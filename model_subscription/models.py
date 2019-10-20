@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+from model_subscription.mixin import SubscriptionModelMixin
+
+
+class SubscriptionModel(SubscriptionModelMixin, models.Model):
+    class Meta:
+        abstract = True
