@@ -1,4 +1,0 @@
-include *.py
-include *.txt
-recursive-include django_model_subscription *.py
-recursive-include model_subscription *.py

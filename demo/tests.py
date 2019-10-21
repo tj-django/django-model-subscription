@@ -14,5 +14,18 @@ if __name__ == '__main__':
 
     from demo.models import TestModel
 
-
+    # Create
     t = TestModel.objects.create(name='test')
+
+    # Bulk create
+    objs = TestModel.objects.bulk_create([
+        TestModel(name='new-{v}'.format(v=i))
+        for i in range(100)
+    ])
+
+
+    # Update
+    t.name = "New name"
+    t.save()
+
+    TestModel.objects.filter(id__in=[t.pk] + [obj.pk for obj in objs]).update(name='you')

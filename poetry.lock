@@ -1,0 +1,603 @@
+[[package]]
+category = "dev"
+description = "Classes Without Boilerplate"
+name = "attrs"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "19.3.0"
+
+[[package]]
+category = "dev"
+description = "A tool that automatically formats Python code to conform to the PEP 8 style guide"
+name = "autopep8"
+optional = false
+python-versions = "*"
+version = "1.4.4"
+
+[package.dependencies]
+pycodestyle = ">=2.4.0"
+
+[[package]]
+category = "dev"
+description = "Version-bump your software with a single command!"
+name = "bump2version"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "0.5.11"
+
+[[package]]
+category = "dev"
+description = "httplib2 caching for requests"
+name = "cachecontrol"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.12.5"
+
+[package.dependencies]
+lockfile = ">=0.9"
+msgpack = "*"
+requests = "*"
+
+[[package]]
+category = "dev"
+description = "Cachy provides a simple yet effective caching library."
+name = "cachy"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.2.0"
+
+[[package]]
+category = "dev"
+description = "Python package for providing Mozilla's CA Bundle."
+name = "certifi"
+optional = false
+python-versions = "*"
+version = "2019.9.11"
+
+[[package]]
+category = "dev"
+description = "Universal encoding detector for Python 2 and 3"
+name = "chardet"
+optional = false
+python-versions = "*"
+version = "3.0.4"
+
+[[package]]
+category = "dev"
+description = "Check MANIFEST.in in a Python source package for completeness"
+name = "check-manifest"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "0.40"
+
+[package.dependencies]
+toml = "*"
+
+[[package]]
+category = "dev"
+description = "Cleo allows you to create beautiful and testable command-line interfaces."
+name = "cleo"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.6.8"
+
+[package.dependencies]
+pastel = ">=0.1.0,<0.2.0"
+pylev = ">=1.3,<2.0"
+
+[[package]]
+category = "dev"
+description = "Updated configparser from Python 3.7 for Python 2.6+."
+marker = "python_version < \"3\""
+name = "configparser"
+optional = false
+python-versions = ">=2.6"
+version = "4.0.2"
+
+[[package]]
+category = "dev"
+description = "Backports and enhancements for the contextlib module"
+marker = "python_version < \"3\""
+name = "contextlib2"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.6.0.post1"
+
+[[package]]
+category = "dev"
+description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
+name = "django"
+optional = false
+python-versions = "*"
+version = "1.11.25"
+
+[package.dependencies]
+pytz = "*"
+
+[[package]]
+category = "main"
+description = "Declarative model lifecycle hooks, inspired by Rails callbacks."
+name = "django-lifecycle"
+optional = false
+python-versions = "*"
+version = "0.3.2"
+
+[[package]]
+category = "dev"
+description = "Python 3.4 Enum backported to 3.3, 3.2, 3.1, 2.7, 2.6, 2.5, and 2.4"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\""
+name = "enum34"
+optional = false
+python-versions = "*"
+version = "1.1.6"
+
+[[package]]
+category = "dev"
+description = "Backport of the functools module from Python 3.2.3 for use on 2.7 and PyPy."
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3\""
+name = "functools32"
+optional = false
+python-versions = "*"
+version = "3.2.3-2"
+
+[[package]]
+category = "dev"
+description = "Automatic Changelog generator using Jinja2 templates."
+marker = "python_version >= \"3.6\" and python_version < \"4.0\""
+name = "git-changelog"
+optional = false
+python-versions = ">=3.6,<4.0"
+version = "0.1.0"
+
+[package.dependencies]
+Jinja2 = ">=2.10,<3.0"
+
+[[package]]
+category = "dev"
+description = "Version of the glob module that can capture patterns and supports recursive wildcards"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.4\" and python_version < \"3.5\""
+name = "glob2"
+optional = false
+python-versions = "*"
+version = "0.6"
+
+[[package]]
+category = "dev"
+description = "HTML parser based on the WHATWG HTML specification"
+name = "html5lib"
+optional = false
+python-versions = "*"
+version = "1.0.1"
+
+[package.dependencies]
+six = ">=1.9"
+webencodings = "*"
+
+[[package]]
+category = "dev"
+description = "Internationalized Domain Names in Applications (IDNA)"
+name = "idna"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.8"
+
+[[package]]
+category = "dev"
+description = "Read metadata from Python packages"
+name = "importlib-metadata"
+optional = false
+python-versions = ">=2.7,!=3.0,!=3.1,!=3.2,!=3.3"
+version = "0.23"
+
+[package.dependencies]
+zipp = ">=0.5"
+
+[package.dependencies.configparser]
+python = "<3"
+version = ">=3.5"
+
+[package.dependencies.contextlib2]
+python = "<3"
+version = "*"
+
+[[package]]
+category = "dev"
+description = "A very fast and expressive template engine."
+name = "jinja2"
+optional = false
+python-versions = "*"
+version = "2.10.3"
+
+[package.dependencies]
+MarkupSafe = ">=0.23"
+
+[[package]]
+category = "dev"
+description = "An implementation of JSON Schema validation for Python"
+name = "jsonschema"
+optional = false
+python-versions = "*"
+version = "3.1.1"
+
+[package.dependencies]
+attrs = ">=17.4.0"
+importlib-metadata = "*"
+pyrsistent = ">=0.14.0"
+setuptools = "*"
+six = ">=1.11.0"
+
+[package.dependencies.functools32]
+python = "<3"
+version = "*"
+
+[[package]]
+category = "dev"
+description = "Platform-independent file locking module"
+marker = "extra == \"filecache\""
+name = "lockfile"
+optional = false
+python-versions = "*"
+version = "0.12.2"
+
+[[package]]
+category = "dev"
+description = "Safely add untrusted strings to HTML/XML markup."
+name = "markupsafe"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
+version = "1.1.1"
+
+[[package]]
+category = "dev"
+description = "More routines for operating on iterables, beyond itertools"
+name = "more-itertools"
+optional = false
+python-versions = "*"
+version = "5.0.0"
+
+[package.dependencies]
+six = ">=1.0.0,<2.0.0"
+
+[[package]]
+category = "dev"
+description = "MessagePack (de)serializer."
+name = "msgpack"
+optional = false
+python-versions = "*"
+version = "0.6.2"
+
+[[package]]
+category = "dev"
+description = "Bring colors to your terminal."
+name = "pastel"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.1.1"
+
+[[package]]
+category = "dev"
+description = "Object-oriented filesystem paths"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.4\" and python_version < \"3.5\""
+name = "pathlib2"
+optional = false
+python-versions = "*"
+version = "2.3.5"
+
+[package.dependencies]
+six = "*"
+
+[package.dependencies.scandir]
+python = "<3.5"
+version = "*"
+
+[[package]]
+category = "dev"
+description = "Query metadatdata from sdists / bdists / installed packages."
+name = "pkginfo"
+optional = false
+python-versions = "*"
+version = "1.5.0.1"
+
+[[package]]
+category = "dev"
+description = "Python dependency management and packaging made easy."
+name = "poetry"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.12.17"
+
+[package.dependencies]
+cachecontrol = ">=0.12.4,<0.13.0"
+cachy = ">=0.2,<0.3"
+cleo = ">=0.6.7,<0.7.0"
+html5lib = ">=1.0,<2.0"
+jsonschema = ">=3.0a3,<4.0"
+pkginfo = ">=1.4,<2.0"
+pyparsing = ">=2.2,<3.0"
+pyrsistent = ">=0.14.2,<0.15.0"
+requests = ">=2.18,<3.0"
+requests-toolbelt = ">=0.8.0,<0.9.0"
+shellingham = ">=1.1,<2.0"
+tomlkit = ">=0.5.1,<0.6.0"
+
+[package.dependencies.functools32]
+python = ">=2.7,<2.8"
+version = ">=3.2.3,<4.0.0"
+
+[package.dependencies.glob2]
+python = ">=2.7,<2.8 || >=3.4,<3.5"
+version = ">=0.6,<0.7"
+
+[package.dependencies.pathlib2]
+python = ">=2.7,<2.8 || >=3.4,<3.5"
+version = ">=2.3,<3.0"
+
+[package.dependencies.subprocess32]
+python = ">=2.7,<2.8 || >=3.4,<3.5"
+version = ">=3.5,<4.0"
+
+[package.dependencies.typing]
+python = ">=2.7,<2.8 || >=3.4,<3.5"
+version = ">=3.6,<4.0"
+
+[package.dependencies.virtualenv]
+python = ">=2.7,<2.8"
+version = ">=16.0,<17.0"
+
+[[package]]
+category = "dev"
+description = "make setup.py (setutools) from pyproject.toml (poetry)"
+name = "poetry-setup"
+optional = false
+python-versions = "*"
+version = "0.3.6"
+
+[package.dependencies]
+autopep8 = "*"
+jinja2 = "*"
+poetry = "*"
+yapf = "*"
+
+[[package]]
+category = "dev"
+description = "Python style guide checker"
+name = "pycodestyle"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "2.5.0"
+
+[[package]]
+category = "dev"
+description = "A pure Python Levenshtein implementation that's not freaking GPL'd."
+name = "pylev"
+optional = false
+python-versions = "*"
+version = "1.3.0"
+
+[[package]]
+category = "dev"
+description = "Python parsing module"
+name = "pyparsing"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
+version = "2.4.2"
+
+[[package]]
+category = "dev"
+description = "Persistent/Functional/Immutable data structures"
+name = "pyrsistent"
+optional = false
+python-versions = "*"
+version = "0.14.11"
+
+[package.dependencies]
+six = "*"
+
+[[package]]
+category = "dev"
+description = "World timezone definitions, modern and historical"
+name = "pytz"
+optional = false
+python-versions = "*"
+version = "2019.3"
+
+[[package]]
+category = "dev"
+description = "Python HTTP for Humans."
+name = "requests"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+version = "2.22.0"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+chardet = ">=3.0.2,<3.1.0"
+idna = ">=2.5,<2.9"
+urllib3 = ">=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26"
+
+[[package]]
+category = "dev"
+description = "A utility belt for advanced users of python-requests"
+name = "requests-toolbelt"
+optional = false
+python-versions = "*"
+version = "0.8.0"
+
+[package.dependencies]
+requests = ">=2.0.1,<3.0.0"
+
+[[package]]
+category = "dev"
+description = "scandir, a better directory iterator and faster os.walk()"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.4\" and python_version < \"3.5\""
+name = "scandir"
+optional = false
+python-versions = "*"
+version = "1.10.0"
+
+[[package]]
+category = "dev"
+description = "Tool to Detect Surrounding Shell"
+name = "shellingham"
+optional = false
+python-versions = ">=2.6,!=3.0,!=3.1,!=3.2,!=3.3"
+version = "1.3.1"
+
+[[package]]
+category = "dev"
+description = "Python 2 and 3 compatibility utilities"
+name = "six"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*"
+version = "1.12.0"
+
+[[package]]
+category = "dev"
+description = "A backport of the subprocess module from Python 3 for use on 2.x."
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.4\" and python_version < \"3.5\""
+name = "subprocess32"
+optional = false
+python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*, <4"
+version = "3.5.4"
+
+[[package]]
+category = "dev"
+description = "Python Library for Tom's Obvious, Minimal Language"
+name = "toml"
+optional = false
+python-versions = "*"
+version = "0.10.0"
+
+[[package]]
+category = "dev"
+description = "Style preserving TOML library"
+name = "tomlkit"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+version = "0.5.8"
+
+[package.dependencies]
+[package.dependencies.enum34]
+python = ">=2.7,<2.8"
+version = ">=1.1,<2.0"
+
+[package.dependencies.functools32]
+python = ">=2.7,<2.8"
+version = ">=3.2.3,<4.0.0"
+
+[package.dependencies.typing]
+python = ">=2.7,<2.8 || >=3.4,<3.5"
+version = ">=3.6,<4.0"
+
+[[package]]
+category = "main"
+description = "Type Hints for Python"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.4\" and python_version < \"3.5\""
+name = "typing"
+optional = false
+python-versions = "*"
+version = "3.7.4.1"
+
+[[package]]
+category = "dev"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+name = "urllib3"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4"
+version = "1.25.6"
+
+[[package]]
+category = "dev"
+description = "Virtual Python Environment builder"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\""
+name = "virtualenv"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
+version = "16.7.6"
+
+[[package]]
+category = "dev"
+description = "Character encoding aliases for legacy web content"
+name = "webencodings"
+optional = false
+python-versions = "*"
+version = "0.5.1"
+
+[[package]]
+category = "dev"
+description = "A formatter for Python code."
+name = "yapf"
+optional = false
+python-versions = "*"
+version = "0.28.0"
+
+[[package]]
+category = "dev"
+description = "Backport of pathlib-compatible object wrapper for zip files"
+name = "zipp"
+optional = false
+python-versions = ">=2.7"
+version = "0.6.0"
+
+[package.dependencies]
+more-itertools = "*"
+
+[extras]
+deploy = []
+development = []
+
+[metadata]
+content-hash = "b6df0aea5b9d0d815164ecf818391363af0ddc97de5c5c6d53c9f25f86e58685"
+python-versions = "~2.7 || ^3.5 || ^3.6 || ^3.7 || ~3.8"
+
+[metadata.hashes]
+attrs = ["08a96c641c3a74e44eb59afb61a24f2cb9f4d7188748e76ba4bb5edfa3cb7d1c", "f7b7ce16570fe9965acd6d30101a28f62fb4a7f9e926b3bbc9b61f8b04247e72"]
+autopep8 = ["4d8eec30cc81bc5617dbf1218201d770dc35629363547f17577c61683ccfb3ee"]
+bump2version = ["524bde030318fe2543038defe0f77739605636fef96924883813cb290cf79c1e", "bfcc051498dda9fd9ac8634689f4516e1c20fdeeace3278932cc6e1248418b36"]
+cachecontrol = ["cef77effdf51b43178f6a2d3b787e3734f98ade253fa3187f3bb7315aaa42ff7"]
+cachy = ["b71513e5a38ce90c1280c02b7d8d6bb3fdf64666c9cc0584f2479afea097d56c", "b71e8e7ddb5b386e23e81befdfac8a93885406139b8681bedc17b3444fcb8fca"]
+certifi = ["e4f3620cfea4f83eedc95b24abd9cd56f3c4b146dd0177e83a21b4eb49e21e50", "fd7c7c74727ddcf00e9acd26bba8da604ffec95bf1c2144e67aff7a8b50e6cef"]
+chardet = ["84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae", "fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"]
+check-manifest = ["42de6eaab4ed149e60c9b367ada54f01a3b1e4d6846784f9b9710e770ff5572c", "78dd077f2c70dbac7cfcc9d12cbd423914e787ea4b5631de45aecd25b524e8e3"]
+cleo = ["85a63076b72ca376fb06668be1fc7758dc16740b394783d5cc65200c4b32f71b", "9b7f79f1aa470a025c0d28c76aa225ee9e65028d32f80032e871aa3500df61b8"]
+configparser = ["254c1d9c79f60c45dfde850850883d5aaa7f19a23f13561243a050d5a7c3fe4c", "c7d282687a5308319bf3d2e7706e575c635b0a470342641c93bea0ea3b5331df"]
+contextlib2 = ["01f490098c18b19d2bd5bb5dc445b2054d2fa97f09a4280ba2c5f3c394c8162e", "3355078a159fbb44ee60ea80abd0d87b80b78c248643b49aa6d94673b413609b"]
+django = ["2f31cdaaeffdb1728614c4ede5f7101c5770aa90b471c1299d4a203bf00f3b05", "5314e8586285d532b7aa5c6d763b0248d9a977a37efec86d30f0212b82e8ef66"]
+django-lifecycle = ["19f213d962e73fa1e2fdde04964f59bd49648606cc5e596ef47ce376e04ad326"]
+enum34 = ["2d81cbbe0e73112bdfe6ef8576f2238f2ba27dd0d55752a776c41d38b7da2850", "644837f692e5f550741432dd3f223bbb9852018674981b1664e5dc339387588a", "6bd0f6ad48ec2aa117d3d141940d484deccda84d4fcd884f5c3d93c23ecd8c79", "8ad8c4783bf61ded74527bffb48ed9b54166685e4230386a9ed9b1279e2df5b1"]
+functools32 = ["89d824aa6c358c421a234d7f9ee0bd75933a67c29588ce50aaa3acdf4d403fa0", "f6253dfbe0538ad2e387bd8fdfd9293c925d63553f5813c4e587745416501e6d"]
+git-changelog = ["213f930dc2801d598202a28300a9593366aa212a8530811fa9d2f668a3522080", "d7362594ec609f2c2fc2c3cd4bb862f2cf3dbb39b359481973962cbd56875b45"]
+glob2 = ["f5b0a686ff21f820c4d3f0c4edd216704cea59d79d00fa337e244a2f2ff83ed6"]
+html5lib = ["20b159aa3badc9d5ee8f5c647e5efd02ed2a66ab8d354930bd9ff139fc1dc0a3", "66cb0dcfdbbc4f9c3ba1a63fdb511ffdbd4f513b2b6d81b80cd26ce6b3fb3736"]
+idna = ["c357b3f628cf53ae2c4c05627ecc484553142ca23264e593d327bcde5e9c3407", "ea8b7f6188e6fa117537c3df7da9fc686d485087abf6ac197f9c46432f7e4a3c"]
+importlib-metadata = ["aa18d7378b00b40847790e7c27e11673d7fed219354109d0e7b9e5b25dc3ad26", "d5f18a79777f3aa179c145737780282e27b508fc8fd688cb17c7a813e8bd39af"]
+jinja2 = ["74320bb91f31270f9551d46522e33af46a80c3d619f4a4bf42b3164d30b5911f", "9fe95f19286cfefaa917656583d020be14e7859c6b0252588391e47db34527de"]
+jsonschema = ["2fa0684276b6333ff3c0b1b27081f4b2305f0a36cf702a23db50edb141893c3f", "94c0a13b4a0616458b42529091624e66700a17f847453e52279e35509a5b7631"]
+lockfile = ["6aed02de03cba24efabcd600b30540140634fc06cfa603822d508d5361e9f799", "6c3cb24f344923d30b2785d5ad75182c8ea7ac1b6171b08657258ec7429d50fa"]
+markupsafe = ["00bc623926325b26bb9605ae9eae8a215691f33cae5df11ca5424f06f2d1f473", "09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161", "09c4b7f37d6c648cb13f9230d847adf22f8171b1ccc4d5682398e77f40309235", "1027c282dad077d0bae18be6794e6b6b8c91d58ed8a8d89a89d59693b9131db5", "24982cc2533820871eba85ba648cd53d8623687ff11cbb805be4ff7b4c971aff", "29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b", "43a55c2930bbc139570ac2452adf3d70cdbb3cfe5912c71cdce1c2c6bbd9c5d1", "46c99d2de99945ec5cb54f23c8cd5689f6d7177305ebff350a58ce5f8de1669e", "500d4957e52ddc3351cabf489e79c91c17f6e0899158447047588650b5e69183", "535f6fc4d397c1563d08b88e485c3496cf5784e927af890fb3c3aac7f933ec66", "62fe6c95e3ec8a7fad637b7f3d372c15ec1caa01ab47926cfdf7a75b40e0eac1", "6dd73240d2af64df90aa7c4e7481e23825ea70af4b4922f8ede5b9e35f78a3b1", "717ba8fe3ae9cc0006d7c451f0bb265ee07739daf76355d06366154ee68d221e", "79855e1c5b8da654cf486b830bd42c06e8780cea587384cf6545b7d9ac013a0b", "7c1699dfe0cf8ff607dbdcc1e9b9af1755371f92a68f706051cc8c37d447c905", "88e5fcfb52ee7b911e8bb6d6aa2fd21fbecc674eadd44118a9cc3863f938e735", "8defac2f2ccd6805ebf65f5eeb132adcf2ab57aa11fdf4c0dd5169a004710e7d", "98c7086708b163d425c67c7a91bad6e466bb99d797aa64f965e9d25c12111a5e", "9add70b36c5666a2ed02b43b335fe19002ee5235efd4b8a89bfcf9005bebac0d", "9bf40443012702a1d2070043cb6291650a0841ece432556f784f004937f0f32c", "ade5e387d2ad0d7ebf59146cc00c8044acbd863725f887353a10df825fc8ae21", "b00c1de48212e4cc9603895652c5c410df699856a2853135b3967591e4beebc2", "b1282f8c00509d99fef04d8ba936b156d419be841854fe901d8ae224c59f0be5", "b2051432115498d3562c084a49bba65d97cf251f5a331c64a12ee7e04dacc51b", "ba59edeaa2fc6114428f1637ffff42da1e311e29382d81b339c1817d37ec93c6", "c8716a48d94b06bb3b2524c2b77e055fb313aeb4ea620c8dd03a105574ba704f", "cd5df75523866410809ca100dc9681e301e3c27567cf498077e8551b6d20e42f", "e249096428b3ae81b08327a63a485ad0878de3fb939049038579ac0ef61e17e7"]
+more-itertools = ["38a936c0a6d98a38bcc2d03fdaaedaba9f412879461dd2ceff8d37564d6522e4", "c0a5785b1109a6bd7fac76d6837fd1feca158e54e521ccd2ae8bfe393cc9d4fc", "fe7a7cae1ccb57d33952113ff4fa1bc5f879963600ed74918f1236e212ee50b9"]
+msgpack = ["0cc7ca04e575ba34fea7cfcd76039f55def570e6950e4155a4174368142c8e1b", "187794cd1eb73acccd528247e3565f6760bd842d7dc299241f830024a7dd5610", "1904b7cb65342d0998b75908304a03cb004c63ef31e16c8c43fee6b989d7f0d7", "229a0ccdc39e9b6c6d1033cd8aecd9c296823b6c87f0de3943c59b8bc7c64bee", "24149a75643aeaa81ece4259084d11b792308a6cf74e796cbb35def94c89a25a", "30b88c47e0cdb6062daed88ca283b0d84fa0d2ad6c273aa0788152a1c643e408", "32fea0ea3cd1ef820286863a6202dcfd62a539b8ec3edcbdff76068a8c2cc6ce", "355f7fd0f90134229eaeefaee3cf42e0afc8518e8f3cd4b25f541a7104dcb8f9", "4abdb88a9b67e64810fb54b0c24a1fd76b12297b4f7a1467d85a14dd8367191a", "757bd71a9b89e4f1db0622af4436d403e742506dbea978eba566815dc65ec895", "76df51492bc6fa6cc8b65d09efdb67cbba3cbfe55004c3afc81352af92b4a43c", "774f5edc3475917cd95fe593e625d23d8580f9b48b570d8853d06cac171cd170", "8a3ada8401736df2bf497f65589293a86c56e197a80ae7634ec2c3150a2f5082", "a06efd0482a1942aad209a6c18321b5e22d64eb531ea20af138b28172d8f35ba", "b24afc52e18dccc8c175de07c1d680bdf315844566f4952b5bedb908894bec79", "b8b4bd3dafc7b92608ae5462add1c8cc881851c2d4f5d8977fdea5b081d17f21", "c6e5024fc0cdf7f83b6624850309ddd7e06c48a75fa0d1c5173de4d93300eb19", "db7ff14abc73577b0bcbcf73ecff97d3580ecaa0fc8724babce21fdf3fe08ef6", "dedf54d72d9e7b6d043c244c8213fe2b8bbfe66874b9a65b39c4cc892dd99dd4", "ea3c2f859346fcd55fc46e96885301d9c2f7a36d453f5d8f2967840efa1e1830", "f0f47bafe9c9b8ed03e19a100a743662dd8c6d0135e684feea720a0d0046d116"]
+pastel = ["a904e1659512cc9880a028f66de77cc813a4c32f7ceb68725cbc8afad57ef7ef", "bf3b1901b2442ea0d8ab9a390594e5b0c9584709d543a3113506fe8b28cbace3"]
+pathlib2 = ["0ec8205a157c80d7acc301c0b18fbd5d44fe655968f5d947b6ecef5290fc35db", "6cd9a47b597b37cc57de1c05e56fb1a1c9cc9fab04fe78c29acd090418529868"]
+pkginfo = ["7424f2c8511c186cd5424bbf31045b77435b37a8d604990b79d4e70d741148bb", "a6d9e40ca61ad3ebd0b72fbadd4fba16e4c0e4df0428c041e01e06eb6ee71f32"]
+poetry = ["0133cd4edc77e955de8cd91203b6728f8365e2849d7fa7da1bfbc14b6529ab43", "6e535de38df7e6ab46ff8d197f53632b071675287d1477efc7bf4a5c4c63bc3f"]
+poetry-setup = ["18204efc69bc3a79d19c905142d986e76d9a9dd18f4480f336dc6a7aad6a43b3"]
+pycodestyle = ["95a2219d12372f05704562a14ec30bc76b05a5b297b21a5dfe3f6fac3491ae56", "e40a936c9a450ad81df37f549d676d127b1b66000a6c500caa2b085bc0ca976c"]
+pylev = ["063910098161199b81e453025653ec53556c1be7165a9b7c50be2f4d57eae1c3", "1d29a87beb45ebe1e821e7a3b10da2b6b2f4c79b43f482c2df1a1f748a6e114e"]
+pyparsing = ["6f98a7b9397e206d78cc01df10131398f1c8b8510a2f4d97d9abd82e1aacdd80", "d9338df12903bbf5d65a0e4e87c2161968b10d2e489652bb47001d82a9b028b4"]
+pyrsistent = ["3ca82748918eb65e2d89f222b702277099aca77e34843c5eb9d52451173970e2"]
+pytz = ["1c557d7d0e871de1f5ccd5833f60fb2550652da6be2693c1e02300743d21500d", "b02c06db6cf09c12dd25137e563b31700d3b80fcc4ad23abb7a315f2789819be"]
+requests = ["11e007a8a2aa0323f5a921e9e6a2d7e4e67d9877e85773fba9ba6419025cbeb4", "9cf5292fcd0f598c671cfc1e0d7d1a7f13bb8085e9a590f48c010551dc6c4b31"]
+requests-toolbelt = ["42c9c170abc2cacb78b8ab23ac957945c7716249206f90874651971a4acff237", "f6a531936c6fa4c6cfce1b9c10d5c4f498d16528d2a54a22ca00011205a187b5"]
+scandir = ["2586c94e907d99617887daed6c1d102b5ca28f1085f90446554abf1faf73123e", "2ae41f43797ca0c11591c0c35f2f5875fa99f8797cb1a1fd440497ec0ae4b022", "2b8e3888b11abb2217a32af0766bc06b65cc4a928d8727828ee68af5a967fa6f", "2c712840c2e2ee8dfaf36034080108d30060d759c7b73a01a52251cc8989f11f", "4d4631f6062e658e9007ab3149a9b914f3548cb38bfb021c64f39a025ce578ae", "67f15b6f83e6507fdc6fca22fedf6ef8b334b399ca27c6b568cbfaa82a364173", "7d2d7a06a252764061a020407b997dd036f7bd6a175a5ba2b345f0a357f0b3f4", "8c5922863e44ffc00c5c693190648daa6d15e7c1207ed02d6f46a8dcc2869d32", "92c85ac42f41ffdc35b6da57ed991575bdbe69db895507af88b9f499b701c188", "b24086f2375c4a094a6b51e78b4cf7ca16c721dcee2eddd7aa6494b42d6d519d", "cb925555f43060a1745d0a321cca94bcea927c50114b623d73179189a4e100ac"]
+shellingham = ["77d37a4fd287c1e663006f7ecf1b9deca9ad492d0082587bd813c44eb49e4e62", "985b23bbd1feae47ca6a6365eacd314d93d95a8a16f8f346945074c28fe6f3e0"]
+six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
+subprocess32 = ["88e37c1aac5388df41cc8a8456bb49ebffd321a3ad4d70358e3518176de3a56b", "eb2937c80497978d181efa1b839ec2d9622cf9600a039a79d0e108d1f9aec79d"]
+toml = ["229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c", "235682dd292d5899d361a811df37e04a8828a5b1da3115886b73cf81ebc9100e", "f1db651f9657708513243e61e6cc67d101a39bad662eaa9b5546f789338e07a3"]
+tomlkit = ["32c10cc16ded7e4101c79f269910658cc2a0be5913f1252121c3cd603051c269", "96e6369288571799a3052c1ef93b9de440e1ab751aa045f435b55e9d3bcd0690"]
+typing = ["91dfe6f3f706ee8cc32d38edbbf304e9b7583fb37108fef38229617f8b3eba23", "c8cabb5ab8945cd2f54917be357d134db9cc1eb039e59d1606dc1e60cb1d9d36", "f38d83c5a7a7086543a0f649564d661859c5146a85775ab90c0d2f93ffaa9714"]
+urllib3 = ["3de946ffbed6e6746608990594d08faac602528ac7015ac28d33cee6a45b7398", "9a107b99a5393caf59c7aa3c1249c16e6879447533d0887f4336dde834c7be86"]
+virtualenv = ["3e3597e89c73df9313f5566e8fc582bd7037938d15b05329c232ec57a11a7ad5", "5d370508bf32e522d79096e8cbea3499d47e624ac7e11e9089f9397a0b3318df"]
+webencodings = ["a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78", "b36a1c245f2d304965eb4e0a82848379241dc04b865afcc4aab16748587e1923"]
+yapf = ["02ace10a00fa2e36c7ebd1df2ead91dbfbd7989686dc4ccbdc549e95d19f5780", "6f94b6a176a7c114cfa6bad86d40f259bbe0f10cf2fa7f2f4b3596fc5802a41b"]
+zipp = ["3718b1cbcd963c7d4c5511a8240812904164b7f381b647143a89d3b98f9bcd8e", "f06903e9f1f43b12d371004b4ac7b06ab39a44adc747266928ae6debfa7b3335"]
