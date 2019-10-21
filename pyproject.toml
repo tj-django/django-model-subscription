@@ -53,8 +53,9 @@ include = [
 exclude = [
     "__pycache__",
     "*.pyc", "*.pyo",
-    "*.orig", "tests*",
-    "*tests", "demo*",
+    "*.orig", "tests",
+    "model_subscription/tests.py",
+    "demo",
 ]
 readme = "README.md"
 
