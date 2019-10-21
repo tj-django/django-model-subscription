@@ -69,9 +69,9 @@ setup(
                 '*.pyc',
                 '*.pyo',
                 '*.orig',
-                'tests*',
-                '*tests',
-                'demo*',
+                'tests',
+                'model_subscription/tests.py',
+                'demo',
         ]
     ),  # Required
     # https://packaging.python.org/en/latest/requirements.html
