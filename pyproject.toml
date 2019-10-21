@@ -40,7 +40,15 @@ classifiers = [
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
 ]
 
-include = ["CHANGELOG.md", "manage.py", "django_model_subscription", "model_subscription"]
+packages = [
+    { include = "django_model_subscription" },
+    { include = "model_subscription" },
+]
+
+include = [
+    "CHANGELOG.md",
+    "manage.py",
+]
 
 exclude = [
     "__pycache__",
