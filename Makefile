@@ -43,10 +43,8 @@ tag-build:
 release-to-pypi: increase-version tag-build  ## Release project to pypi
 	@poetry build
 	@poetry publish
-
-
-deploy: release-to-pypi
 	@git-changelog . >> CHANGELOG.md
+	@git commit -am "Synced pyproject.toml and updated CHANGELOG.md."
 
 
 # ----------------------------------------------------------

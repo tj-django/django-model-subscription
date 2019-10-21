@@ -27,7 +27,7 @@ setup(
     name='django-model-subscription',  # Required
     # https://www.python.org/dev/peps/pep-0440/
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.3',  # Required
+    version='0.0.4',  # Required
     # https://packaging.python.org/specifications/core-metadata/#summary
     description="Subscription model for a django model instance.",  # Required
     # https://packaging.python.org/specifications/core-metadata/#description-optional
@@ -82,7 +82,10 @@ setup(
     # https://setuptools.readthedocs.io/en/latest/setuptools.html#dependencies-that-aren-t-in-pypi
     dependency_links=[
     ],  # Optional
-    extras_require={'deploy': [], 'development': []},
+    extras_require={
+        'deploy': [],
+        'development': [],
+    },
     # https://stackoverflow.com/a/16576850
     include_package_data=True,
     # https://packaging.python.org/specifications/core-metadata/#project-url-multiple-use
