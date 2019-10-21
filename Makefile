@@ -56,6 +56,7 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 	@echo "Increasing project '$(PART)' version..."
 	@poetry up
 	@poetry version $(PART)
+	@poetry-setup
 
 # ----------------------------------------------------------
 # --------- Run project Test -------------------------------
