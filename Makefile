@@ -46,6 +46,7 @@ release-to-pypi: increase-version tag-build  ## Release project to pypi
 	@git-changelog . >> CHANGELOG.md
 	@git commit -am "Synced pyproject.toml and updated CHANGELOG.md."
 	@git push --tags
+	@git push
 
 
 # ----------------------------------------------------------
