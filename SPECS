@@ -1,0 +1,3 @@
+TODOS
+- Add support for field subscriptions i.e should this also include Foriegn keys and Many to Many
+relationships.
