@@ -9,9 +9,7 @@ from model_subscription.subscriber import ModelSubscription
 
 class SubscriptionMeta(ModelBase):
     """
-    The Singleton class can be implemented in different ways in Python. Some
-    possible methods include: base class, decorator, metaclass. We will use the
-    metaclass because it is best suited for this purpose.
+    The Singleton base metaclass.
     """
 
     def __new__(cls, name, bases, attrs):

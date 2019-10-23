@@ -1,6 +1,7 @@
 from functools import partial
 from typing import Callable, Optional
 
+from django.conf import settings
 from django.db import models
 
 from model_subscription.constants import OperationType
@@ -14,6 +15,10 @@ __all__ = [
     'unsubscribe', 'unsubscribe_create',
     'unsubscribe_bulk_create', 'unsubscribe_update',
     'unsubscribe_delete',
+
+    'create_external_subscription', 'bulk_create_external_subscription',
+    'update_external_subscription', 'bulk_update_external_subscription',
+    'delete_external_subscription', 'bulk_delete_external_subscription',
 ]
 
 
@@ -90,4 +95,25 @@ def unsubscribe(operation, model, func=None):
 unsubscribe_create = partial(unsubscribe, OperationType.CREATE)
 unsubscribe_bulk_create = partial(unsubscribe, OperationType.BULK_CREATE)
 unsubscribe_update = partial(unsubscribe, OperationType.UPDATE)
+unsubscribe_bulk_update = partial(unsubscribe, OperationType.BULK_UPDATE)
 unsubscribe_delete = partial(unsubscribe, OperationType.DELETE)
+unsubscribe_bulk_delete = partial(unsubscribe, OperationType.BULK_DELETE)
+
+
+
+# Using the settings.SUBSCRIPTION_RUN_EXTERNAL or falls back to settings.DEBUG
+def external(func):
+    can_run = getattr(settings, 'SUBSCRIPTION_RUN_EXTERNAL', settings.DEBUG)
+    if not can_run:
+        def noop():
+            pass
+        return noop
+    return func
+
+
+create_external_subscription = external(create_subscription)
+bulk_create_external_subscription = external(bulk_create_subscription)
+update_external_subscription = external(update_subscription)
+bulk_update_external_subscription = external(bulk_update_subscription)
+delete_external_subscription = external(delete_subscription)
+bulk_delete_external_subscription = external(bulk_delete_subscription)

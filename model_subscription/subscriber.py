@@ -14,15 +14,11 @@ from model_subscription.observers import (
 
 
 class BaseSubscription(ABC):
-    """
-    The Subject interface declares a set of methods for managing subscribers.
-    """
-
     @abstractmethod
     def attach(self, operation_type, receiver):
         # type: (OperationType, Callable) -> None
         """
-        Attach an observer to the subject.
+        Attach an observer.
         """
         pass
 
@@ -30,7 +26,7 @@ class BaseSubscription(ABC):
     def detach(self, operation_type, receiver):
         # type: (OperationType, Callable) -> None
         """
-        Detach an observer from the subject.
+        Detach an observer.
         """
         pass
 
@@ -42,28 +38,36 @@ class BaseSubscription(ABC):
         """
         pass
 
+    @abstractmethod
+    def notify_many(self, operation_type, objs):
+        # type: (OperationType.BULK_CREATE, List[models.Model]) -> None
+        """
+        Notify the observers of (bulk) actions.
+        """
+        pass
+
 
 class ModelSubscription(BaseSubscription):
     """
-    The Subject owns some important state and notifies observers when the state
-    changes.
+    Notifies observers when the state changes.
     """
-    _subscription_model = None  # type: (LifecycleModelMixin, models.Model)
-    _observers = frozenset(  # type: Set[OperationType, Set[Observer]]
-        [
-            (OperationType.CREATE, CreateObserver()),
-            (OperationType.BULK_CREATE, BulkCreateObserver()),
-            (OperationType.UPDATE, UpdateObserver()),
-            (OperationType.BULK_UPDATE, BulkUpdateObserver()),
-            (OperationType.DELETE, DeleteObserver()),
-            (OperationType.BULK_DELETE, BulkDeleteObserver()),
-        ]
-    )
 
-    """
-    List of subscribers. In real life, the list of subscribers can be stored
-    more comprehensively (categorized by event type, etc.).
-    """
+    def __init__(self):
+        """
+        Subscription types and List of subscribers.
+        """
+        self._observers = frozenset(  # type: Set[OperationType, Set[Observer]]
+            [
+                (OperationType.CREATE, CreateObserver()),
+                (OperationType.BULK_CREATE, BulkCreateObserver()),
+                (OperationType.UPDATE, UpdateObserver()),
+                (OperationType.BULK_UPDATE, BulkUpdateObserver()),
+                (OperationType.DELETE, DeleteObserver()),
+                (OperationType.BULK_DELETE, BulkDeleteObserver()),
+            ]
+        )
+
+        _subscription_model = None  # type: (LifecycleModelMixin, models.Model)
 
     @property
     def observers(self):
@@ -106,9 +110,6 @@ class ModelSubscription(BaseSubscription):
 
     def notify(self, operation_type, instance):
         # type: (OperationType, type(models.Model)) -> None
-        """
-        Trigger an handles of the subscribers.
-        """
         self.subscription_model = instance
         observer = self.observers[operation_type]
 
