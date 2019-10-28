@@ -8,3 +8,7 @@ __pycache__/
 
 dist/
 build/
+
+_build
+_static
+_templates

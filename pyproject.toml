@@ -72,6 +72,11 @@ check-manifest = {version = "^0.40.0", extras = ["development"]}
 bump2version = {version = "^0.5.11", extras = ["deploy"]}
 git-changelog = {version = "^0.1.0", extras = ["deploy"], python = "^3.6"}
 poetry-setup = {version = "^0.3.6", extras = ["development"]}
+sphinx = "=1.8.5"
+sphinx-autobuild = "^0.7.1"
+sphinx_rtd_theme = "^0.4.3"
+lockfile = "^0.12.2"
+recommonmark = "^0.6.0"
 
 [tool.poetry.extras]
 deploy = ["bump2version", "git-changelog", "poetry-setup"]
