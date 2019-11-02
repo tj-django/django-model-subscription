@@ -1,25 +1,26 @@
 Settings
 ========
 
-Default Settings
-----------------
-
-.. code-block:: python
-
-    SUBSCRIPTION_MODULE = 'subscription'
-    SUBSCRIPTION_AUTO_DISCOVER = False
-
-
-
 `SUBSCRIPTION_MODULE`: Set the module or package name where auto-discover should look for
 application level subscriptions (Defaults to 'subscription').
 
-.. warning:: Ensure that the module is a submodule in the application package.
+.. warning:: Ensure that the module is a submodule in the app.
 
 `SUBSCRIPTION_AUTO_DISCOVER`:  Switch Auto discover (on/off).
 
 .. warning:: With auto discovery on this would trigger subscriptions anywhere the model object is used
  from scripts to executing management commands.
+
+Sample Settings
+----------------
+
+.. code-block:: python
+
+    SUBSCRIPTION_MODULE = 'subscription' # This requires an app_name.subscription module/package
+    SUBSCRIPTION_AUTO_DISCOVER = True  # Turns on auto discovery
+
+
+
 
 
 Auto discovery
@@ -30,6 +31,8 @@ django signals work.
 App.ready
 ~~~~~~~~~
 Use the apps.ready for more control over which subscribers needs to be registered at runtime.
+
+.. warning:: Ensure `SUBSCRIPTION_AUTO_DISCOVER` is set to False or omitted from the settings.
 
 .. code-block:: python
 

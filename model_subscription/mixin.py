@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db.models.base import ModelBase
+from django.core.exceptions import ImproperlyConfigured
 from django.utils import six
 from django_lifecycle import LifecycleModelMixin, hook
 
@@ -24,7 +25,11 @@ class SubscriptionMeta(ModelBase):
 @six.add_metaclass(SubscriptionMeta)
 class SubscriptionModelMixin(LifecycleModelMixin):
     def __init__(self, *args, **kwargs):
-        if settings.SUBSCRIPTION_AUTO_DISCOVER:
+        if getattr(settings, 'SUBSCRIPTION_AUTO_DISCOVER', False):
+            if not hasattr(settings, 'SUBSCRIPTION_MODULE'):
+                raise ImproperlyConfigured(
+                    'Error no settings.SUBSCRIPTION_MODULE provided.'
+                )
             self._subscription.auto_discover()
         super(SubscriptionModelMixin, self).__init__(*args, **kwargs)
 
