@@ -70,7 +70,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'django_model_subscription.wsgi.application'
 
 SUBSCRIPTION_MODULE = 'subscription'
-SUBSCRIPTION_AUTO_DISCOVER = True
+SUBSCRIPTION_AUTO_DISCOVER = False
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases

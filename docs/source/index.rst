@@ -10,10 +10,11 @@ Welcome to Django Model Subscription's documentation!
    :maxdepth: 2
    :caption: Package Documentation:
 
-   installing
+   installation
    configuration
-
-.. include:: ../../README.md
+   settings
+   modules
+   contents
 
 
 Indices and tables
