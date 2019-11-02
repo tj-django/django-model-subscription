@@ -2,7 +2,7 @@
 Configuration
 *************
 
-Add ``model_subscription`` to your `INSTALLED_APPS`.
+Add ``model_subscription`` to your ``INSTALLED_APPS``.
 
 
 .. code-block:: python

@@ -4,6 +4,7 @@ from typing import Set, Dict, Callable, List
 
 from django.conf import settings
 from django.db import models
+from django.utils.module_loading import autodiscover_modules
 from django_lifecycle import LifecycleModelMixin
 
 from model_subscription.constants import OperationType
@@ -56,7 +57,7 @@ class ModelSubscription(BaseSubscription):
         """
         Subscription types and List of subscribers.
         """
-        self._observers = frozenset(  # type: Set[OperationType, Set[Observer]]
+        self.__observers = frozenset(  # type: Set[OperationType, Set[Observer]]
             [
                 (OperationType.CREATE, CreateObserver()),
                 (OperationType.BULK_CREATE, BulkCreateObserver()),
@@ -67,19 +68,19 @@ class ModelSubscription(BaseSubscription):
             ]
         )
 
-        _subscription_model = None  # type: (LifecycleModelMixin, models.Model)
+        self.__subscription_model = None  # type: (LifecycleModelMixin, models.Model)
 
     @property
     def observers(self):
-        return dict(self._observers)
+        return dict(self._ModelSubscription__observers)
 
     @property
     def subscription_model(self):
-        return self._subscription_model
+        return self._ModelSubscription__subscription_model
 
     @subscription_model.setter
     def subscription_model(self, model):
-        self._subscription_model = model
+        self._ModelSubscription__subscription_model = model
 
     def attach(self, operation_type, receiver):
         # type: (OperationType, Callable) -> None
@@ -94,19 +95,7 @@ class ModelSubscription(BaseSubscription):
 
     @staticmethod
     def auto_discover():
-        from django.apps import apps
-        for app_config in apps.get_app_configs():
-            app_name = app_config.name
-            try:
-                import_module(
-                    '%(app_name)s.%(module_name)s' %
-                    {
-                        'app_name': app_name,
-                        'module_name': settings.SUBSCRIPTION_MODULE
-                    }
-                )
-            except ImportError:
-                pass
+        autodiscover_modules(settings.SUBSCRIPTION_MODULE)
 
     def notify(self, operation_type, instance):
         # type: (OperationType, type(models.Model)) -> None

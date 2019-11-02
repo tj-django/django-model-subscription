@@ -2,7 +2,10 @@
 Package contents
 ****************
 
-.. automodule:: model_subscription
-    :members:
-    :undoc-members:
-    :show-inheritance:
+django-model-subscription
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 5
+
+   model_subscription

@@ -6,7 +6,7 @@ from model_subscription.decorators import (
     subscribe, create_subscription, unsubscribe_create,
     bulk_create_subscription, update_subscription,
     delete_subscription, bulk_update_subscription,
-)
+    bulk_delete_subscription)
 
 log = logging.getLogger(__name__)
 
@@ -47,4 +47,10 @@ def handle_bulk_update(instances):
 
 @delete_subscription(TestModel)
 def handle_delete(instance):
-    log.debug('Deleted {}: "{}"'.format(instance.__class__.__name__, instance.name))
+    log.debug('Deleted {}'.format(instance.name))
+
+
+@bulk_delete_subscription(TestModel)
+def handle_bulk_delete(instances):
+    for instance in instances:
+        log.debug('Bulk Deleted {}'.format(instance.name))

@@ -13,7 +13,9 @@ Welcome to Django Model Subscription's documentation!
    installation
    configuration
    settings
-   modules
+   auto_discovery
+   subscription_model
+   subscribers
    contents
 
 
