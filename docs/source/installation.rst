@@ -26,7 +26,7 @@ Add to the project ``setup.py``.
 
     setup(
         ...
-        install_requires=['django-model-subscriptio'],
+        install_requires=['django_model_subscription'],
         ...
     )
 
