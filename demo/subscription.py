@@ -29,8 +29,9 @@ def handle_bulk_create(instances):
     for instance in instances:
         log.debug('Bulk Created {}'.format(instance.name))
 
+
 @create_subscription(TestModel)
-def handle_create_1(instance):
+def handle_create_3(instance):
     log.debug('3. Created {}'.format(instance.name))
 
 

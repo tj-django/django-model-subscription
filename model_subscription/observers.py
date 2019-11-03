@@ -26,7 +26,7 @@ class Observer(ABC):
         # type: (List[models.Model]) -> None
         pass
 
-    @abstractmethod
+    @abstractmethod  # noqa: F811
     def handle(self, instance, changed_data=None):
         # type: (models.Model, dict) -> None
         """
@@ -50,6 +50,7 @@ class Observer(ABC):
             else:
                 if id(other) not in [x[0] for x in self._receivers]:
                     self._receivers.append((id(other), other))
+
 
 """
 Concrete Observers react to the operations issued by the Model they have been attached to.

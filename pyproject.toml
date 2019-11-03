@@ -67,7 +67,7 @@ typing = { version = "^3.6", python = "~2.7 || ~3.4" }
 django-lifecycle = "^0.3.0"
 
 [tool.poetry.dev-dependencies]
-Django = {version = "^1.11", extras = ["development"]}
+Django = {version = "*", extras = ["development"]}
 check-manifest = {version = "^0.40.0", extras = ["development"]}
 bump2version = {version = "^0.5.11", extras = ["deploy"]}
 git-changelog = {version = "^0.1.0", extras = ["deploy"], python = "^3.6"}
@@ -78,6 +78,8 @@ sphinx_rtd_theme = "^0.4.3"
 lockfile = "^0.12.2"
 recommonmark = "^0.6.0"
 psycopg2 = "=2.7.3.1"
+mysqlclient = {version = "^1.4", python = "^3.6"}
+tox = "^3.14"
 
 [tool.poetry.extras]
 deploy = ["bump2version", "git-changelog", "poetry-setup"]
