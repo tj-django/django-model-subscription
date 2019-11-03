@@ -10,12 +10,6 @@ jobs:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: circleci/python:3.6.1
-        environment:
-          PG_USER: circleci
-          PG_DB: circle_test
-          MSQL_USER: circleci
-          MSQL_DB: test_db
-          MSQL_PASSWORD: passw0rd
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -76,6 +70,12 @@ jobs:
           command: |
             . venv/bin/activate
             make tox
+          environment:
+            PG_USER: circleci
+            PG_DB: circle_test
+            MSQL_USER: circleci
+            MSQL_DB: test_db
+            MSQL_PASSWORD: passw0rd
 
       - store_artifacts:
           path: test-reports
