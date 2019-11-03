@@ -61,6 +61,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "0.12.5"
 
 [package.dependencies]
+lockfile = ">=0.9"
 msgpack = "*"
 requests = "*"
 
@@ -846,7 +847,7 @@ deploy = []
 development = []
 
 [metadata]
-content-hash = "92fbb36b20e88ba55ca0c56447d1caca28465bf65aaac0476a3e4ecd4b1291c0"
+content-hash = "bd472b61981bca9437f44bf22392635a68ff976ab445708c23bf760a2adbeddf"
 python-versions = "~2.7 || ^3.5 || ^3.6 || ^3.7 || ~3.8"
 
 [metadata.hashes]

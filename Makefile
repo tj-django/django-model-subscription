@@ -35,6 +35,7 @@ clean-build: ## Clean project build artifacts.
 
 install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
+	@pip install poetry==0.12.17
 	@poetry install
 
 install-dev: clean-build  ## Install development extra dependencies.
