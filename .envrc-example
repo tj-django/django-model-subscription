@@ -1,0 +1,5 @@
+export PG_DB=demo_postgres
+export PG_USER=test_user
+export MSQL_DB=demo_mysql
+export MSQL_USER=test_user
+export MSQL_PASSWORD=Test_user_password@123

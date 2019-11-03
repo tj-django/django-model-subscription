@@ -79,17 +79,17 @@ DATABASES = {
     },
     'postgres': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('PG_DB', 'demo_postgres'),
-        'USER': os.environ.get('PG_USER', 'test_user'),
+        'NAME': os.environ['PG_DB'],
+        'USER': os.environ['PG_USER'],
         'HOST': 'localhost',
         'PORT': '5432',
     },
     'mysql': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ.get('MSQL_DB', 'demo_mysql'),
+        'NAME': os.environ['MSQL_DB'],
         'HOST': 'localhost',
-        'USER': os.environ.get('MSQL_USER', 'test_user'),
-        'PASSWORD': os.environ.get('MSQL_PASSWORD', 'Test_user_password@123'),
+        'USER': os.environ['MSQL_USER'],
+        'PASSWORD': os.environ['MSQL_PASSWORD'],
     }
 }
 
