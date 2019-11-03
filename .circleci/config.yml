@@ -5,9 +5,21 @@
 ---
 version: 2
 jobs:
-  build-msql:
+  build-postgres:
     docker:
-      - image: circleci/php:7.1-apache-node-browsers # The primary container where steps are run
+      # specify the version you desire here
+      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+      - image: circleci/python:3.6.1
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: test_user
+          POSTGRES_DB: test_db
+          POSTGRES_PASSWORD: test_user_password
+
       - image: circleci/mysql:8.0.4
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
@@ -15,10 +27,12 @@ jobs:
           MYSQL_USER: user
           MYSQL_PASSWORD: passw0rd
 
+    working_directory: ~/repo
+
     steps:
       - checkout
       - run:
-      # Our primary container isn't MYSQL so run a sleep command until it's ready.
+          # Our primary container isn't MYSQL so run a sleep command until it's ready.
           name: Waiting for MySQL to be ready
           command: |
             for i in `seq 1 10`;
@@ -28,38 +42,6 @@ jobs:
               sleep 1
             done
             echo Failed waiting for MySQL && exit 1
-      - run:
-          name: Install MySQL CLI; Import dummy data; run an example query
-          command: |
-            sudo apt-get install default-mysql-client
-            mysql -h 127.0.0.1 -u user -ppassw0rd
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - build-msql
-
-jobs:
-  build:
-    docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.1
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-#      - image: circleci/postgres:9.6-alpine
-#        environment:
-#          POSTGRES_USER: test_user
-#          POSTGRES_DB: test_db
-#          POSTGRES_PASSWORD: test_user_password
-# TODO: Setup mysql/sqlite db.
-
-    working_directory: ~/repo
-
-    steps:
-      - checkout
 
       # Download and cache dependencies
       - restore_cache:
@@ -68,6 +50,10 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
+      - run:
+          name: Install MySQL CLI;
+          command: |
+            sudo apt-get install default-mysql-client
       - run:
           name: install dependencies
           command: |
@@ -94,3 +80,8 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build-postgres
