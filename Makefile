@@ -90,4 +90,4 @@ clean-test-all: clean-build  ## Clean build and test assets.
 # ---------- Managment Commands ----------------------------
 # ----------------------------------------------------------
 test:
-	@python manage.py test
+	@python manage.py test --no-input
