@@ -28,8 +28,8 @@ class ModelSubscriptionTestCase(TestCase):
         self.assertEqual(
             cm.output,
             [
-                f'DEBUG:demo.subscription:1. Created {name}',
-                f'DEBUG:demo.subscription:3. Created {name}',
+                'DEBUG:demo.subscription:1. Created {}'.format(name),
+                'DEBUG:demo.subscription:3. Created {}'.format(name),
             ],
         )
 
@@ -48,9 +48,9 @@ class ModelSubscriptionTestCase(TestCase):
         self.assertEqual(
             cm.output,
             [
-                f'DEBUG:demo.subscription:1. Created {name}',
-                f'DEBUG:demo.subscription:3. Created {name}',
-                f'DEBUG:demo.subscription:Updated {new_name}',
+                'DEBUG:demo.subscription:1. Created {}'.format(name),
+                'DEBUG:demo.subscription:3. Created {}'.format(name),
+                'DEBUG:demo.subscription:Updated {}'.format(new_name),
             ],
         )
 
@@ -66,12 +66,11 @@ class ModelSubscriptionTestCase(TestCase):
         self.assertEqual(
             cm.output,
             [
-                f'DEBUG:demo.subscription:1. Created {name}',
-                f'DEBUG:demo.subscription:3. Created {name}',
-                f'DEBUG:demo.subscription:Deleted {name}',
+                'DEBUG:demo.subscription:1. Created {}'.format(name),
+                'DEBUG:demo.subscription:3. Created {}'.format(name),
+                'DEBUG:demo.subscription:Deleted {}'.format(name),
             ],
         )
-
 
 
 class BaseSubscriptionTransactionTestCase(TransactionTestCase):
@@ -106,7 +105,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         self.assertEqual(
             cm.output,
             [
-                f'DEBUG:demo.subscription:Bulk Created {name}'
+                'DEBUG:demo.subscription:Bulk Created {}'.format(name)
                 for name in names
             ],
         )
@@ -126,7 +125,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         self.assertEqual(
             cm.output,
             [
-                f'DEBUG:demo.subscription:Bulk Created {name}'
+                'DEBUG:demo.subscription:Bulk Created {}'.format(name)
                 for name in names
             ],
         )
@@ -152,7 +151,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         self.assertEqual(
             cm.output,
             [
-                f'DEBUG:demo.subscription:Bulk Created {name}'
+                'DEBUG:demo.subscription:Bulk Created {}'.format(name)
                 for name in names
             ]
         )
@@ -164,8 +163,8 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
                 if connection.features.can_return_ids_from_bulk_insert
                 else (
                     self.TestModel.objects
-                    .using(self.db_alias)
-                    .values_list('pk', flat=True)
+                        .using(self.db_alias)
+                        .values_list('pk', flat=True)
                 )
             )
 
@@ -174,7 +173,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         self.assertEqual(
             cm.output,
             [
-                f'DEBUG:demo.subscription:Bulk Updated {new_name}'
+                'DEBUG:demo.subscription:Bulk Updated {}'.format(new_name)
                 for _ in range(len(obj_pks))
             ]
         )
@@ -194,7 +193,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         self.assertEqual(
             cm.output,
             [
-                f'DEBUG:demo.subscription:Bulk Created {name}'
+                'DEBUG:demo.subscription:Bulk Created {}'.format(name)
                 for name in names
             ]
         )
@@ -205,8 +204,8 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
                 if connection.features.can_return_ids_from_bulk_insert
                 else (
                     self.TestModel.objects
-                    .using(self.db_alias)
-                    .values_list('pk', flat=True)
+                        .using(self.db_alias)
+                        .values_list('pk', flat=True)
                 )
             )
 
@@ -215,10 +214,11 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         self.assertEqual(
             cm.output,
             [
-                f'DEBUG:demo.subscription:Bulk Deleted {name}'
+                'DEBUG:demo.subscription:Bulk Deleted {}'.format(name)
                 for name in names
             ]
         )
+
 
 @override_settings(
     SUBSCRIPTION_MODULE='subscription',
@@ -226,3 +226,11 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
 )
 class ModelSubscriptionPostgresTransactionTestCase(ModelSubscriptionSqliteTransactionTestCase):
     db_alias = 'postgres'
+
+
+# @override_settings(
+#     SUBSCRIPTION_MODULE='subscription',
+#     SUBSCRIPTION_AUTO_DISCOVER=False,
+# )
+# class ModelSubscriptionMysqlTransactionTestCase(ModelSubscriptionSqliteTransactionTestCase):
+#     db_alias = 'mysql'

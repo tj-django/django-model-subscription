@@ -5,4 +5,4 @@ class DemoConfig(AppConfig):
     name = 'demo'
 
     def ready(self):
-        from demo import subscription
+        from demo import subscription  # noqa: F401

@@ -44,6 +44,9 @@ install-dev: clean-build  ## Install development extra dependencies.
 tag-build:
 	@git tag v$(PACKAGE_VERSION)
 
+poetry-setup:
+	@poetry-setup
+
 release-to-pypi: increase-version tag-build  ## Release project to pypi
 	@poetry build
 	@poetry publish
@@ -70,7 +73,7 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 	@echo "Increasing project '$(PART)' version..."
 	@poetry up
 	@poetry version $(PART)
-	@poetry-setup
+	@$(MAKE) poetry-setup
 
 # ----------------------------------------------------------
 # --------- Run project Test -------------------------------
@@ -81,3 +84,9 @@ tox: install-test  ## Run tox test
 clean-test-all: clean-build  ## Clean build and test assets.
 	@rm -rf .tox/
 	@rm db.*
+
+# ----------------------------------------------------------
+# ---------- Managment Commands ----------------------------
+# ----------------------------------------------------------
+test:
+	@python manage.py test

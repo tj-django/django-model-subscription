@@ -1,6 +1,5 @@
 from abc import ABC, abstractmethod
-from importlib import import_module
-from typing import Set, Dict, Callable, List
+from typing import Set, Callable, List
 
 from django.conf import settings
 from django.db import models

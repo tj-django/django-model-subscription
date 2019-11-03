@@ -28,7 +28,7 @@ Using the subscribe decorator.
 @subscribe(CREATE, TestModel)
 def my_custom_create_receiver(instance)
     pass
-    
+
 @subscribe(BULK_CREATE, TestModel)
 def my_custom_bulk_create_receiver(instance)
     pass
@@ -47,7 +47,7 @@ def my_custom_delete_receiver(instance)
 @create_subscription(TestModel)
 def my_custom_create_receiver(instance)
     pass
-    
+
 @bulk_create_subscription(TestModel)
 def my_custom_bulk_create_receiver(instances):
     pass
@@ -98,7 +98,6 @@ unsubscribe_update = partial(unsubscribe, OperationType.UPDATE)
 unsubscribe_bulk_update = partial(unsubscribe, OperationType.BULK_UPDATE)
 unsubscribe_delete = partial(unsubscribe, OperationType.DELETE)
 unsubscribe_bulk_delete = partial(unsubscribe, OperationType.BULK_DELETE)
-
 
 
 # Using the settings.SUBSCRIPTION_RUN_EXTERNAL or falls back to settings.DEBUG
