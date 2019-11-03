@@ -10,15 +10,20 @@ jobs:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: circleci/python:3.6.1
+        environment:
+          PG_USER: root
+          PG_DB: circle-test_test
+          MSQL_USER: user
+          MSQL_DB: test_db
+          MSQL_PASSWORD: passw0rd
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: circleci/postgres:9.6-alpine
         environment:
-          POSTGRES_USER: test_user
-          POSTGRES_DB: test_db
-          POSTGRES_PASSWORD: test_user_password
+          POSTGRES_USER: root
+          POSTGRES_DB: circle-test_test
 
       - image: circleci/mysql:8.0.4
         environment:
