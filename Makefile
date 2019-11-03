@@ -79,7 +79,7 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 # ----------------------------------------------------------
 # --------- Run project Test -------------------------------
 # ----------------------------------------------------------
-tox: install-test  ## Run tox test
+tox:  ## Run tox test
 	@tox
 
 clean-test-all: clean-build  ## Clean build and test assets.
