@@ -1,4 +1,5 @@
-from django.db import models
+from django.conf import settings
+from django.db import models, connections
 from django.db.models import QuerySet
 
 from model_subscription.mixin import SubscriptionModelMixin
@@ -7,18 +8,27 @@ from model_subscription.mixin import SubscriptionModelMixin
 class SubscriptionQuerySet(QuerySet):
     def bulk_create(self, *args, **kwargs):
         objs = super(SubscriptionQuerySet, self).bulk_create(*args, **kwargs)
-        self.model.notify_bulk_create(objs)
+        connection = connections[self.db]
+        can_notify_bulk_create_subscribers = (
+            getattr(
+                settings,
+                'NOTIFY_BULK_CREATE_SUBSCRIBERS_WITHOUT_PKS',
+                connection.features.can_return_ids_from_bulk_insert,
+            )
+        )
+        if can_notify_bulk_create_subscribers:
+            self.model.notify_bulk_create(objs)
         return objs
 
     def update(self, **kwargs):
-        rows = super(SubscriptionQuerySet, self).bulk_update(**kwargs)
-        self.model.notify_bulk_update(rows)
+        rows = super(SubscriptionQuerySet, self).update(**kwargs)
+        self.model.notify_bulk_update(self)
         return rows
 
     def delete(self):
-        rows = super(SubscriptionQuerySet, self).delete()
-        self.model.notify_bulk_delete(rows)
-        return rows
+        self.model.notify_bulk_delete(self)
+        deleted, rows = super(SubscriptionQuerySet, self).delete()
+        return deleted, rows
 
 
 class SubscriptionModel(SubscriptionModelMixin, models.Model):

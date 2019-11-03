@@ -69,9 +69,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'django_model_subscription.wsgi.application'
 
-SUBSCRIPTION_MODULE = 'subscription'
-SUBSCRIPTION_AUTO_DISCOVER = True
-
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
@@ -79,9 +76,18 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+    'postgres': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'demo_postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    },
+    # 'mysql': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'demo_mysql',
+    # }
 }
-
 
 
 # Internationalization

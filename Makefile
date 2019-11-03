@@ -7,6 +7,10 @@ MANAGE_PY 		:= $(PYTHON) manage.py
 PYTHON_PIP  	:= /usr/bin/env pip
 PIP_COMPILE 	:= /usr/bin/env pip-compile
 PART 			:= patch
+DOCS_DIR 		:= ./docs
+DOC_SOURCE_DIR 	:= source
+DOC_BUILD_DIR 	:= build
+DOC_SERVE_PORT	:= 8080
 PACKAGE_VERSION = $(shell $(PYTHON) setup.py --version)
 
 # Put it first so that "make" without argument is like "make help".
@@ -48,6 +52,16 @@ release-to-pypi: increase-version tag-build  ## Release project to pypi
 	@git push --tags
 	@git push
 
+# --------------------------------------------------------
+# ----- Sphinx Documentation commands --------------------
+# --------------------------------------------------------
+build-docs:
+	@echo "Building docs..."
+	@$(MAKE) -C $(DOCS_DIR) SPHINXOPTS='-W' clean html
+
+view-docs: build-docs  ## Serve sphinx doc locally.
+	@echo "Serving documentation..."
+	@cd $(DOCS_DIR) && sphinx-autobuild $(DOC_SOURCE_DIR) $(DOC_BUILD_DIR) -p $(DOC_SERVE_PORT)
 
 # ----------------------------------------------------------
 # ---------- Upgrade project version (bumpversion)  --------
