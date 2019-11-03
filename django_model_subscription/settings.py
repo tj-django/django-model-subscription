@@ -79,8 +79,8 @@ DATABASES = {
     },
     'postgres': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['PG_DB'],
-        'USER': os.environ['PG_USER'],
+        'NAME': os.environ.get('PG_DB', 'demo_postgres'),
+        'USER': os.environ.get('PG_USER', 'test_user'),
         'HOST': 'localhost',
         'PORT': '5432',
     },
