@@ -49,11 +49,6 @@ jobs:
             - v1-dependencies-{{ checksum "requirements.txt" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
-
-      - run:
-          name: Install MySQL CLI;
-          command: |
-            sudo apt-get install mysql-server
       - run:
           name: install dependencies
           command: |
