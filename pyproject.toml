@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-model-subscription"
-version = "0.0.5"
+version = "0.0.6"
 description = "Subscription model for a django model instance."
 authors = ["Tonye Jack <tonyejck@gmail.com>"]
 license = "MIT"

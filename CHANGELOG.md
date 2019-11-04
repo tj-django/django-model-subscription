@@ -4,11 +4,49 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [v0.0.6](https://github.com/jackton1/django-model-subscription/releases/tag/v0.0.6) ([compare](https://github.com/jackton1/django-model-subscription/compare/v0.0.5...v0.0.6))
+## [v0.0.6](https://github.com/jackton1/django-model-subscription/releases/tag/v0.0.6) ([compare](https://github.com/jackton1/django-model-subscription/compare/v0.0.5...v0.0.6)) - 2019-11-04
+
+### Added
+- Added documentation and improved README.md ([946eac6](https://github.com/jackton1/django-model-subscription/commit/946eac64bd4505fe6bd02da8eef6febb852c9ab4)).
+- Added env vars. ([5738df6](https://github.com/jackton1/django-model-subscription/commit/5738df696b061f4c7343e63d2bf4508090d26ef5)).
+
+### Fixed
+- Fixed connection errors. ([cc048ad](https://github.com/jackton1/django-model-subscription/commit/cc048ad111f9c53e57612b98027e217f68acb80d)).
+- Fixed settings. ([09c26e0](https://github.com/jackton1/django-model-subscription/commit/09c26e02a552163fd03e8749aa08610244f565b5)).
+- Fixed test command. ([ccb0d7a](https://github.com/jackton1/django-model-subscription/commit/ccb0d7a7c731755c3c0f9614a63015619befa9a8)).
+
+### Removed
+- Removed sdist. ([e2dcdae](https://github.com/jackton1/django-model-subscription/commit/e2dcdaec4a60e3ebdfc76c21ae479900a2e5652d)).
 
 ### Misc
+- Cleaned up changelog. ([b85e730](https://github.com/jackton1/django-model-subscription/commit/b85e730956cf46ef2dcf1e797a9488c846129bf2)).
+- Disable mysql. ([31982c5](https://github.com/jackton1/django-model-subscription/commit/31982c5ff27f3b784d403640d0806a95c970ee06)).
+- Excluded venv. ([df9a898](https://github.com/jackton1/django-model-subscription/commit/df9a89826796ed3402ecb3d87935f2368e827bbb)).
+- Improved the test. ([5038ba4](https://github.com/jackton1/django-model-subscription/commit/5038ba4daa3c1204e5ecab84acee9f63c0570299)).
+- Setup Circle CI and updated the documentation. ([1b32603](https://github.com/jackton1/django-model-subscription/commit/1b326038b077a180a0aa56fb18cd222d7dfe429a)).
 - Synced pyproject.toml and updated CHANGELOG.md. ([6ba4a9e](https://github.com/jackton1/django-model-subscription/commit/6ba4a9ec7fb1184b636970476f826070072b3f12)).
+- Update README.md ([7901663](https://github.com/jackton1/django-model-subscription/commit/79016634865425b16709cb4c39acf3466d3108b4)).
+- Update README.md ([30f8abe](https://github.com/jackton1/django-model-subscription/commit/30f8abea6b4a3d9fe6e2ada2826fc63fa888965b)).
+- Update README.md ([b079369](https://github.com/jackton1/django-model-subscription/commit/b079369281a87630e3a3bcfa4e2a30602c5a5052)).
+- Update README.md ([4e60e26](https://github.com/jackton1/django-model-subscription/commit/4e60e26c0635f266eb1288754dee0a67e1768b85)).
+- Updated circle ci config ([31f3c4b](https://github.com/jackton1/django-model-subscription/commit/31f3c4b3ce96ef1e5ca6e1b1e76f880944d17a9b)).
+- Updated circle ci config ([b6d5643](https://github.com/jackton1/django-model-subscription/commit/b6d56434b3fe7fa68c68a31e6b08884ee7e4fe90)).
+- Updated circle ci config ([8b41668](https://github.com/jackton1/django-model-subscription/commit/8b4166823554623e4d5a1367e6b2008ad2585020)).
+- Updated config. ([5d66309](https://github.com/jackton1/django-model-subscription/commit/5d66309ff6db8181296959b0239837cff2c9717c)).
 - Updated deploy. ([94fd3ed](https://github.com/jackton1/django-model-subscription/commit/94fd3edd229339a8d6489d9496fbb199504f8705)).
+- Updated license key. ([1d190d4](https://github.com/jackton1/django-model-subscription/commit/1d190d4f38d85a4778e5e5a170b2a85ea42e6b30)).
+- Updated settings to fix docs. ([365cef1](https://github.com/jackton1/django-model-subscription/commit/365cef136040a6f39e819362824d3051e5072c10)).
+- Updated the dependencies ([3da1ae5](https://github.com/jackton1/django-model-subscription/commit/3da1ae5c75050403c82115e34fe8d68881fc6b93)).
+- Updated the docs. ([8fa950c](https://github.com/jackton1/django-model-subscription/commit/8fa950c75490fd1d927cf9f22ceca835716a5754)).
+- Updated the docs. ([c7194b5](https://github.com/jackton1/django-model-subscription/commit/c7194b5bfb49dd16ec2c8d97214b0482c6adddde)).
+- Updated the docs. ([b87ec7e](https://github.com/jackton1/django-model-subscription/commit/b87ec7e581bce586ad0c0cc25ba997c6e02345b6)).
+- Updated the docs. ([3535d8c](https://github.com/jackton1/django-model-subscription/commit/3535d8c69aac9ec49c0cacece0274e718280acaf)).
+- Updated the docs. ([9e2ed47](https://github.com/jackton1/django-model-subscription/commit/9e2ed47f79319de1228282211e338c376c2d112f)).
+- Updated the package. ([1881961](https://github.com/jackton1/django-model-subscription/commit/1881961d6be48a4dff61395ad4eaa19e072a4f63)).
+- Updated the path. ([736f38e](https://github.com/jackton1/django-model-subscription/commit/736f38e4c1b15a0032e8714859dbd0c2f15f158e)).
+- Updated the requirements. ([79afc3d](https://github.com/jackton1/django-model-subscription/commit/79afc3da00a3a65106b1a803d96a68261c7b4838)).
+- UPdated the settings. ([4e50b93](https://github.com/jackton1/django-model-subscription/commit/4e50b93e667cf2bf65aed10f625cf616ef4c69cf)).
+- Updated the test. ([8f3833d](https://github.com/jackton1/django-model-subscription/commit/8f3833d06093d543fabf76f3f17abc3a70653463)).
 
 
 ## [v0.0.5](https://github.com/jackton1/django-model-subscription/releases/tag/v0.0.5) ([compare](https://github.com/jackton1/django-model-subscription/compare/v0.0.4...v0.0.5)) - 2019-10-23
