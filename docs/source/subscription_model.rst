@@ -5,7 +5,7 @@ Enabling observers that listen to model changes.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-* Swap your ``models.Model`` class with ``model_subscription.SubscriptionModel``
+* Swap ``models.Model`` with ``model_subscription.SubscriptionModel``
 * This comes with it's own ``objects`` QuerySet manager.
 
 
