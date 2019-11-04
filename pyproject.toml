@@ -4,9 +4,9 @@ version = "0.0.5"
 description = "Subscription model for a django model instance."
 authors = ["Tonye Jack <tonyejck@gmail.com>"]
 license = "MIT"
-homepage = "https://github.com/jackton1/django-model-subscription"
+homepage = "https://django-model-subscription.readthedocs.io/en/latest/index.html"
 repository = "https://github.com/jackton1/django-model-subscription"
-documentation = "https://github.com/jackton1/django-model-subscription/blob/master/README.md"
+documentation = "https://django-model-subscription.readthedocs.io/en/latest/index.html"
 
 keywords = [
     "django model subscription",
