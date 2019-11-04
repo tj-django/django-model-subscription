@@ -7,7 +7,7 @@ Via Python Package (Pip)
 
 .. code-block:: bash
 
-    pip install django-model-subscription
+    pip install django_model_subscription
 
 
 Via Poetry
@@ -15,7 +15,7 @@ Via Poetry
 
 .. code-block:: bash
 
-    poetry add django-model-subscription
+    poetry add django_model_subscription
 
 Via setup.py
 ============
