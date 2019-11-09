@@ -506,6 +506,7 @@ version = "0.3.1"
 [[package]]
 category = "dev"
 description = "psycopg2 - Python-PostgreSQL Database Adapter"
+marker = "python_version >= \"2.7.0\" and python_version < \"2.8.0\" or python_version >= \"3.4.0\" and python_version < \"3.8.0\""
 name = "psycopg2"
 optional = false
 python-versions = "*"
@@ -849,7 +850,7 @@ deploy = []
 development = []
 
 [metadata]
-content-hash = "4d2cf2a6da7e05b92a08bd725bed478059e57fab1c2d7564f1236d993d985712"
+content-hash = "bf217ed9f7611016f0d401f121188ee0c4fb304acf8ce1b4a26897ec87e75957"
 python-versions = "2.7.* || 3.4.* || 3.5.* || 3.6.* || 3.7.* || 3.8.*"
 
 [metadata.hashes]
