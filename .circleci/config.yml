@@ -80,9 +80,9 @@ jobs:
             MSQL_PASSWORD: passw0rd
 
       - save_cache:
-        paths:
-          - ./.tox
-        key: v1-dependencies-{{ checksum "tox.ini" }}
+          paths:
+            - ./.tox
+          key: v1-dependencies-{{ checksum "tox.ini" }}
 
       - store_artifacts:
           path: test-reports
