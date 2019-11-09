@@ -57,7 +57,7 @@ jobs:
           name: install dependencies
           command: |
             python -m pip install virtualenv
-            python -m virtualenv venv --python=`which python`
+            python -m virtualenv --python=`which python` venv
             . venv/bin/activate
             make install
 
