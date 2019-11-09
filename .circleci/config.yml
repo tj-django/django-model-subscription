@@ -18,13 +18,7 @@ workflows:
 jobs:
   test-3.8: &test-template
     docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
       - image: circleci/python:3.8
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
       - image: circleci/postgres:9.6-alpine
         environment:
           POSTGRES_USER: circleci
@@ -95,23 +89,84 @@ jobs:
     <<: *test-template
     docker:
       - image: circleci/python:3.7
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
+
   test-3.6:
     <<: *test-template
     docker:
       - image: circleci/python:3.6
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
   test-3.5:
     <<: *test-template
     docker:
       - image: circleci/python:3.5
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
   test-3.4:
     <<: *test-template
     docker:
       - image: circleci/python:3.4
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
   test-2.7:
     <<: *test-template
     docker:
       - image: circleci/python:2.7
+      - image: circleci/postgres:9.6-alpine
+          environment:
+            POSTGRES_USER: circleci
+            POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
   test-2.6:
     <<: *test-template
     docker:
       - image: circleci/python:2.6
+      - image: circleci/postgres:9.6-alpine
+          environment:
+            POSTGRES_USER: circleci
+            POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
