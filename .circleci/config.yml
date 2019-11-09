@@ -56,6 +56,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
+            pip install virtualenv
             python -m venv venv
             . venv/bin/activate
             make install
