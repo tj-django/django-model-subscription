@@ -58,6 +58,7 @@ jobs:
           command: |
             python -m pip install virtualenv
             python -m virtualenv venv --python=`which python`
+            . venv/bin/activate
             make install
 
       - save_cache:
