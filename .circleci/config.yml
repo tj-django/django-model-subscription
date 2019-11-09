@@ -12,7 +12,6 @@ workflows:
       - test-3.7
       - test-3.6
       - test-3.5
-      - test-3.4
 #      - test-2.7
 jobs:
   test-3.8: &test-template
@@ -122,20 +121,6 @@ jobs:
     <<: *test-template
     docker:
       - image: circleci/python:3.5
-      - image: circleci/postgres:9.6-alpine
-        environment:
-          POSTGRES_USER: circleci
-          POSTGRES_DB: circle_test
-      - image: circleci/mysql:8.0.4
-        environment:
-          MYSQL_ROOT_PASSWORD: rootpw
-          MYSQL_DATABASE: test_db
-          MYSQL_USER: circleci
-          MYSQL_PASSWORD: passw0rd
-  test-3.4:
-    <<: *test-template
-    docker:
-      - image: circleci/python:3.4
       - image: circleci/postgres:9.6-alpine
         environment:
           POSTGRES_USER: circleci
