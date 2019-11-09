@@ -49,7 +49,8 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
+            - v1-dependencies-{{ checksum "poetry.lock" }}
+            - v1-dependencies-{{ checksum "tox.ini" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run:
@@ -57,10 +58,10 @@ jobs:
           command: |
             make install
 
-      - save_cache:
-          paths:
-            - ./venv
-          key: v1-dependencies-{{ checksum "poetry.lock" }}
+#      - save_cache:
+#          paths:
+#            - ./venv
+#          key: v1-dependencies-{{ checksum "poetry.lock" }}
 
       # run tests!
       # this example uses Django's built-in test-runner
@@ -70,7 +71,6 @@ jobs:
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
             make tox
           environment:
             PG_USER: circleci
@@ -78,6 +78,11 @@ jobs:
             MSQL_USER: circleci
             MSQL_DB: test_db
             MSQL_PASSWORD: passw0rd
+
+      - save_cache:
+        paths:
+          - ./.tox
+        key: v1-dependencies-{{ checksum "tox.ini" }}
 
       - store_artifacts:
           path: test-reports
