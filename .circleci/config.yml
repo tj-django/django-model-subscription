@@ -56,12 +56,14 @@ jobs:
       - run:
           name: install dependencies
           command: |
+            python -m pip install virtualenv
+            python -m virtualenv venv --python=`which python`
             make install
 
-#      - save_cache:
-#          paths:
-#            - ./venv
-#          key: v1-dependencies-{{ checksum "poetry.lock" }}
+      - save_cache:
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ checksum "poetry.lock" }}
 
       # run tests!
       # this example uses Django's built-in test-runner
