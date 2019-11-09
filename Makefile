@@ -36,7 +36,7 @@ clean-build: ## Clean project build artifacts.
 install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@pip install poetry==0.12.17
-	@poetry install
+	@poetry install -vvv
 
 install-dev: clean-build  ## Install development extra dependencies.
 	@echo "Installing development requirements..."
@@ -80,6 +80,7 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 # --------- Run project Test -------------------------------
 # ----------------------------------------------------------
 tox:  ## Run tox test
+	@pip install "tox>=3.14,<4.0"
 	@tox
 
 clean-test-all: clean-build  ## Clean build and test assets.
