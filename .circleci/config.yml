@@ -13,7 +13,7 @@ workflows:
       - test-3.6
       - test-3.5
       - test-3.4
-      - test-2.7
+#      - test-2.7
 jobs:
   test-3.8: &test-template
     docker:
@@ -56,9 +56,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python -m pip install virtualenv
-            python -m virtualenv --python=`which python` venv
+            python -m venv venv
             . venv/bin/activate
+            make install
 
       - save_cache:
           paths:
