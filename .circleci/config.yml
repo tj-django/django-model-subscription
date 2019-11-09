@@ -8,10 +8,11 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - test-3.8
+#      - test-3.8
       - test-3.7
-      - test-3.6
-      - test-3.5
+# TODO: FIX ME
+#      - test-3.6
+#      - test-3.5
 #      - test-2.7
 jobs:
   test-3.8: &test-template
@@ -58,6 +59,12 @@ jobs:
             python -m venv venv
             . venv/bin/activate
             make install
+
+      - run:
+          name: Show versions
+          command: |
+            python --version
+            pip --version
 
       - save_cache:
           paths:
