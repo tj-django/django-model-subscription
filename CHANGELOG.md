@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v0.0.8](https://github.com/jackton1/django-model-subscription/releases/tag/v0.0.8) ([compare](https://github.com/jackton1/django-model-subscription/compare/v0.0.7...v0.0.8)) - 2019-11-18
+
+### Added
+- Added the AUTHOORS and updated the LICENSE. ([2c6cb56](https://github.com/jackton1/django-model-subscription/commit/2c6cb56392e26cdaf8ca844d809752eb39c3ea46)).
+
+### Misc
+- Feature/updated the readme (#5) ([d24a259](https://github.com/jackton1/django-model-subscription/commit/d24a2599d90fbd378883e1f5113a48902cae9fc5)).
+- Remooved unused code. ([73de6f3](https://github.com/jackton1/django-model-subscription/commit/73de6f31563fe47790c398cae719dd5c99a567b4)).
+- Synced pyproject.toml and updated CHANGELOG.md. ([7f044a9](https://github.com/jackton1/django-model-subscription/commit/7f044a920224509c0688145921fa27aa13fb1753)).
+- Update README.md ([8d9c810](https://github.com/jackton1/django-model-subscription/commit/8d9c810cfee0a1b68251a0b3f7c68992ceb8be04)).
+- Updated poetry.lock ([1d7f86c](https://github.com/jackton1/django-model-subscription/commit/1d7f86c17a469fea295c20661eeb6a8c61d696a8)).
+- Updated the gif ([17f7710](https://github.com/jackton1/django-model-subscription/commit/17f7710b0b30e3ea5961b627ee3834e65b26cfa9)).
+- Updated the README.md ([c8a32fc](https://github.com/jackton1/django-model-subscription/commit/c8a32fc1e887491005e6bb1b081f65095a659f0c)).
+- Updated to workon venv. ([1833e78](https://github.com/jackton1/django-model-subscription/commit/1833e786e84da629568746f6a6ddf7cf424d5c7a)).
+
+
 ## [v0.0.7](https://github.com/jackton1/django-model-subscription/releases/tag/v0.0.7) ([compare](https://github.com/jackton1/django-model-subscription/compare/v0.0.6...v0.0.7)) - 2019-11-09
 
 ### Fixed
