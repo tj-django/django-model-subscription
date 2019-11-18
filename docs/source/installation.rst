@@ -29,9 +29,3 @@ Add to the project ``setup.py``.
         install_requires=['django_model_subscription'],
         ...
     )
-
-Install your package in editable mode.
-
-.. code-block:: bash
-
-    pip install -e .

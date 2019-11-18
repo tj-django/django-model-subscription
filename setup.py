@@ -73,23 +73,21 @@ setup(
                 'model_subscription/tests.py',
                 'demo',
         ]
-    ),  # Required
+            ),  # Required
     # https://packaging.python.org/en/latest/requirements.html
     install_requires=[
             'typing (>=3.6,<4.0); python_version >= "2.7" and python_version < "2.8" or python_version >= "3.4" and python_version < "3.5"',
             'django-lifecycle (>=0.3.0,<0.4.0)',
-    ],  # Optional
+            'typing_extensions (>=3.7,<4.0)',
+            ],  # Optional
     # https://setuptools.readthedocs.io/en/latest/setuptools.html#dependencies-that-aren-t-in-pypi
     dependency_links=[
-    ],  # Optional
-    extras_require={
-        'deploy': [],
-        'development': [],
-    },
+            ],  # Optional
+    extras_require={'deploy': [], 'development': []},
     # https://stackoverflow.com/a/16576850
     include_package_data=True,
     # https://packaging.python.org/specifications/core-metadata/#project-url-multiple-use
     project_urls={  # Optional
             'homepage': 'https://django-model-subscription.readthedocs.io/en/latest/index.html',
-    },
+            },
 )

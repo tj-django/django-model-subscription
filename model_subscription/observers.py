@@ -1,6 +1,6 @@
 import threading
 from abc import ABC, abstractmethod
-from typing import Callable, Any, List, Tuple, Union, overload
+from typing import Callable, List, Tuple, Union, overload, NoReturn, Dict, Optional
 
 from django.db import models
 
@@ -14,7 +14,7 @@ class Observer(ABC):
 
     def __init__(self):
         self.lock = threading.Lock()
-        self._receivers = []  # type: List[Tuple[int, Callable[[models.Model, dict], Any]]]
+        self._receivers = []  # type: List[Tuple[int, Callable[[models.Model, Dict], NoReturn]]]
 
     @property
     @abstractmethod
@@ -82,6 +82,7 @@ class BulkUpdateObserver(BulkObserverMixin, Observer):
 
 
 class BulkDeleteObserver(BulkObserverMixin, Observer):
+    # tyoe:
     action = OperationType.BULK_DELETE
 
 

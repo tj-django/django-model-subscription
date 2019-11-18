@@ -17,7 +17,7 @@ class SubscriptionMeta(ModelBase):
         for base in bases:
             if hasattr(bases, '_subscription'):
                 del base['_subscription']
-        _subscription = ModelSubscription()
+        _subscription = ModelSubscription()  # type: ignore
         attrs['_subscription'] = _subscription
         return super(SubscriptionMeta, cls).__new__(cls, name, bases, attrs)
 

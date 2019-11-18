@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-model-subscription"
-version = "0.0.6"
+version = "0.0.8"
 description = "Subscription model for a django model instance."
 authors = ["Tonye Jack <tonyejck@gmail.com>"]
 license = "MIT"
@@ -27,10 +27,7 @@ classifiers = [
     'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
-    'Programming Language :: Python :: 2.6',
     'Programming Language :: Python :: 2.7',
-    'Programming Language :: Python :: 3.0',
-    'Programming Language :: Python :: 3.2',
     'Programming Language :: Python :: 3.4',
     'Programming Language :: Python :: 3.5',
     'Programming Language :: Python :: 3.6',
@@ -61,25 +58,29 @@ readme = "README.md"
 
 
 [tool.poetry.dependencies]
-python = "~2.7 || ^3.5 || ^3.6 || ^3.7 || ~3.8"
+python = "2.7.* || 3.4.* || 3.5.* || 3.6.* || 3.7.* || 3.8.*"
 # The typing module is not in the stdlib in Python 2.7 and 3.4
 typing = { version = "^3.6", python = "~2.7 || ~3.4" }
 django-lifecycle = "^0.3.0"
+typing_extensions = "^3.7"
 
 [tool.poetry.dev-dependencies]
 Django = {version = "*", extras = ["development"]}
-check-manifest = {version = "^0.40.0", extras = ["development"]}
-bump2version = {version = "^0.5.11", extras = ["deploy"]}
+check-manifest = {version = "^0.40.0", extras = ["development"], python = " ^2.7 || ^3.5"}
+bump2version = {version = "^0.5.11", extras = ["deploy"], python = " ^2.7 || ^3.5"}
 git-changelog = {version = "^0.1.0", extras = ["deploy"], python = "^3.6"}
 poetry-setup = {version = "^0.3.6", extras = ["development"]}
+poetry = {version = "^0.12", extras = ["development"]}
 sphinx = "=1.8.5"
 sphinx-autobuild = "^0.7.1"
 sphinx_rtd_theme = "^0.4.3"
 lockfile = "^0.12.2"
 recommonmark = "^0.6.0"
-psycopg2 = "=2.7.3.1"
-mysqlclient = {version = "^1.4", python = "^3.6"}
+psycopg2 = {version = "=2.7.3.1", python = "2.7.* || 3.4.* || 3.5.* || 3.6.* || 3.7.*"}
+mysqlclient = {version = "=1.4.4", python = "^3.6"}
 tox = "^3.14"
+mypy = {version = "^0.720", python = "3.6"}
+django-stubs = {version = "^1.1", python = "3.6"}
 
 [tool.poetry.extras]
 deploy = ["bump2version", "git-changelog", "poetry-setup"]
