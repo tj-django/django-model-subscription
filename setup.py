@@ -27,7 +27,7 @@ setup(
     name='django-model-subscription',  # Required
     # https://www.python.org/dev/peps/pep-0440/
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.6',  # Required
+    version='0.0.7',  # Required
     # https://packaging.python.org/specifications/core-metadata/#summary
     description="Subscription model for a django model instance.",  # Required
     # https://packaging.python.org/specifications/core-metadata/#description-optional

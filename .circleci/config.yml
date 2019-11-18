@@ -79,6 +79,7 @@ jobs:
       - run:
           name: run tests
           command: |
+            . venv/bin/activate
             make tox
           environment:
             PG_USER: circleci
