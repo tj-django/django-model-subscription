@@ -19,7 +19,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Updated the README.md ([c8a32fc](https://github.com/jackton1/django-model-subscription/commit/c8a32fc1e887491005e6bb1b081f65095a659f0c)).
 - Updated to workon venv. ([1833e78](https://github.com/jackton1/django-model-subscription/commit/1833e786e84da629568746f6a6ddf7cf424d5c7a)).
 
-
 ## [v0.0.7](https://github.com/jackton1/django-model-subscription/releases/tag/v0.0.7) ([compare](https://github.com/jackton1/django-model-subscription/compare/v0.0.6...v0.0.7)) - 2019-11-09
 
 ### Fixed
