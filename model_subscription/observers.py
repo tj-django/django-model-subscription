@@ -1,6 +1,6 @@
 import threading
 from abc import ABC, abstractmethod
-from typing import Callable, List, Tuple, Union, overload, NoReturn, Dict, Optional
+from typing import Callable, List, Tuple, Union, overload, NoReturn, Dict
 
 from django.db import models
 
