@@ -13,7 +13,7 @@ Welcome to Django Model Subscription's documentation!
    installation
    configuration
    settings
-   auto_discovery
+   register_subscribers
    subscription_model
    subscribers
    contents
