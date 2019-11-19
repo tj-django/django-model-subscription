@@ -1,11 +1,10 @@
 from functools import partial
-from typing import Callable, Optional
+from typing import Callable, Optional, Any
 
 from django.conf import settings
-from django.db import models
 
 from model_subscription.constants import OperationType
-from model_subscription.mixin import SubscriptionModelMixin
+from model_subscription.types import T
 
 __all__ = [
     'subscribe', 'create_subscription',
@@ -64,7 +63,7 @@ def my_custom_delete_receiver(instance)
 
 
 def subscribe(operation, model):
-    # type: ((SubscriptionModelMixin, models.Model), OperationType) -> Callable
+    # type: (OperationType, 'SubscriptionModel') -> Callable[[T], None]
     def _decorator(func):
         model._subscription.attach(operation, func)
         return func
@@ -80,7 +79,7 @@ bulk_delete_subscription = partial(subscribe, OperationType.BULK_DELETE)
 
 
 def unsubscribe(operation, model, func=None):
-    # type: ((SubscriptionModelMixin, models.Model), OperationType, Optional[Callable]) -> Callable
+    # type: (OperationType, 'SubscriptionModel', Optional[Callable[[T], Any]]) -> Callable[[T], Any]
 
     if func is not None:
         model._subscription.detach(operation, func)
@@ -110,9 +109,9 @@ def external(func):
     return func
 
 
-create_external_subscription = external(create_subscription)
-bulk_create_external_subscription = external(bulk_create_subscription)
-update_external_subscription = external(update_subscription)
-bulk_update_external_subscription = external(bulk_update_subscription)
-delete_external_subscription = external(delete_subscription)
-bulk_delete_external_subscription = external(bulk_delete_subscription)
+create_external_subscription = external(create_subscription)  # type: ignore
+bulk_create_external_subscription = external(bulk_create_subscription)  # type: ignore
+update_external_subscription = external(update_subscription)  # type: ignore
+bulk_update_external_subscription = external(bulk_update_subscription)  # type: ignore
+delete_external_subscription = external(delete_subscription)  # type: ignore
+bulk_delete_external_subscription = external(bulk_delete_subscription)  # type: ignore

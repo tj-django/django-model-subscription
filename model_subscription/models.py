@@ -5,7 +5,7 @@ from django.db.models import QuerySet
 from model_subscription.mixin import SubscriptionModelMixin
 
 
-class SubscriptionQuerySet(QuerySet):
+class SubscriptionQuerySet(QuerySet):  # type: ignore
     def bulk_create(self, *args, **kwargs):
         objs = super(SubscriptionQuerySet, self).bulk_create(*args, **kwargs)
         connection = connections[self.db]

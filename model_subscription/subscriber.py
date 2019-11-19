@@ -1,10 +1,9 @@
 from abc import ABC, abstractmethod
-from typing import Set, Callable, List
+from typing import Callable, List, FrozenSet, Tuple, Type, Any, Optional, Union
 
 from django.conf import settings
 from django.db import models
 from django.utils.module_loading import autodiscover_modules
-from django_lifecycle import LifecycleModelMixin
 
 from model_subscription.constants import OperationType
 from model_subscription.observers import (
@@ -32,7 +31,7 @@ class BaseSubscription(ABC):
 
     @abstractmethod
     def notify(self, operation_type, instance):
-        # type: (OperationType, type(models.Model)) -> None
+        # type: (OperationType, Type[models.Model]) -> None
         """
         Notify all observers about an event.
         """
@@ -56,7 +55,7 @@ class ModelSubscription(BaseSubscription):
         """
         Subscription types and List of subscribers.
         """
-        self.__observers = frozenset(  # type: Set[OperationType, Set[Observer]]
+        self.__observers = frozenset(
             [
                 (OperationType.CREATE, CreateObserver()),
                 (OperationType.BULK_CREATE, BulkCreateObserver()),
@@ -65,9 +64,9 @@ class ModelSubscription(BaseSubscription):
                 (OperationType.DELETE, DeleteObserver()),
                 (OperationType.BULK_DELETE, BulkDeleteObserver()),
             ]
-        )
+        )  # type: FrozenSet[Tuple[OperationType, Observer]]
 
-        self.__subscription_model = None  # type: (LifecycleModelMixin, models.Model)
+        self.__subscription_model = None  # type: Optional[models.Model]
 
     @property
     def observers(self):
@@ -82,11 +81,11 @@ class ModelSubscription(BaseSubscription):
         self._ModelSubscription__subscription_model = model
 
     def attach(self, operation_type, receiver):
-        # type: (OperationType, Callable) -> None
+        # type: (OperationType, Callable[[Any], Any]) -> None
         self.observers[operation_type].receivers = receiver
 
     def detach(self, operation_type, receiver):
-        # type: (OperationType, Callable) -> None
+        # type: (OperationType, Callable[[Any], Any]) -> None
         current_receivers = self.observers[operation_type].receivers
         self.observers[operation_type].receivers = [
             r[1] for r in current_receivers if r[0] != id(receiver)
@@ -97,7 +96,7 @@ class ModelSubscription(BaseSubscription):
         autodiscover_modules(settings.SUBSCRIPTION_MODULE)
 
     def notify(self, operation_type, instance):
-        # type: (OperationType, type(models.Model)) -> None
+        # type: (Union[OperationType.CREATE, OperationType.UPDATE, OperationType.DELETE], Type['SubscriptionModelMixin']) -> None
         self.subscription_model = instance
         observer = self.observers[operation_type]
 
@@ -107,6 +106,6 @@ class ModelSubscription(BaseSubscription):
         )
 
     def notify_many(self, operation_type, objs):
-        # type: (OperationType.BULK_CREATE, List[models.Model]) -> None
+        # type: (Union[OperationType.BULK_CREATE, OperationType.BULK_UPDATE, OperationType.BULK_DELETE], List[models.Model]) -> None
         observer = self.observers[operation_type]  # type: BulkCreateObserver
         observer.handle(objs)

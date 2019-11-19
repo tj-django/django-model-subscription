@@ -1,8 +1,8 @@
 Settings
 ========
 
-``SUBSCRIPTION_MODULE``: Set the module or package name where auto-discover should look for
-application level subscriptions (Defaults to 'subscription').
+``SUBSCRIPTION_MODULE``: Set the module or package name where auto-discovery should look for
+application level subscriptions (Defaults to ``subscription``).
 
 .. warning:: Ensure that ``subscription`` module is a submodule of your app.
 
