@@ -8,8 +8,6 @@
 
 ![Sreenshot](https://media.giphy.com/media/IgvrR33L6S7nFgH1by/giphy.gif)
 
-https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
-
 
 ## Table of contents
 * [Motivation](#Motivation)
@@ -203,6 +201,9 @@ SUBSCRIPTION_AUTO_DISCOVER = True
 SUBSCRIPTION_MODULE  = 'subscription' 
 
 ```
+
+#### Reasources
+- https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
 
 TODO's
 - Supporting field level subscriptions.
