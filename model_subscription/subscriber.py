@@ -1,10 +1,9 @@
 from abc import ABC, abstractmethod
-from typing import Callable, List, FrozenSet, Tuple, Type, Any, Optional
+from typing import Callable, List, FrozenSet, Tuple, Type, Any, Optional, Union
 
 from django.conf import settings
 from django.db import models
 from django.utils.module_loading import autodiscover_modules
-from typing_extensions import Literal
 
 from model_subscription.constants import OperationType
 from model_subscription.observers import (
@@ -106,6 +105,6 @@ class ModelSubscription(BaseSubscription):
         )
 
     def notify_many(self, operation_type, objs):
-        # type: (Literal[OperationType.BULK_CREATE], List[models.Model]) -> None
+        # type: (Union[OperationType.BULK_CREATE, OperationType.BULK_UPDATE, OperationType.BULK_DELETE], List[models.Model]) -> None
         observer = self.observers[operation_type]  # type: BulkCreateObserver
         observer.handle(objs)
