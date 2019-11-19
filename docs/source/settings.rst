@@ -6,7 +6,7 @@ application level subscriptions (Defaults to ``subscription``).
 
 .. warning:: Ensure that ``subscription`` module is a submodule of your app.
 
-``SUBSCRIPTION_AUTO_DISCOVER``:  Toggle Auto discovery.
+``SUBSCRIPTION_AUTO_DISCOVER``:  Toggle Auto discovery on/off (Defaults to ``False``).
 
 .. warning:: With auto discovery on this would trigger subscriptions anywhere the model object is used
  from scripts to executing management commands.
