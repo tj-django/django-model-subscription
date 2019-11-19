@@ -15,7 +15,7 @@ https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
 * [Usage](#Usage)
 * [Decorators](#Decorators)
 * [Setup Subscribers using App.ready](#setup-subscribers-using-appready-recomended)
-* [Setup Subscribers with auto discovery](#Setup-Subscribers-with-auto-discovery)
+* [Setup Subscribers with auto discovery](#setup-subscribers-using-auto-discovery)
 
 
 ### Motivation
