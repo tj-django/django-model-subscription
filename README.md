@@ -10,8 +10,8 @@ https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
 
 
 ## Table of contents
-* [Installation](#Installation)
 * [Motivation](#Motivation)
+* [Installation](#Installation)
 * [Usage](#Usage)
 * [Decorators](#Decorators)
 * [Setup Subscribers using App.ready](#Setup-Subscribers-using-App.ready)
