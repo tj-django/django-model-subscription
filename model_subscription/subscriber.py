@@ -96,6 +96,7 @@ class ModelSubscription(BaseSubscription):
         autodiscover_modules(settings.SUBSCRIPTION_MODULE)
 
     def notify(self, operation_type, instance):
+        # type: (Union[OperationType.CREATE, OperationType.UPDATE, OperationType.DELETE], Type['SubscriptionModelMixin']) -> None
         self.subscription_model = instance
         observer = self.observers[operation_type]
 
