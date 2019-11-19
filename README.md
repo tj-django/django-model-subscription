@@ -22,7 +22,7 @@ https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
 
 ### Motivation
 
-- Extending django models using Observer Pattern.
+- Using Observer Pattern notify subscribers about changes to a django model.
 - Decouple Business logic from Models.save
 - Support for bulk actions (Not available using django signals.)
 - Use noop subscribers when `settings.SUBSCRIPTION_RUN_EXTERNAL` is `False` 
