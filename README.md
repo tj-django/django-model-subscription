@@ -14,7 +14,7 @@ https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [Decorators](#Decorators)
-* [Setup Subscribers using App.ready](#Setup-Subscribers-using-App.ready)
+* [Setup Subscribers using App.ready](#setup-subscribers-using-appready-recomended)
 * [Setup Subscribers with auto discovery](#Setup-Subscribers-with-auto-discovery)
 
 
@@ -89,12 +89,12 @@ def handle_create(instance):
 
 ### Decorators
 
-`subscribe`: Explicit (Requires a valid OperationType).
+* `subscribe`: Explicit (Requires a valid OperationType).
 
 
 (Create, Update, Delete) operations. 
 
-`create_subscription`: Subscribes to create operation i.e a new instance.
+* `create_subscription`: Subscribes to create operation i.e a new instance.
 
 ```python
 @create_subscription(TestModel)
@@ -110,7 +110,7 @@ def handle_update(instance, changed_data):
 ```
 
 
-`delete_subscription`: Subscribes to delete operation: 
+* `delete_subscription`: Subscribes to delete operation: 
 
 > NOTE: The instance.pk is already set to None.
 
@@ -122,7 +122,7 @@ def handle_delete(instance):
 
 (Bulk Create, Bulk Update, Bulk Delete) operations. 
 
-`bulk_create_subscription`: Subscribe to bulk create operations.
+* `bulk_create_subscription`: Subscribe to bulk create operations.
 
 ```python
 
@@ -134,7 +134,7 @@ def handle_bulk_create(instances):
 ```
 
 
-`bulk_update_subscription`: Subscribe to bulk update operations.
+* `bulk_update_subscription`: Subscribe to bulk update operations.
 
 ```python
 @bulk_update_subscription(TestModel)
@@ -144,7 +144,7 @@ def handle_bulk_update(instances):
 ```
 
 
-`bulk_delete_subscription`: Subscribe to bulk delete operations.
+* `bulk_delete_subscription`: Subscribe to bulk delete operations.
 
 ```python
 
@@ -177,7 +177,7 @@ class MyAppConfig(AppConfig):
 
 
 
-### Setup Subscribers with auto discovery.
+### Setup Subscribers using auto discovery.
 
 By default the `settings.SUBSCRIPTION_AUTO_DISCOVER` is set to `False`.
 
