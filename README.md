@@ -13,6 +13,9 @@ https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
 * [Installation](#Installation)
 * [Motivation](#Motivation)
 * [Usage](#Usage)
+* [Decorators](#Decorators)
+* [Setup Subscribers using App.ready](#Setup-Subscribers-using-App.ready)
+* [Setup Subscribers with auto discovery](#Setup-Subscribers-with-auto-discovery)
 
 
 ### Motivation
@@ -78,7 +81,7 @@ def handle_create(instance):
 ```
 
 
-#### Decorators
+### Decorators
 
 `subscribe`: Explicit (Requires a valid OperationType).
 
@@ -147,7 +150,7 @@ def handle_bulk_delete(instances):
 ```
 
 
-#### Setup Subscribers using App.ready `(Recomended)`. 
+### Setup Subscribers using App.ready `(Recomended)`. 
 
 
 Update you `apps.py`
@@ -168,7 +171,7 @@ class MyAppConfig(AppConfig):
 
 
 
-#### Setup Subscribers with auto discovery.
+### Setup Subscribers with auto discovery.
 
 By default the `settings.SUBSCRIPTION_AUTO_DISCOVER` is set to `False`.
 
@@ -183,7 +186,7 @@ SUBSCRIPTION_AUTO_DISCOVER = True
 
 ```
 
-##### Setting up the `SUBSCRIPTION_MODULE`
+#### Setting up the `SUBSCRIPTION_MODULE`
 
 > NOTE: This is only required when ``SUBSCRIPTION_AUTO_DISCOVER = True``
 
