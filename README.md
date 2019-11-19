@@ -202,7 +202,7 @@ SUBSCRIPTION_MODULE  = 'subscription'
 
 ```
 
-#### Reasources
+#### Resources
 - https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
 
 TODO's
