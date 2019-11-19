@@ -92,7 +92,7 @@ def handle_create(instance):
 * `subscribe`: Explicit (Requires a valid OperationType).
 
 
-(Create, Update, Delete) operations. 
+#### (Create, Update, Delete) operations. 
 
 * `create_subscription`: Subscribes to create operation i.e a new instance.
 
@@ -102,7 +102,7 @@ def handle_create(instance):
     log.debug('1. Created {}'.format(instance.name))
 ```
 
-`update_subscription`: Subscribes to updates also includes (`changed_data`).
+* `update_subscription`: Subscribes to updates also includes (`changed_data`).
 ```python
 @update_subscription(TestModel)
 def handle_update(instance, changed_data):
@@ -120,7 +120,7 @@ def handle_delete(instance):
     log.debug('Deleted {}'.format(instance.name))
 ```
 
-(Bulk Create, Bulk Update, Bulk Delete) operations. 
+#### (Bulk Create, Bulk Update, Bulk Delete) operations. 
 
 * `bulk_create_subscription`: Subscribe to bulk create operations.
 
