@@ -27,7 +27,7 @@ setup(
     name='django-model-subscription',  # Required
     # https://www.python.org/dev/peps/pep-0440/
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.6',  # Required
+    version='0.0.8',  # Required
     # https://packaging.python.org/specifications/core-metadata/#summary
     description="Subscription model for a django model instance.",  # Required
     # https://packaging.python.org/specifications/core-metadata/#description-optional
@@ -49,11 +49,8 @@ setup(
                      'Operating System :: OS Independent',
                      'Programming Language :: Python',
                      'Programming Language :: Python :: 2',
-                     'Programming Language :: Python :: 2.6',
                      'Programming Language :: Python :: 2.7',
                      'Programming Language :: Python :: 3',
-                     'Programming Language :: Python :: 3.0',
-                     'Programming Language :: Python :: 3.2',
                      'Programming Language :: Python :: 3.4',
                      'Programming Language :: Python :: 3.5',
                      'Programming Language :: Python :: 3.6',

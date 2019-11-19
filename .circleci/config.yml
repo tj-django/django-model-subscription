@@ -4,16 +4,20 @@
 #
 ---
 version: 2
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+#      - test-3.8
+      - test-3.7
+# TODO: FIX ME
+#      - test-3.6
+#      - test-3.5
+#      - test-2.7
 jobs:
-  build-postgres:
+  test-3.8: &test-template
     docker:
-      # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.1
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/python:3.8
       - image: circleci/postgres:9.6-alpine
         environment:
           POSTGRES_USER: circleci
@@ -45,15 +49,22 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
+            - v1-dependencies-{{ checksum "poetry.lock" }}
+            - v1-dependencies-{{ checksum "tox.ini" }}
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
       - run:
           name: install dependencies
           command: |
-            python3 -m venv venv
+            python -m venv venv
             . venv/bin/activate
             make install
+
+      - run:
+          name: Show versions
+          command: |
+            python --version
+            pip --version
 
       - save_cache:
           paths:
@@ -77,11 +88,68 @@ jobs:
             MSQL_DB: test_db
             MSQL_PASSWORD: passw0rd
 
+      - save_cache:
+          paths:
+            - ./.tox
+          key: v1-dependencies-{{ checksum "tox.ini" }}
+
       - store_artifacts:
           path: test-reports
           destination: test-reports
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - build-postgres
+  test-3.7:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.7
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
+
+  test-3.6:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.6
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
+  test-3.5:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.5
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
+  test-2.7:
+    <<: *test-template
+    docker:
+      - image: circleci/python:2.7
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: circle_test
+      - image: circleci/mysql:8.0.4
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
