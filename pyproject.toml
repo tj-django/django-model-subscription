@@ -79,8 +79,8 @@ recommonmark = "^0.6.0"
 psycopg2 = {version = "=2.7.3.1", python = "2.7.* || 3.4.* || 3.5.* || 3.6.* || 3.7.*"}
 mysqlclient = {version = "=1.4.4", python = "^3.6"}
 tox = "^3.14"
-mypy = {version = "^0.720", python = "3.6"}
-django-stubs = {version = "^1.1", python = "3.6"}
+mypy = {version = "^0.720", python = "^3.6"}
+django-stubs = {version = "^1.1", python = "^3.6"}
 
 [tool.poetry.extras]
 deploy = ["bump2version", "git-changelog", "poetry-setup"]

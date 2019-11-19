@@ -176,7 +176,7 @@ version = "0.3.2"
 [[package]]
 category = "dev"
 description = "Mypy stubs for Django"
-marker = "python_version == \"3.6\""
+marker = "python_version >= \"3.6\" and python_version < \"4.0\""
 name = "django-stubs"
 optional = false
 python-versions = ">=3.6"
@@ -383,7 +383,7 @@ version = "0.6.2"
 [[package]]
 category = "dev"
 description = "Optional static typing for Python"
-marker = "python_version == \"3.6\""
+marker = "python_version >= \"3.6\" and python_version < \"4.0\""
 name = "mypy"
 optional = false
 python-versions = "*"
@@ -397,7 +397,7 @@ typing-extensions = ">=3.7.4"
 [[package]]
 category = "dev"
 description = "Experimental type system extensions for programs checked with the mypy typechecker."
-marker = "python_version == \"3.6\""
+marker = "python_version >= \"3.6\" and python_version < \"4.0\""
 name = "mypy-extensions"
 optional = false
 python-versions = "*"
@@ -830,7 +830,7 @@ version = ">=0.12,<1"
 [[package]]
 category = "dev"
 description = "a fork of Python 2 and 3 ast modules with type comment support"
-marker = "python_version == \"3.6\""
+marker = "python_version >= \"3.6\" and python_version < \"4.0\""
 name = "typed-ast"
 optional = false
 python-versions = "*"
@@ -920,7 +920,7 @@ deploy = []
 development = []
 
 [metadata]
-content-hash = "09e09be8a5c800ffd3ce823f375614a52be6bba3884acfd26401a35f5fc5359f"
+content-hash = "525c23b607e9bff3c2d715b39ec54b1008d349fdeb200e13dd4acc8a466eaced"
 python-versions = "2.7.* || 3.4.* || 3.5.* || 3.6.* || 3.7.* || 3.8.*"
 
 [metadata.hashes]
