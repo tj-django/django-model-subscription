@@ -20,7 +20,13 @@ https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
 
 ### Motivation
 
-Extending django models using Observer Pattern.
+- Extending django models using Observer Pattern.
+- Decouple Business logic from Models.save
+- Support for bulk actions (Not available using django signals.)
+- Use noop subscribers when `settings.SUBSCRIPTION_RUN_EXTERNAL` is `False` 
+  which prevents having to mock external service subscribers in testing, local development environments.
+- Show changes to the instance after it has been updated i.e diff's the initial state and the 
+current state.
 
 ![Screenshot](Subscriber.png)
 
@@ -195,3 +201,8 @@ SUBSCRIPTION_AUTO_DISCOVER = True
 SUBSCRIPTION_MODULE  = 'subscription' 
 
 ```
+
+TODO's
+- Supporting field level subscriptions.
+- Support class based subscribers which implements `__call__`
+- Extend to include custom OperationType.
