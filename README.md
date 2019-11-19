@@ -24,7 +24,8 @@
 - Decouple Business logic from Models.save
 - Support for bulk actions (Not available using django signals.)
 - Use noop subscribers when `settings.SUBSCRIPTION_RUN_EXTERNAL` is `False` 
-  which prevents having to mock external service subscribers in testing, local development environments.
+  which prevents having to mock subscribers that call external services in testing, local development 
+  environments.
 - Show changes to the instance after it has been updated i.e diff's the initial state and the 
 current state.
 
