@@ -29,7 +29,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get upgrade
-        sudo apt-get install -y --no-install-recommends build-essential checkinstall zlib1g-dev openssl
+        sudo apt-get install -y --no-install-recommends libpq-dev
         make tox
       env:
         # use postgres for the host here because we have specified a container for the job.
