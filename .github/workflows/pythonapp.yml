@@ -27,8 +27,6 @@ jobs:
         python-version: 3.7
     - name: Test with tox
       run: |
-        sudo apt-get update
-        sudo apt-get upgrade
         sudo apt-get install -y --no-install-recommends libpq-dev
         make tox
       env:
