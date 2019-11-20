@@ -27,6 +27,9 @@ jobs:
         python-version: 3.7
     - name: Test with tox
       run: |
+        apt-get update
+        apt-get upgrade
+        apt-get install -y --no-install-recommends build-essential checkinstall zlib1g-dev openssl
         make tox
       env:
         # use postgres for the host here because we have specified a container for the job.
