@@ -15,7 +15,7 @@
 * [Installation](#Installation)
 * [Usage](#Usage)
 * [Decorators](#Decorators)
-* [Setup Subscribers using App.ready](#setup-subscribers-using-appready-recomended)
+* [Setup Subscribers using AppConfig.ready](#setup-subscribers-using-appconfigready-recomended)
 * [Setup Subscribers with auto discovery](#setup-subscribers-using-auto-discovery)
 
 
@@ -158,7 +158,7 @@ def handle_bulk_delete(instances):
 ```
 
 
-### Setup Subscribers using App.ready `(Recomended)`. 
+### Setup Subscribers using AppConfig.ready `(Recomended)`. 
 
 
 Update you `apps.py`
