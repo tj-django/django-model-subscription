@@ -211,3 +211,4 @@ TODO's
 - Supporting field level subscriptions.
 - Support class based subscribers which implements `__call__`
 - Extend to include custom OperationType.
+- Add support for using a single class to manage multiple actions i.e MyClass.update, MyClass.create.
