@@ -206,6 +206,8 @@ SUBSCRIPTION_MODULE  = 'subscription'
 
 #### Resources
 - https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
+- https://refactoring.guru/design-patterns/observer
+- https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c
 
 TODO's
 - Supporting field level subscriptions.
