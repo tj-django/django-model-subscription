@@ -1,7 +1,8 @@
+import six
+
 from django.conf import settings
 from django.db.models.base import ModelBase
 from django.core.exceptions import ImproperlyConfigured
-from django.utils import six
 from django_lifecycle import LifecycleModelMixin, hook
 
 from model_subscription.constants import OperationType
