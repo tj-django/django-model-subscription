@@ -76,7 +76,7 @@ setup(
             'typing (>=3.6,<4.0); python_version >= "2.7" and python_version < "2.8" or python_version >= "3.4" and python_version < "3.5"',
             'django-lifecycle (>=0.3.0,<0.4.0)',
             'typing_extensions (>=3.7,<4.0)',
-            'six (>=1.14,<2.0); python_version >= "2.0.0" and python_version < "3.0.0"',
+            'six (>=1.14,<2.0)',
     ],  # Optional
     # https://setuptools.readthedocs.io/en/latest/setuptools.html#dependencies-that-aren-t-in-pypi
     dependency_links=[

@@ -908,7 +908,7 @@ deploy = []
 development = []
 
 [metadata]
-content-hash = "c5f29ca991b6cfacc01c707e4eb6df2af6674ad05974fba84b02e661a8936b7e"
+content-hash = "37588be6e9a23fe62dd68278cd5108845990fe21baf1a71b0c246be099fd703c"
 python-versions = "2.7.* || 3.4.* || 3.5.* || 3.6.* || 3.7.* || 3.8.*"
 
 [metadata.hashes]
