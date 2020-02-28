@@ -4,6 +4,42 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v0.0.10](https://github.com/jackton1/django-model-subscription/releases/tag/v0.0.10) ([compare](https://github.com/jackton1/django-model-subscription/compare/v0.0.9...v0.0.10)) - 2020-02-28
+
+### Fixed
+- Fixed missing pg_config. ([bcffacc](https://github.com/jackton1/django-model-subscription/commit/bcffacc49983439e390bfe8bd9896122569f6dfb)).
+- Fixed permission error. ([9aec463](https://github.com/jackton1/django-model-subscription/commit/9aec463a803a8ca099e10377d10619f6dcdae461)).
+- Fixed workflow. ([c157de1](https://github.com/jackton1/django-model-subscription/commit/c157de1e6721d81eef00bb208fa0df3751767d00)).
+
+### Removed
+- Removed unused import. ([3b3a952](https://github.com/jackton1/django-model-subscription/commit/3b3a9522c26d79bea4d8d819e171052ae6c07863)).
+
+### Misc
+- Cleaned up README.md ([f3b2586](https://github.com/jackton1/django-model-subscription/commit/f3b25866ac68e4bdcd70eb1ae58f8215d7d988df)).
+- Create greetings.yml ([be50d33](https://github.com/jackton1/django-model-subscription/commit/be50d334a5b6f6fc61a0bc38ff2b004fbff71969)).
+- Create pythonapp.yml ([c1c6cd5](https://github.com/jackton1/django-model-subscription/commit/c1c6cd5dbdfe4fb65caaa93a738b54ab893768d7)).
+- Improve README.md ([1db892d](https://github.com/jackton1/django-model-subscription/commit/1db892d3d3b8706a673b59349e79e0a5d3b88176)).
+- Replace App.ready -> AppConfig.ready (#12) ([d1f6009](https://github.com/jackton1/django-model-subscription/commit/d1f60097068bafe6c01c93e3db16918f6f4965c2)).
+- Synced pyproject.toml and updated CHANGELOG.md. ([7c4452c](https://github.com/jackton1/django-model-subscription/commit/7c4452c455379f805b869f934404f7a610a2a93a)).
+- Update mixin.py ([d362b48](https://github.com/jackton1/django-model-subscription/commit/d362b488968bf02ce4f354b698766c2f98a2d8b5)).
+- Update pythonapp.yml ([b8bd964](https://github.com/jackton1/django-model-subscription/commit/b8bd964dfd5175d7f9cbcece3b365490fdf3dc4c)).
+- Update pythonapp.yml ([39478ec](https://github.com/jackton1/django-model-subscription/commit/39478ec1bbe26bf114ec284562b45fdf673ada49)).
+- Update README.md ([ac8e540](https://github.com/jackton1/django-model-subscription/commit/ac8e5407ce0788a206e44aa2803843e246c279da)).
+- Update README.md ([3a76ab1](https://github.com/jackton1/django-model-subscription/commit/3a76ab1735ac020af263adc1f6b6cbefdc82ba59)).
+- Update README.md ([c0f62bc](https://github.com/jackton1/django-model-subscription/commit/c0f62bcf53db23b4fc3ad5c9d74d5df97b875e3d)).
+- Update README.md ([1b7d44f](https://github.com/jackton1/django-model-subscription/commit/1b7d44fa14576727815c27944df6bd14d6a0b590)).
+- Update README.md ([3d664ff](https://github.com/jackton1/django-model-subscription/commit/3d664ffe846a6424182a605ecf31fa3ee9f04b6c)).
+- Update README.md ([30ad977](https://github.com/jackton1/django-model-subscription/commit/30ad9770bc8ea4653b4dc6431e72680778fcaeb4)).
+- Update README.md ([9299296](https://github.com/jackton1/django-model-subscription/commit/9299296a8332f9a49d748649f98e74b0488f30af)).
+- Update README.md (#13) ([7cd8ebd](https://github.com/jackton1/django-model-subscription/commit/7cd8ebdd38a460a4a62eb8e34ef141e3724ca6f3)).
+- Update SPECS (#14) ([532f1d0](https://github.com/jackton1/django-model-subscription/commit/532f1d0d15c35c7f2040956c8bbd738739019d31)).
+- Updated the docs. ([29506d8](https://github.com/jackton1/django-model-subscription/commit/29506d8a18cd8218d3279b6ba5024c55ce274da8)).
+- Updated the docs. ([6f9138e](https://github.com/jackton1/django-model-subscription/commit/6f9138ee43491f806ad502aded60f79e8b5f7afe)).
+- Updated the package deps. ([6a9da9b](https://github.com/jackton1/django-model-subscription/commit/6a9da9b3ba2f58399d1be5c9e4c44cf12c13eaee)).
+- Updated to include openssl. ([7392a13](https://github.com/jackton1/django-model-subscription/commit/7392a136a591f179bc42c38f2c81a548794d18f5)).
+- Updated workflow. ([8482dcb](https://github.com/jackton1/django-model-subscription/commit/8482dcbb677498fc2c11b0708f0769b43b7b218a)).
+
+
 ## [v0.0.9](https://github.com/jackton1/django-model-subscription/releases/tag/v0.0.9) ([compare](https://github.com/jackton1/django-model-subscription/compare/v0.0.6...v0.0.9)) - 2019-11-19
 
 ### Fixed
