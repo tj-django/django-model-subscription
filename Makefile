@@ -63,6 +63,10 @@ build-docs:
 	@echo "Building docs..."
 	@$(MAKE) -C $(DOCS_DIR) SPHINXOPTS='-W' clean html
 
+github: 
+	@cd $(DOCS_DIR) && make html
+	@cd $(DOCS_DIR) && cp -a _build/html/. ../docs
+
 view-docs: build-docs  ## Serve sphinx doc locally.
 	@echo "Serving documentation..."
 	@cd $(DOCS_DIR) && sphinx-autobuild $(DOC_SOURCE_DIR) $(DOC_BUILD_DIR) -p $(DOC_SERVE_PORT)
