@@ -3,6 +3,7 @@ from typing import Callable, Optional, Any
 
 from django.conf import settings
 
+from model_subscription.models import SubscriptionModel
 from model_subscription.constants import OperationType
 from model_subscription.types import T
 
@@ -63,7 +64,7 @@ def my_custom_delete_receiver(instance)
 
 
 def subscribe(operation, model):
-    # type: (OperationType, 'SubscriptionModel') -> Callable[[T], None]
+    # type: (OperationType, SubscriptionModel) -> Callable[[T], None]
     def _decorator(func):
         model._subscription.attach(operation, func)
         return func
@@ -79,7 +80,7 @@ bulk_delete_subscription = partial(subscribe, OperationType.BULK_DELETE)
 
 
 def unsubscribe(operation, model, func=None):
-    # type: (OperationType, 'SubscriptionModel', Optional[Callable[[T], Any]]) -> Callable[[T], Any]
+    # type: (OperationType, SubscriptionModel, Optional[Callable[[T], Any]]) -> Callable[[T], Any]
 
     if func is not None:
         model._subscription.detach(operation, func)
