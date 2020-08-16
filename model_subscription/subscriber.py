@@ -6,7 +6,6 @@ from django.db import models
 from django.utils.module_loading import autodiscover_modules
 
 from model_subscription.constants import OperationType
-from model_subscription.mixin import SubscriptionModelMixin
 from model_subscription.observers import (
     Observer, CreateObserver, UpdateObserver, DeleteObserver,
     BulkCreateObserver, BulkUpdateObserver, BulkDeleteObserver
@@ -97,7 +96,7 @@ class ModelSubscription(BaseSubscription):
         autodiscover_modules(settings.SUBSCRIPTION_MODULE)
 
     def notify(self, operation_type, instance):
-        # type: (Union[OperationType.CREATE, OperationType.UPDATE, OperationType.DELETE], Type[SubscriptionModelMixin]) -> None
+        # type: (Union[OperationType.CREATE, OperationType.UPDATE, OperationType.DELETE], Type[Any]) -> None
         self.subscription_model = instance
         observer = self.observers[operation_type]
 
