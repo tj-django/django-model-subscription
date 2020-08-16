@@ -5,7 +5,7 @@ from model_subscription.models import SubscriptionModel
 
 
 class TestModel(SubscriptionModel):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20)  # type: ignore
 
     def __str__(self):
         return '<{}: {}>'.format(self.pk, self.name)

@@ -6,7 +6,6 @@ from django.core.exceptions import ImproperlyConfigured
 from django_lifecycle import LifecycleModelMixin, hook
 
 from model_subscription.constants import OperationType
-from model_subscription.subscriber import ModelSubscription
 
 
 class SubscriptionMeta(ModelBase):
@@ -14,13 +13,14 @@ class SubscriptionMeta(ModelBase):
     The Singleton base metaclass.
     """
 
-    def __new__(cls, name, bases, attrs):
+    def __new__(mcs, name, bases, attrs):
+        from model_subscription.subscriber import ModelSubscription
         for base in bases:
             if hasattr(bases, '_subscription'):
                 del base['_subscription']
         _subscription = ModelSubscription()  # type: ignore
         attrs['_subscription'] = _subscription
-        return super(SubscriptionMeta, cls).__new__(cls, name, bases, attrs)
+        return super(SubscriptionMeta, mcs).__new__(name, bases, attrs)
 
 
 @six.add_metaclass(SubscriptionMeta)

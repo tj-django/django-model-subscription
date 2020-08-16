@@ -1,8 +1,12 @@
 from functools import partial
+from typing import Callable, Optional, Any, Type
 
 from django.conf import settings
+from django.db import models
 
 from model_subscription.constants import OperationType
+from model_subscription.mixin import SubscriptionModelMixin
+from model_subscription.types import T
 
 __all__ = [
     'subscribe', 'create_subscription',
@@ -61,6 +65,7 @@ def my_custom_delete_receiver(instance)
 
 
 def subscribe(operation, model):
+    # type: (OperationType, Type[SubscriptionModelMixin]) -> Callable[[T], None]
     def _decorator(func):
         model._subscription.attach(operation, func)
         return func
@@ -76,6 +81,7 @@ bulk_delete_subscription = partial(subscribe, OperationType.BULK_DELETE)
 
 
 def unsubscribe(operation, model, func=None):
+    # type: (OperationType, Type[SubscriptionModelMixin], Optional[Callable[[T], Any]]) -> Callable[[T], Any]
     if func is not None:
         model._subscription.detach(operation, func)
         return func
