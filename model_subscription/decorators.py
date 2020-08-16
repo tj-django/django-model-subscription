@@ -78,9 +78,6 @@ bulk_delete_subscription = partial(subscribe, OperationType.BULK_DELETE)
 
 
 def unsubscribe(operation, model, func=None):
-    from model_subscription.models import SubscriptionModel
-    # type: (OperationType, SubscriptionModel, Optional[Callable[[T], Any]]) -> Callable[[T], Any]
-
     if func is not None:
         model._subscription.detach(operation, func)
         return func
