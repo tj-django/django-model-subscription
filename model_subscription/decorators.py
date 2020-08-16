@@ -2,7 +2,6 @@ from functools import partial
 from typing import Callable, Optional, Any, Type
 
 from django.conf import settings
-from django.db import models
 
 from model_subscription.constants import OperationType
 from model_subscription.mixin import SubscriptionModelMixin
