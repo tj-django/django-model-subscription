@@ -64,7 +64,7 @@ def my_custom_delete_receiver(instance)
 
 def subscribe(operation, model):
     from model_subscription.models import SubscriptionModel
-    # type: (OperationType, SubscriptionModel) -> Callable[[T], None]
+    # type: (OperationType, SubscriptionModel) -> Callable[[T], Any]
 
     def _decorator(func):
         model._subscription.attach(operation, func)
