@@ -20,7 +20,7 @@ class SubscriptionMeta(ModelBase):
                 del base['_subscription']
         _subscription = ModelSubscription()  # type: ignore
         attrs['_subscription'] = _subscription
-        return super(SubscriptionMeta, mcs).__new__(name, bases, attrs)
+        return super(SubscriptionMeta, mcs).__new__(mcs, name, bases, attrs)
 
 
 @six.add_metaclass(SubscriptionMeta)
