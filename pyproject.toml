@@ -69,7 +69,7 @@ six = "^1.14"
 Django = {version = "*", extras = ["development"]}
 check-manifest = {version = "^0.40.0", extras = ["development"], python = " ^2.7 || ^3.5"}
 bump2version = {version = "^0.5.11", extras = ["deploy"], python = " ^2.7 || ^3.5"}
-git-changelog = {version = "^0.1.0", extras = ["deploy"], python = "^3.6"}
+git-changelog = {version = "^0.4.0", extras = ["deploy"], python = "^3.6"}
 poetry-setup = {version = "^0.3.6", extras = ["development"]}
 poetry = {version = "^0.12", extras = ["development"]}
 sphinx = "=1.8.5"
