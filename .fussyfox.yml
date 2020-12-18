@@ -1,0 +1,9 @@
+## list of checks you would like to run on this repository
+# e.g.:
+- flake8
+- black
+- pycodestyle
+- pydocstyle
+- pyflakes
+- bandit
+- isort
