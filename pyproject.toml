@@ -61,7 +61,7 @@ readme = "README.md"
 python = "2.7.* || 3.4.* || 3.5.* || 3.6.* || 3.7.* || 3.8.*"
 # The typing module is not in the stdlib in Python 2.7 and 3.4
 typing = { version = "^3.6", python = "~2.7 || ~3.4" }
-django-lifecycle = "^0.3.0"
+django-lifecycle = "^0.9.0"
 typing_extensions = "^3.7"
 six = "^1.14"
 
