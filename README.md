@@ -5,6 +5,7 @@
 
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-model-subscription.svg)](https://pypi.org/project/django-model-subscription)
 [![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-model-subscription.svg)](https://docs.djangoproject.com/en/2.2/releases/)
+[![Downloads](https://pepy.tech/badge/django-model-subscription)](https://pepy.tech/project/django-model-subscription)
 
 # [django-model-subscription](https://django-model-subscription.readthedocs.io/en/latest/installation.html)
 
