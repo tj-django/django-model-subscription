@@ -37,9 +37,9 @@ install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@pip install -U pip setuptools
 	@pip install poetry==0.12.17
-	@poetry install -vvv
+	@LDFLAGS=`echo $(pg_config --ldflags)` poetry install -vvv
 
-install-dev: clean-build  ## Install development extra dependencies.
+install-dev: clean-build install  ## Install development extra dependencies.
 	@echo "Installing development requirements..."
 	@poetry install -E "development"
 
