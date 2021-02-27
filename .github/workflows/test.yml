@@ -12,7 +12,7 @@ jobs:
         image: postgres:10.16
         env:
           POSTGRES_USER: test_user
-          POSTGRES_PASSWORD: ''
+          POSTGRES_PASSWORD: test_user_password
           POSTGRES_DB: test
         ports:
         - 5432:5432
@@ -49,4 +49,5 @@ jobs:
         POSTGRES_HOST: postgres
         POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
         PG_USER: test_user
+        PG_PASSWORD: test_user_password
         PG_DB: test
