@@ -24,7 +24,7 @@ jobs:
           POSTGRES_DB: circle_test
           POSTGRES_PASSWORD: circle_password
 
-      - image: circleci/mysql:8.0.4
+      - image: circleci/mysql:8.0.23
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
           MYSQL_DATABASE: test_db
@@ -107,7 +107,7 @@ jobs:
           POSTGRES_USER: circleci
           POSTGRES_DB: circle_test
           POSTGRES_PASSWORD: circle_password
-      - image: circleci/mysql:8.0.4
+      - image: circleci/mysql:8.0.23
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
           MYSQL_DATABASE: test_db
@@ -123,7 +123,7 @@ jobs:
           POSTGRES_USER: circleci
           POSTGRES_DB: circle_test
           POSTGRES_PASSWORD: circle_password
-      - image: circleci/mysql:8.0.4
+      - image: circleci/mysql:8.0.23
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
           MYSQL_DATABASE: test_db
@@ -138,7 +138,7 @@ jobs:
           POSTGRES_USER: circleci
           POSTGRES_DB: circle_test
           POSTGRES_PASSWORD: circle_password
-      - image: circleci/mysql:8.0.4
+      - image: circleci/mysql:8.0.23
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
           MYSQL_DATABASE: test_db
@@ -153,7 +153,7 @@ jobs:
           POSTGRES_USER: circleci
           POSTGRES_DB: circle_test
           POSTGRES_PASSWORD: circle_password
-      - image: circleci/mysql:8.0.4
+      - image: circleci/mysql:8.0.23
         environment:
           MYSQL_ROOT_PASSWORD: rootpw
           MYSQL_DATABASE: test_db
