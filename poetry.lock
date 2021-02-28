@@ -100,17 +100,18 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "check-manifest"
-version = "0.40"
+version = "0.44"
 description = "Check MANIFEST.in in a Python source package for completeness"
 category = "dev"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+python-versions = ">=3.5"
 
 [package.dependencies]
+pep517 = "*"
 toml = "*"
 
 [package.extras]
-test = ["mock"]
+test = ["mock (>=3.0.0)"]
 
 [[package]]
 name = "cleo"
@@ -163,25 +164,6 @@ description = "Manage Python errors with ease"
 category = "dev"
 optional = false
 python-versions = ">=3.6,<4.0"
-
-[[package]]
-name = "cryptography"
-version = "3.2.1"
-description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
-category = "dev"
-optional = false
-python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
-
-[package.dependencies]
-cffi = ">=1.8,<1.11.3 || >1.11.3"
-six = ">=1.4.1"
-
-[package.extras]
-docs = ["sphinx (>=1.6.5,!=1.8.0,!=3.1.0,!=3.1.1)", "sphinx-rtd-theme"]
-docstest = ["doc8", "pyenchant (>=1.6.11)", "twine (>=1.12.0)", "sphinxcontrib-spelling (>=4.0.1)"]
-pep8test = ["black", "flake8", "flake8-import-order", "pep8-naming"]
-ssh = ["bcrypt (>=3.1.5)"]
-test = ["pytest (>=3.6.0,!=3.9.0,!=3.9.1,!=3.9.2)", "pretend", "iso8601", "pytz", "hypothesis (>=1.11.4,!=3.79.2)"]
 
 [[package]]
 name = "cryptography"
@@ -343,17 +325,6 @@ docs = ["sphinx", "rst.linker", "jaraco.packaging"]
 
 [[package]]
 name = "jeepney"
-version = "0.4.3"
-description = "Low-level, pure Python DBus protocol wrapper."
-category = "dev"
-optional = false
-python-versions = ">=3.5"
-
-[package.extras]
-dev = ["testpath"]
-
-[[package]]
-name = "jeepney"
 version = "0.6.0"
 description = "Low-level, pure Python DBus protocol wrapper."
 category = "dev"
@@ -506,6 +477,19 @@ description = "File system general utilities"
 category = "dev"
 optional = false
 python-versions = "*"
+
+[[package]]
+name = "pep517"
+version = "0.9.1"
+description = "Wrappers to build Python packages using PEP 517 hooks"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+importlib_metadata = {version = "*", markers = "python_version < \"3.8\""}
+toml = "*"
+zipp = {version = "*", markers = "python_version < \"3.8\""}
 
 [[package]]
 name = "pexpect"
@@ -713,18 +697,6 @@ python-versions = "*"
 
 [package.dependencies]
 requests = ">=2.0.1,<3.0.0"
-
-[[package]]
-name = "secretstorage"
-version = "3.2.0"
-description = "Python bindings to FreeDesktop.org Secret Service API"
-category = "dev"
-optional = false
-python-versions = ">=3.5"
-
-[package.dependencies]
-cryptography = ">=2.0"
-jeepney = ">=0.4.2"
 
 [[package]]
 name = "secretstorage"
@@ -996,7 +968,7 @@ development = []
 [metadata]
 lock-version = "1.1"
 python-versions = "3.5.* || 3.6.* || 3.7.* || 3.8.* || 3.9.*"
-content-hash = "d32aca12158e3818dcb5b857534f470ce6686e550bac55b4c87e63e43ed8132b"
+content-hash = "9d94a9e6e362fa5a53973f0341f01d16d738e547910a4b349de336cc4eb7f22d"
 
 [metadata.files]
 alabaster = [
@@ -1075,8 +1047,8 @@ chardet = [
     {file = "chardet-4.0.0.tar.gz", hash = "sha256:0d6f53a15db4120f2b08c94f11e7d93d2c911ee118b6b30a04ec3ee8310179fa"},
 ]
 check-manifest = [
-    {file = "check-manifest-0.40.tar.gz", hash = "sha256:42de6eaab4ed149e60c9b367ada54f01a3b1e4d6846784f9b9710e770ff5572c"},
-    {file = "check_manifest-0.40-py2.py3-none-any.whl", hash = "sha256:78dd077f2c70dbac7cfcc9d12cbd423914e787ea4b5631de45aecd25b524e8e3"},
+    {file = "check-manifest-0.44.tar.gz", hash = "sha256:1d09db87162a70aa2877660c0ac1a1153e62b8e69bbde5e6155af7507e417af1"},
+    {file = "check_manifest-0.44-py2.py3-none-any.whl", hash = "sha256:5866028482fb05c411f5e0dc27d4d86209959c1334645f223667cec445be363d"},
 ]
 cleo = [
     {file = "cleo-0.8.1-py2.py3-none-any.whl", hash = "sha256:141cda6dc94a92343be626bb87a0b6c86ae291dfc732a57bf04310d4b4201753"},
@@ -1099,28 +1071,6 @@ crashtest = [
     {file = "crashtest-0.3.1.tar.gz", hash = "sha256:42ca7b6ce88b6c7433e2ce47ea884e91ec93104a4b754998be498a8e6c3d37dd"},
 ]
 cryptography = [
-    {file = "cryptography-3.2.1-cp27-cp27m-macosx_10_10_x86_64.whl", hash = "sha256:6dc59630ecce8c1f558277ceb212c751d6730bd12c80ea96b4ac65637c4f55e7"},
-    {file = "cryptography-3.2.1-cp27-cp27m-manylinux1_x86_64.whl", hash = "sha256:75e8e6684cf0034f6bf2a97095cb95f81537b12b36a8fedf06e73050bb171c2d"},
-    {file = "cryptography-3.2.1-cp27-cp27m-manylinux2010_x86_64.whl", hash = "sha256:4e7268a0ca14536fecfdf2b00297d4e407da904718658c1ff1961c713f90fd33"},
-    {file = "cryptography-3.2.1-cp27-cp27m-win32.whl", hash = "sha256:7117319b44ed1842c617d0a452383a5a052ec6aa726dfbaffa8b94c910444297"},
-    {file = "cryptography-3.2.1-cp27-cp27m-win_amd64.whl", hash = "sha256:a733671100cd26d816eed39507e585c156e4498293a907029969234e5e634bc4"},
-    {file = "cryptography-3.2.1-cp27-cp27mu-manylinux1_x86_64.whl", hash = "sha256:a75f306a16d9f9afebfbedc41c8c2351d8e61e818ba6b4c40815e2b5740bb6b8"},
-    {file = "cryptography-3.2.1-cp27-cp27mu-manylinux2010_x86_64.whl", hash = "sha256:5849d59358547bf789ee7e0d7a9036b2d29e9a4ddf1ce5e06bb45634f995c53e"},
-    {file = "cryptography-3.2.1-cp35-abi3-macosx_10_10_x86_64.whl", hash = "sha256:bd717aa029217b8ef94a7d21632a3bb5a4e7218a4513d2521c2a2fd63011e98b"},
-    {file = "cryptography-3.2.1-cp35-abi3-manylinux1_x86_64.whl", hash = "sha256:efe15aca4f64f3a7ea0c09c87826490e50ed166ce67368a68f315ea0807a20df"},
-    {file = "cryptography-3.2.1-cp35-abi3-manylinux2010_x86_64.whl", hash = "sha256:32434673d8505b42c0de4de86da8c1620651abd24afe91ae0335597683ed1b77"},
-    {file = "cryptography-3.2.1-cp35-abi3-manylinux2014_aarch64.whl", hash = "sha256:7b8d9d8d3a9bd240f453342981f765346c87ade811519f98664519696f8e6ab7"},
-    {file = "cryptography-3.2.1-cp35-cp35m-win32.whl", hash = "sha256:d3545829ab42a66b84a9aaabf216a4dce7f16dbc76eb69be5c302ed6b8f4a29b"},
-    {file = "cryptography-3.2.1-cp35-cp35m-win_amd64.whl", hash = "sha256:a4e27ed0b2504195f855b52052eadcc9795c59909c9d84314c5408687f933fc7"},
-    {file = "cryptography-3.2.1-cp36-abi3-win32.whl", hash = "sha256:13b88a0bd044b4eae1ef40e265d006e34dbcde0c2f1e15eb9896501b2d8f6c6f"},
-    {file = "cryptography-3.2.1-cp36-abi3-win_amd64.whl", hash = "sha256:07ca431b788249af92764e3be9a488aa1d39a0bc3be313d826bbec690417e538"},
-    {file = "cryptography-3.2.1-cp36-cp36m-win32.whl", hash = "sha256:a035a10686532b0587d58a606004aa20ad895c60c4d029afa245802347fab57b"},
-    {file = "cryptography-3.2.1-cp36-cp36m-win_amd64.whl", hash = "sha256:d26a2557d8f9122f9bf445fc7034242f4375bd4e95ecda007667540270965b13"},
-    {file = "cryptography-3.2.1-cp37-cp37m-win32.whl", hash = "sha256:545a8550782dda68f8cdc75a6e3bf252017aa8f75f19f5a9ca940772fc0cb56e"},
-    {file = "cryptography-3.2.1-cp37-cp37m-win_amd64.whl", hash = "sha256:55d0b896631412b6f0c7de56e12eb3e261ac347fbaa5d5e705291a9016e5f8cb"},
-    {file = "cryptography-3.2.1-cp38-cp38-win32.whl", hash = "sha256:3cd75a683b15576cfc822c7c5742b3276e50b21a06672dc3a800a2d5da4ecd1b"},
-    {file = "cryptography-3.2.1-cp38-cp38-win_amd64.whl", hash = "sha256:d25cecbac20713a7c3bc544372d42d8eafa89799f492a43b79e1dfd650484851"},
-    {file = "cryptography-3.2.1.tar.gz", hash = "sha256:d3d5e10be0cf2a12214ddee45c6bd203dab435e3d83b4560c03066eda600bfe3"},
     {file = "cryptography-3.4.6-cp36-abi3-macosx_10_10_x86_64.whl", hash = "sha256:57ad77d32917bc55299b16d3b996ffa42a1c73c6cfa829b14043c561288d2799"},
     {file = "cryptography-3.4.6-cp36-abi3-macosx_11_0_arm64.whl", hash = "sha256:4169a27b818de4a1860720108b55a2801f32b6ae79e7f99c00d79f2a2822eeb7"},
     {file = "cryptography-3.4.6-cp36-abi3-manylinux2010_x86_64.whl", hash = "sha256:93cfe5b7ff006de13e1e89830810ecbd014791b042cbe5eec253be11ac2b28f3"},
@@ -1182,8 +1132,6 @@ importlib-resources = [
     {file = "importlib_resources-3.2.1.tar.gz", hash = "sha256:a9fe213ab6452708ec1b3f4ec6f2881b8ab3645cb4e5efb7fea2bbf05a91db3b"},
 ]
 jeepney = [
-    {file = "jeepney-0.4.3-py3-none-any.whl", hash = "sha256:d6c6b49683446d2407d2fe3acb7a368a77ff063f9182fe427da15d622adc24cf"},
-    {file = "jeepney-0.4.3.tar.gz", hash = "sha256:3479b861cc2b6407de5188695fa1a8d57e5072d7059322469b62628869b8e36e"},
     {file = "jeepney-0.6.0-py3-none-any.whl", hash = "sha256:aec56c0eb1691a841795111e184e13cad504f7703b9a64f63020816afa79a8ae"},
     {file = "jeepney-0.6.0.tar.gz", hash = "sha256:7d59b6622675ca9e993a6bd38de845051d315f8b0c72cca3aef733a20b648657"},
 ]
@@ -1321,6 +1269,10 @@ pastel = [
 pathtools = [
     {file = "pathtools-0.1.2.tar.gz", hash = "sha256:7c35c5421a39bb82e58018febd90e3b6e5db34c5443aaaf742b3f33d4655f1c0"},
 ]
+pep517 = [
+    {file = "pep517-0.9.1-py2.py3-none-any.whl", hash = "sha256:3985b91ebf576883efe5fa501f42a16de2607684f3797ddba7202b71b7d0da51"},
+    {file = "pep517-0.9.1.tar.gz", hash = "sha256:aeb78601f2d1aa461960b43add204cc7955667687fbcf9cdb5170f00556f117f"},
+]
 pexpect = [
     {file = "pexpect-4.8.0-py2.py3-none-any.whl", hash = "sha256:0b48a55dcb3c05f3329815901ea4fc1537514d6ba867a152b581d69ae3710937"},
     {file = "pexpect-4.8.0.tar.gz", hash = "sha256:fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c"},
@@ -1421,8 +1373,6 @@ requests-toolbelt = [
     {file = "requests_toolbelt-0.9.1-py2.py3-none-any.whl", hash = "sha256:380606e1d10dc85c3bd47bf5a6095f815ec007be7a8b69c878507068df059e6f"},
 ]
 secretstorage = [
-    {file = "SecretStorage-3.2.0-py3-none-any.whl", hash = "sha256:ed5279d788af258e4676fa26b6efb6d335a31f1f9f529b6f1e200f388fac33e1"},
-    {file = "SecretStorage-3.2.0.tar.gz", hash = "sha256:46305c3847ee3f7252b284e0eee5590fa6341c891104a2fd2313f8798c615a82"},
     {file = "SecretStorage-3.3.1-py3-none-any.whl", hash = "sha256:422d82c36172d88d6a0ed5afdec956514b189ddbfb72fefab0c8a1cee4eaf71f"},
     {file = "SecretStorage-3.3.1.tar.gz", hash = "sha256:fd666c51a6bf200643495a04abb261f83229dcb6fd8472ec393df7ffc8b6f195"},
 ]
