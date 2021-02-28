@@ -10,11 +10,11 @@ README_RST_PATH = os.path.join(BASE_DIR, "README.rst")
 if os.path.isfile(README_PATH):
     with io.open(README_PATH, encoding="utf-8") as f:
         LONG_DESCRIPTION = f.read()
-        LONG_DESCRIPTION_CONTENT_TYPE = 'text/markdown'
+        LONG_DESCRIPTION_CONTENT_TYPE = "text/markdown"
 else:
     with io.open(README_RST_PATH, encoding="utf-8") as f:
         LONG_DESCRIPTION = f.read()
-        LONG_DESCRIPTION_CONTENT_TYPE = 'text/x-rst'
+        LONG_DESCRIPTION_CONTENT_TYPE = "text/x-rst"
 
 VERSION = (0, 2, 0)
 
