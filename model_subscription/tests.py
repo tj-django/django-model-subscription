@@ -226,6 +226,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
 )
 class ModelSubscriptionPostgresTransactionTestCase(ModelSubscriptionSqliteTransactionTestCase):
     db_alias = 'postgres'
+    databases = {'postgres'}
 
 
 # @override_settings(

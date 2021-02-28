@@ -26,6 +26,13 @@ guard-%: ## Checks that env var is set else exits with non 0 mainly used in CI;
 # ------- Python package (pip) management commands -------
 # --------------------------------------------------------
 
+update-requirements:  ## Update requirements.txt file
+	@pip install dephell
+	@dephell deps convert --envs main
+	@dephell deps convert --to requirements-dev.txt --envs dev
+	@dephell deps convert --to setup.py --envs main dev
+	@pip uninstall -y dephell
+
 clean-build: ## Clean project build artifacts.
 	@echo "Removing build assets..."
 	@$(PYTHON) setup.py clean
@@ -36,7 +43,7 @@ clean-build: ## Clean project build artifacts.
 install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@pip install -U pip setuptools
-	@pip install poetry==0.12.17
+	@pip install poetry==1.0.10
 	@LDFLAGS=`echo $(pg_config --ldflags)` poetry install -vvv
 
 install-dev: clean-build install  ## Install development extra dependencies.
