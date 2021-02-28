@@ -1,4 +1,7 @@
 django-lifecycle==0.9.0
-six==1.15.0
-typing==3.*,>=3.6.0; python_version == "2.7.*" and python_version >= "2.7.0" or python_version == "3.4.*" and python_version >= "3.4.0"
+django==2.2.19; python_version >= "3.5"
+pytz==2021.1; python_version >= "3.5"
+six==1.15.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.3.0")
+sqlparse==0.4.1; python_version >= "3.5"
 typing-extensions==3.7.4.3
+urlman==1.4.0
