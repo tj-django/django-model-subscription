@@ -1,3 +1,4 @@
+[![PyPI](https://img.shields.io/pypi/v/django-model-subscription)](https://pypi.org/project/django-model-subscription/)
 [![CircleCI](https://circleci.com/gh/tj-django/django-model-subscription.svg?style=shield)](https://circleci.com/gh/tj-django/django-model-subscription)
 [![Actions Status](https://github.com/jackton1/django-model-subscription/workflows/django%20model%20subscription%20test./badge.svg)](https://github.com/jackton1/django-model-subscription/actions?query=workflow%3A"django+model+subscription+test.")
 [![Documentation Status](https://readthedocs.org/projects/django-model-subscription/badge/?version=latest)](https://django-model-subscription.readthedocs.io/en/latest/?badge=latest)
