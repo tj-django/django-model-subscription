@@ -8,17 +8,22 @@ from model_subscription.mixin import SubscriptionModelMixin
 from model_subscription.types import T
 
 __all__ = [
-    'subscribe', 'create_subscription',
-    'bulk_create_subscription', 'update_subscription',
-    'delete_subscription',
-
-    'unsubscribe', 'unsubscribe_create',
-    'unsubscribe_bulk_create', 'unsubscribe_update',
-    'unsubscribe_delete',
-
-    'create_external_subscription', 'bulk_create_external_subscription',
-    'update_external_subscription', 'bulk_update_external_subscription',
-    'delete_external_subscription', 'bulk_delete_external_subscription',
+    "subscribe",
+    "create_subscription",
+    "bulk_create_subscription",
+    "update_subscription",
+    "delete_subscription",
+    "unsubscribe",
+    "unsubscribe_create",
+    "unsubscribe_bulk_create",
+    "unsubscribe_update",
+    "unsubscribe_delete",
+    "create_external_subscription",
+    "bulk_create_external_subscription",
+    "update_external_subscription",
+    "bulk_update_external_subscription",
+    "delete_external_subscription",
+    "bulk_delete_external_subscription",
 ]
 
 
@@ -68,6 +73,7 @@ def subscribe(operation, model):
     def _decorator(func):
         model._subscription.attach(operation, func)
         return func
+
     return _decorator
 
 
@@ -88,6 +94,7 @@ def unsubscribe(operation, model, func=None):
     def _decorator(inner):
         model._subscription.detach(operation, inner)
         return inner
+
     return _decorator
 
 
@@ -101,10 +108,12 @@ unsubscribe_bulk_delete = partial(unsubscribe, OperationType.BULK_DELETE)
 
 # Using the settings.SUBSCRIPTION_RUN_EXTERNAL or falls back to settings.DEBUG
 def external(func):
-    can_run = getattr(settings, 'SUBSCRIPTION_RUN_EXTERNAL', settings.DEBUG)
+    can_run = getattr(settings, "SUBSCRIPTION_RUN_EXTERNAL", settings.DEBUG)
     if not can_run:
+
         def noop():
             pass
+
         return noop
     return func
 

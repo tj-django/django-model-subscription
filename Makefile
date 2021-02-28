@@ -26,6 +26,13 @@ guard-%: ## Checks that env var is set else exits with non 0 mainly used in CI;
 # ------- Python package (pip) management commands -------
 # --------------------------------------------------------
 
+update-requirements:  ## Update requirements.txt file
+	@pip install dephell
+	@dephell deps convert --envs main
+	@dephell deps convert --to requirements-dev.txt --envs dev
+	@dephell deps convert --to setup.py --envs main dev
+	@pip uninstall -y dephell
+
 clean-build: ## Clean project build artifacts.
 	@echo "Removing build assets..."
 	@$(PYTHON) setup.py clean
@@ -36,10 +43,10 @@ clean-build: ## Clean project build artifacts.
 install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@pip install -U pip setuptools
-	@pip install poetry==0.12.17
+	@pip install poetry==1.0.10
 	@poetry install -vvv
 
-install-dev: clean-build  ## Install development extra dependencies.
+install-dev: clean-build install  ## Install development extra dependencies.
 	@echo "Installing development requirements..."
 	@poetry install -E "development"
 
@@ -84,12 +91,11 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 # --------- Run project Test -------------------------------
 # ----------------------------------------------------------
 tox:  ## Run tox test
-	@pip install "tox>=3.14,<4.0"
+	@pip install "tox>=3.14"
 	@tox
 
 clean-test-all: clean-build  ## Clean build and test assets.
-	@rm -rf .tox/
-	@rm db.*
+	@rm -rf .tox db.* .mypy_cache
 
 # ----------------------------------------------------------
 # ---------- Managment Commands ----------------------------
