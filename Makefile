@@ -74,7 +74,7 @@ view-docs: build-docs  ## Serve sphinx doc locally.
 # ----------------------------------------------------------
 increase-version: clean-build guard-PART  ## Bump the project version (using the $PART env: defaults to 'patch').
 	@echo "Increasing project '$(PART)' version..."
-	@poetry up
+	@poetry update
 	@poetry version $(PART)
 
 # ----------------------------------------------------------
