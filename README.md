@@ -3,6 +3,8 @@
 [![Documentation Status](https://readthedocs.org/projects/django-model-subscription/badge/?version=latest)](https://django-model-subscription.readthedocs.io/en/latest/?badge=latest)
 [![PyPI - License](https://img.shields.io/pypi/l/django-model-subscription.svg)](https://github.com/jackton1/django-model-subscription/blob/master/LICENSE)
 
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/tj-django/django-model-subscription/alerts/)
+[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/tj-django/django-model-subscription/context:python)
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-model-subscription.svg)](https://pypi.org/project/django-model-subscription)
 [![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-model-subscription.svg)](https://docs.djangoproject.com/en/2.2/releases/)
 [![Downloads](https://pepy.tech/badge/django-model-subscription)](https://pepy.tech/project/django-model-subscription)

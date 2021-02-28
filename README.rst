@@ -21,6 +21,16 @@
 
 
 
+.. image:: https://img.shields.io/lgtm/alerts/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/tj-django/django-model-subscription/alerts/
+   :alt: Total alerts
+
+
+.. image:: https://img.shields.io/lgtm/grade/python/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18
+   :target: https://lgtm.com/projects/g/tj-django/django-model-subscription/context:python
+   :alt: Language grade
+
+
 .. image:: https://img.shields.io/pypi/pyversions/django-model-subscription.svg
    :target: https://pypi.org/project/django-model-subscription
    :alt: PyPI - Python Version
