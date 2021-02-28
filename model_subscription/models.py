@@ -29,7 +29,7 @@ class SubscriptionQuerySet(QuerySet):  # type: ignore
         return deleted, rows
 
 
-class SubscriptionModel(SubscriptionModelMixin, models.Model):
+class SubscriptionModel(SubscriptionModelMixin, models.Model):  # lgtm [py/conflicting-attributes]
     objects = SubscriptionQuerySet.as_manager()
 
     class Meta:
