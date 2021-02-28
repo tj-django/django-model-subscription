@@ -52,8 +52,6 @@ jobs:
           keys:
             - v1-dependencies-{{ checksum "poetry.lock" }}
             - v1-dependencies-{{ checksum "tox.ini" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
       - run:
           name: install dependencies
           command: |
