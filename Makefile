@@ -91,12 +91,11 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 # --------- Run project Test -------------------------------
 # ----------------------------------------------------------
 tox:  ## Run tox test
-	@pip install "tox>=3.14,<4.0"
+	@pip install "tox>=3.14"
 	@tox
 
 clean-test-all: clean-build  ## Clean build and test assets.
-	@rm -rf .tox/
-	@rm db.*
+	@rm -rf .tox db.* .mypy_cache
 
 # ----------------------------------------------------------
 # ---------- Managment Commands ----------------------------
