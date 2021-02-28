@@ -11,7 +11,6 @@ DOCS_DIR 		:= ./docs
 DOC_SOURCE_DIR 	:= source
 DOC_BUILD_DIR 	:= build
 DOC_SERVE_PORT	:= 8080
-PACKAGE_VERSION = $(shell $(PYTHON) setup.py --version)
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -27,34 +26,26 @@ guard-%: ## Checks that env var is set else exits with non 0 mainly used in CI;
 # --------------------------------------------------------
 
 update-requirements:  ## Update requirements.txt file
-	@pip install dephell
-	@dephell deps convert --envs main
-	@dephell deps convert --to requirements-dev.txt --envs dev
-	@dephell deps convert --to setup.py --envs main dev
-	@pip uninstall -y dephell
+	@poetry export -f requirements.txt --output requirements.txt
+	@poetry export --dev -f requirements.txt --output requirements-dev.txt
 
 clean-build: ## Clean project build artifacts.
 	@echo "Removing build assets..."
-	@$(PYTHON) setup.py clean
-	@rm -rf build/
-	@rm -rf dist/
-	@rm -rf *.egg-info
+	@rm -rf build dist *.egg-info
 
 install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@pip install -U pip setuptools
-	@pip install poetry==1.0.10
+	@pip install poetry==1.1.4
 	@poetry install -vvv
+	@poetry update
 
 install-dev: clean-build install  ## Install development extra dependencies.
 	@echo "Installing development requirements..."
 	@poetry install -E "development"
 
 tag-build:
-	@git tag v$(PACKAGE_VERSION)
-
-poetry-setup:
-	@poetry-setup
+	@git tag v$(shell cat pyproject.toml | grep -E "^version" | sed 's/["= ]//g;s/version//g')
 
 release-to-pypi: increase-version tag-build  ## Release project to pypi
 	@poetry build
@@ -85,7 +76,6 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 	@echo "Increasing project '$(PART)' version..."
 	@poetry up
 	@poetry version $(PART)
-	@$(MAKE) poetry-setup
 
 # ----------------------------------------------------------
 # --------- Run project Test -------------------------------
