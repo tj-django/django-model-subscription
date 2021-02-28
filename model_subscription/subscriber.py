@@ -7,8 +7,13 @@ from django.utils.module_loading import autodiscover_modules
 
 from model_subscription.constants import OperationType
 from model_subscription.observers import (
-    Observer, CreateObserver, UpdateObserver, DeleteObserver,
-    BulkCreateObserver, BulkUpdateObserver, BulkDeleteObserver
+    Observer,
+    CreateObserver,
+    UpdateObserver,
+    DeleteObserver,
+    BulkCreateObserver,
+    BulkUpdateObserver,
+    BulkDeleteObserver,
 )
 
 
