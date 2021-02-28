@@ -76,7 +76,7 @@ setup(
             "lockfile==0.*,>=0.12.2",
             'mypy==0.*,>=0.720.0; python_version == "3.*" and python_version >= "3.6.0"',
             'mysqlclient==1.4.4; python_version == "3.*" and python_version >= "3.6.0"',
-            "poetry==1.1.0",
+            "poetry==1.1.4",
             'psycopg2==2.7.3.1; python_version == "2.7.*" or python_version == "3.4.*" or python_version == "3.5.*" or python_version == "3.6.*" or python_version == "3.7.*"',
             "recommonmark==0.*,>=0.6.0",
             "sphinx==1.8.5",
