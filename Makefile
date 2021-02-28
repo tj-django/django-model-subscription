@@ -26,6 +26,7 @@ guard-%: ## Checks that env var is set else exits with non 0 mainly used in CI;
 # --------------------------------------------------------
 
 update-requirements:  ## Update requirements.txt file
+	@poetry update
 	@poetry export --without-hashes -f requirements.txt --output requirements.txt
 	@poetry export --without-hashes --dev -f requirements.txt --output requirements-dev.txt
 
