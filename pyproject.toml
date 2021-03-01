@@ -68,7 +68,7 @@ check-manifest = {version = "^0.40.0", python = "^3.6"}
 bump2version = {version = "^1.0.0", python = "^3.6"}
 git-changelog = {version = "^0.1.0", python = "^3.6"}
 poetry = "=1.1.4"
-sphinx = "=1.8.5"
+sphinx = "=3.5.1"
 sphinx-autobuild = "^0.7.1"
 sphinx_rtd_theme = "^0.4.3"
 lockfile = "^0.12.2"
