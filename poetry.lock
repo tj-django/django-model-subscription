@@ -241,7 +241,7 @@ python-versions = "*"
 
 [[package]]
 name = "git-changelog"
-version = "0.1.0"
+version = "0.4.2"
 description = "Automatic Changelog generator using Jinja2 templates."
 category = "dev"
 optional = false
@@ -938,7 +938,7 @@ development = []
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
-content-hash = "9757576b1646fe8df9b5d9e5b23fa2a7cf84ca840ed4e1192013eeb81bc6fdec"
+content-hash = "94dce6a78440afd95c464bc890c6e3987a91dce55f9b8b88e36e1fd0a84e7156"
 
 [metadata.files]
 alabaster = [
@@ -1074,8 +1074,8 @@ filelock = [
     {file = "filelock-3.0.12.tar.gz", hash = "sha256:18d82244ee114f543149c66a6e0c14e9c4f8a1044b5cdaadd0f82159d6a6ff59"},
 ]
 git-changelog = [
-    {file = "git-changelog-0.1.0.tar.gz", hash = "sha256:d7362594ec609f2c2fc2c3cd4bb862f2cf3dbb39b359481973962cbd56875b45"},
-    {file = "git_changelog-0.1.0-py3-none-any.whl", hash = "sha256:213f930dc2801d598202a28300a9593366aa212a8530811fa9d2f668a3522080"},
+    {file = "git-changelog-0.4.2.tar.gz", hash = "sha256:e3fe1938e519dafd083957fa61350868e99f2f84eed9e7e543d0a7dc2b4c8b85"},
+    {file = "git_changelog-0.4.2-py3-none-any.whl", hash = "sha256:d95f540ac0af332d2e59b50f67a60b33280ac7d87859ad4e85972685061f1f53"},
 ]
 html5lib = [
     {file = "html5lib-1.1-py2.py3-none-any.whl", hash = "sha256:0d78f8fde1c230e99fe37986a60526d7049ed4bf8a9fadbad5f00e22e58e041d"},
