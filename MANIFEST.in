@@ -1,0 +1,38 @@
+recursive-include model_subscription *.py
+include LICENSE
+include README.rst
+include README.md
+include *.rst
+
+recursive-exclude demo *.py
+recursive-exclude demo/migrations *.py
+recursive-exclude django_model_subscription *.py
+prune model_subscription/tests.py
+prune docs
+prune .github
+prune .circleci
+global-exclude __pycache__
+global-exclude *.py[co]
+exclude *.example
+exclude *.json
+exclude .yamllint
+exclude *.png
+exclude *.egg-info
+exclude *.py
+exclude *.txt
+exclude .bumpversion.cfg
+exclude .coveragerc
+exclude Makefile
+exclude tox.ini
+exclude .tox
+exclude mypy.ini
+exclude *.json
+exclude *.lock
+exclude *.png
+exclude *.yml
+exclude AUTHORS
+exclude Makefile
+exclude SPECS
+exclude .all-contributorsrc
+exclude .pypirc
+exclude .envrc-example

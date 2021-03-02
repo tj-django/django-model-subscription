@@ -9,12 +9,10 @@ class SubscriptionQuerySet(QuerySet):  # type: ignore
     def bulk_create(self, *args, **kwargs):
         objs = super(SubscriptionQuerySet, self).bulk_create(*args, **kwargs)
         connection = connections[self.db]
-        can_notify_bulk_create_subscribers = (
-            getattr(
-                settings,
-                'NOTIFY_BULK_CREATE_SUBSCRIBERS_WITHOUT_PKS',
-                connection.features.can_return_ids_from_bulk_insert,
-            )
+        can_notify_bulk_create_subscribers = getattr(
+            settings,
+            "NOTIFY_BULK_CREATE_SUBSCRIBERS_WITHOUT_PKS",
+            connection.features.can_return_ids_from_bulk_insert,
         )
         if can_notify_bulk_create_subscribers:
             self.model.notify_bulk_create(objs)
@@ -31,7 +29,9 @@ class SubscriptionQuerySet(QuerySet):  # type: ignore
         return deleted, rows
 
 
-class SubscriptionModel(SubscriptionModelMixin, models.Model):
+class SubscriptionModel(  # lgtm [py/conflicting-attributes]
+    SubscriptionModelMixin, models.Model
+):
     objects = SubscriptionQuerySet.as_manager()
 
     class Meta:

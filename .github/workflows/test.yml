@@ -6,13 +6,16 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.6, 3.7, 3.8, 3.9]
     
     services:
       postgres:
-        image: postgres:10.8
+        image: postgres:10.16
         env:
           POSTGRES_USER: test_user
-          POSTGRES_PASSWORD: ''
+          POSTGRES_PASSWORD: test_user_password
           POSTGRES_DB: test
         ports:
         - 5432:5432
@@ -20,14 +23,28 @@ jobs:
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     
     steps:
-    - uses: actions/checkout@v1
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
       with:
-        python-version: 3.7
+        python-version: ${{ matrix.python-version }}
+    
+    - name: Pip cache
+      uses: actions/cache@v2
+      id: pip-cache
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip
+
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip setuptools
+        sudo apt-get install -y --no-install-recommends libpq-dev
+
     - name: Test with tox
       run: |
-        sudo apt-get install -y --no-install-recommends libpq-dev
         make tox
       env:
         # use postgres for the host here because we have specified a container for the job.
@@ -35,4 +52,5 @@ jobs:
         POSTGRES_HOST: postgres
         POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
         PG_USER: test_user
+        PG_PASSWORD: test_user_password
         PG_DB: test

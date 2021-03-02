@@ -1,0 +1,56 @@
+name: Sync Requirments
+
+on:
+  push:
+    paths:
+      - 'pyproject.toml'
+      - 'poetry.lock'
+  pull_request:
+    paths:
+      - 'pyproject.toml'
+      - 'poetry.lock'
+
+jobs:
+  sync-requirements:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # otherwise, you will failed to push refs to dest repo
+          persist-credentials: false  # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+      - uses: actions/cache@v2
+        id: pip-cache
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+      - name: Install Dependencies
+        run: |
+          make install-dev
+      - name: Generate python dependency changes
+        run: |
+          make update-requirements
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v5.5
+        id: changed_files
+        with:
+          files: |
+            requirements.txt
+            requirements-dev.txt
+      - name: Commit files
+        if: steps.changed_files.outputs.files_changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add requirements-dev.txt requirements.txt
+          git commit -m "Synced dependency changes."
+      - name: Push changes
+        if: steps.changed_files.outputs.files_changed == 'true'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.PAT_TOKEN }}
+          branch: ${{ github.head_ref }}

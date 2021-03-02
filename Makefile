@@ -11,7 +11,6 @@ DOCS_DIR 		:= ./docs
 DOC_SOURCE_DIR 	:= source
 DOC_BUILD_DIR 	:= build
 DOC_SERVE_PORT	:= 8080
-PACKAGE_VERSION = $(shell $(PYTHON) setup.py --version)
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -26,27 +25,27 @@ guard-%: ## Checks that env var is set else exits with non 0 mainly used in CI;
 # ------- Python package (pip) management commands -------
 # --------------------------------------------------------
 
+update-requirements:  ## Update requirements.txt file
+	@poetry export --without-hashes -f requirements.txt --output requirements.txt
+	@poetry export --without-hashes --dev -f requirements.txt --output requirements-dev.txt
+
 clean-build: ## Clean project build artifacts.
 	@echo "Removing build assets..."
-	@$(PYTHON) setup.py clean
-	@rm -rf build/
-	@rm -rf dist/
-	@rm -rf *.egg-info
+	@rm -rf build dist *.egg-info
 
 install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
-	@pip install poetry==0.12.17
+	@pip install -U pip setuptools
+	@pip install poetry==1.1.4
 	@poetry install -vvv
+	@poetry update
 
-install-dev: clean-build  ## Install development extra dependencies.
+install-dev: clean-build install  ## Install development extra dependencies.
 	@echo "Installing development requirements..."
 	@poetry install -E "development"
 
 tag-build:
-	@git tag v$(PACKAGE_VERSION)
-
-poetry-setup:
-	@poetry-setup
+	@git tag v$(shell cat pyproject.toml | grep -E "^version" | sed 's/["= ]//g;s/version//g')
 
 release-to-pypi: increase-version tag-build  ## Release project to pypi
 	@poetry build
@@ -75,20 +74,18 @@ view-docs: build-docs  ## Serve sphinx doc locally.
 # ----------------------------------------------------------
 increase-version: clean-build guard-PART  ## Bump the project version (using the $PART env: defaults to 'patch').
 	@echo "Increasing project '$(PART)' version..."
-	@poetry up
+	@poetry update
 	@poetry version $(PART)
-	@$(MAKE) poetry-setup
 
 # ----------------------------------------------------------
 # --------- Run project Test -------------------------------
 # ----------------------------------------------------------
 tox:  ## Run tox test
-	@pip install "tox>=3.14,<4.0"
+	@pip install "tox>=3.14"
 	@tox
 
 clean-test-all: clean-build  ## Clean build and test assets.
-	@rm -rf .tox/
-	@rm db.*
+	@rm -rf .tox db.* .mypy_cache
 
 # ----------------------------------------------------------
 # ---------- Managment Commands ----------------------------

@@ -14,7 +14,9 @@ class Observer(ABC):
 
     def __init__(self):
         self.lock = threading.Lock()
-        self._receivers = []  # type: List[Tuple[int, Callable[[models.Model, Dict], NoReturn]]]
+        self._receivers = (
+            []
+        )  # type: List[Tuple[int, Callable[[models.Model, Dict], NoReturn]]]
 
     @property
     @abstractmethod

@@ -1,0 +1,25 @@
+name: Github pages
+
+# execute this workflow automatically when a we push to master
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+
+  build_docs_job:
+    runs-on: ubuntu-latest
+    container: debian:buster-slim
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Update permission
+      run: |
+        chmod +x docs/buildDocs.sh
+    - name: Execute script to build our documentation and update pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: "docs/buildDocs.sh"
+      shell: bash
