@@ -26,6 +26,26 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 pytz = ">=2015.7"
 
 [[package]]
+name = "build"
+version = "0.3.0"
+description = "A simple, correct PEP517 package builder"
+category = "dev"
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
+
+[package.dependencies]
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
+packaging = "*"
+pep517 = ">=0.9"
+toml = "*"
+
+[package.extras]
+docs = ["furo (>=2020.11.19b18)", "sphinx (>=3.0,<4.0)", "sphinx-argparse-cli (>=1.5)", "sphinx-autodoc-typehints (>=1.10)"]
+test = ["filelock (>=3)", "pytest (>=4)", "pytest-cov (>=2)", "pytest-mock (>=2)", "pytest-xdist (>=1.34)"]
+typing = ["mypy (==0.800)", "typing-extensions (>=3.7.4.3)"]
+virtualenv = ["virtualenv (>=20.0.35)"]
+
+[[package]]
 name = "bump2version"
 version = "1.0.1"
 description = "Version-bump your software with a single command!"
@@ -92,17 +112,18 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "check-manifest"
-version = "0.40"
+version = "0.46"
 description = "Check MANIFEST.in in a Python source package for completeness"
 category = "dev"
 optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+python-versions = ">=3.6"
 
 [package.dependencies]
+build = ">=0.1"
 toml = "*"
 
 [package.extras]
-test = ["mock"]
+test = ["mock (>=3.0.0)", "pytest"]
 
 [[package]]
 name = "cleo"
@@ -443,6 +464,19 @@ description = "Bring colors to your terminal."
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "pep517"
+version = "0.9.1"
+description = "Wrappers to build Python packages using PEP 517 hooks"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+importlib_metadata = {version = "*", markers = "python_version < \"3.8\""}
+toml = "*"
+zipp = {version = "*", markers = "python_version < \"3.8\""}
 
 [[package]]
 name = "pexpect"
@@ -938,7 +972,7 @@ development = []
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
-content-hash = "fb3f117ce66d2d9504a902486dc58c255fb52eb2e88a7b886c39364c5031f2ec"
+content-hash = "1c29b363df9042d4bd08b557e07a5f3379510f57e425b57d0a487a7ff47aabc3"
 
 [metadata.files]
 alabaster = [
@@ -952,6 +986,10 @@ appdirs = [
 babel = [
     {file = "Babel-2.9.0-py2.py3-none-any.whl", hash = "sha256:9d35c22fcc79893c3ecc85ac4a56cde1ecf3f19c540bba0922308a6c06ca6fa5"},
     {file = "Babel-2.9.0.tar.gz", hash = "sha256:da031ab54472314f210b0adcff1588ee5d1d1d0ba4dbd07b94dba82bde791e05"},
+]
+build = [
+    {file = "build-0.3.0-py2.py3-none-any.whl", hash = "sha256:75bc5676b1a014fb996dc96914428b197d174364392a46778200d5e115ffe76c"},
+    {file = "build-0.3.0.tar.gz", hash = "sha256:0eb95b2c8d770d7c4c9b92c68c227c350bbf65f3ec83551ace9097c18cc15fdd"},
 ]
 bump2version = [
     {file = "bump2version-1.0.1-py2.py3-none-any.whl", hash = "sha256:37f927ea17cde7ae2d7baf832f8e80ce3777624554a653006c9144f8017fe410"},
@@ -1013,8 +1051,8 @@ chardet = [
     {file = "chardet-4.0.0.tar.gz", hash = "sha256:0d6f53a15db4120f2b08c94f11e7d93d2c911ee118b6b30a04ec3ee8310179fa"},
 ]
 check-manifest = [
-    {file = "check-manifest-0.40.tar.gz", hash = "sha256:42de6eaab4ed149e60c9b367ada54f01a3b1e4d6846784f9b9710e770ff5572c"},
-    {file = "check_manifest-0.40-py2.py3-none-any.whl", hash = "sha256:78dd077f2c70dbac7cfcc9d12cbd423914e787ea4b5631de45aecd25b524e8e3"},
+    {file = "check-manifest-0.46.tar.gz", hash = "sha256:5895e42a012989bdc51854a02c82c8d6898112a4ab11f2d7878200520b49d428"},
+    {file = "check_manifest-0.46-py3-none-any.whl", hash = "sha256:b59b0e7c7ed3946537677c9ab9b2c2cb7be9b1807fd40bc4dfc1eef31d42cff5"},
 ]
 cleo = [
     {file = "cleo-0.8.1-py2.py3-none-any.whl", hash = "sha256:141cda6dc94a92343be626bb87a0b6c86ae291dfc732a57bf04310d4b4201753"},
@@ -1229,6 +1267,10 @@ packaging = [
 pastel = [
     {file = "pastel-0.2.1-py2.py3-none-any.whl", hash = "sha256:4349225fcdf6c2bb34d483e523475de5bb04a5c10ef711263452cb37d7dd4364"},
     {file = "pastel-0.2.1.tar.gz", hash = "sha256:e6581ac04e973cac858828c6202c1e1e81fee1dc7de7683f3e1ffe0bfd8a573d"},
+]
+pep517 = [
+    {file = "pep517-0.9.1-py2.py3-none-any.whl", hash = "sha256:3985b91ebf576883efe5fa501f42a16de2607684f3797ddba7202b71b7d0da51"},
+    {file = "pep517-0.9.1.tar.gz", hash = "sha256:aeb78601f2d1aa461960b43add204cc7955667687fbcf9cdb5170f00556f117f"},
 ]
 pexpect = [
     {file = "pexpect-4.8.0-py2.py3-none-any.whl", hash = "sha256:0b48a55dcb3c05f3329815901ea4fc1537514d6ba867a152b581d69ae3710937"},
