@@ -6,4 +6,3 @@
 - pydocstyle
 - pyflakes
 - bandit
-- isort
