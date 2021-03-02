@@ -419,7 +419,7 @@ python-versions = "*"
 
 [[package]]
 name = "mysqlclient"
-version = "1.4.4"
+version = "1.4.6"
 description = "Python interface to MySQL"
 category = "dev"
 optional = false
@@ -938,7 +938,7 @@ development = []
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
-content-hash = "9757576b1646fe8df9b5d9e5b23fa2a7cf84ca840ed4e1192013eeb81bc6fdec"
+content-hash = "8f68677a5ca5678e20c72e4d2d58fb28d0064a066eef41ecdb1f52cc456f43ac"
 
 [metadata.files]
 alabaster = [
@@ -1218,9 +1218,10 @@ mypy-extensions = [
     {file = "mypy_extensions-0.4.3.tar.gz", hash = "sha256:2d82818f5bb3e369420cb3c4060a7970edba416647068eb4c5343488a6c604a8"},
 ]
 mysqlclient = [
-    {file = "mysqlclient-1.4.4-cp36-cp36m-win_amd64.whl", hash = "sha256:8c3b61d89f7daaeab6aad6bf4c4bc3ef30bec1a8169f94dc59aea87ba2fabf80"},
-    {file = "mysqlclient-1.4.4-cp37-cp37m-win_amd64.whl", hash = "sha256:79a498ddda955e488f80c82a6392bf6e07c323d48db236033f33825665d8ba5c"},
-    {file = "mysqlclient-1.4.4.tar.gz", hash = "sha256:9c737cc55a5dc8dd3583a942d5a9b21be58d16f00f5fefca4e575e7d9682e98c"},
+    {file = "mysqlclient-1.4.6-cp36-cp36m-win_amd64.whl", hash = "sha256:4c82187dd6ab3607150fbb1fa5ef4643118f3da122b8ba31c3149ddd9cf0cb39"},
+    {file = "mysqlclient-1.4.6-cp37-cp37m-win_amd64.whl", hash = "sha256:9e6080a7aee4cc6a06b58b59239f20f1d259c1d2fddf68ddeed242d2311c7087"},
+    {file = "mysqlclient-1.4.6-cp38-cp38-win_amd64.whl", hash = "sha256:f646f8d17d02be0872291f258cce3813497bc7888cd4712a577fd1e719b2f213"},
+    {file = "mysqlclient-1.4.6.tar.gz", hash = "sha256:f3fdaa9a38752a3b214a6fe79d7cae3653731a53e577821f9187e67cbecb2e16"},
 ]
 packaging = [
     {file = "packaging-20.9-py2.py3-none-any.whl", hash = "sha256:67714da7f7bc052e064859c05c595155bd1ee9f69f76557e21f051443c20947a"},
