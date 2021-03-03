@@ -1,6 +1,5 @@
 name: Github pages
 
-# execute this workflow automatically when a we push to master
 on:
   release:
     types: [published]
