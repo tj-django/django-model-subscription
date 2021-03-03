@@ -84,7 +84,6 @@ class BulkUpdateObserver(BulkObserverMixin, Observer):
 
 
 class BulkDeleteObserver(BulkObserverMixin, Observer):
-    # tyoe:
     action = OperationType.BULK_DELETE
 
 
