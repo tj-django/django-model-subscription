@@ -57,7 +57,7 @@ INSTALLED_APPS = [
 
 ### Usage
 
-#### Using the `SubscriptionModelMixin` and `SubscriptionQuerySet`
+##### Using the `SubscriptionModelMixin` and `SubscriptionQuerySet`
 
 ```py
 from model_subscription.mixin import SubscriptionModelMixin
@@ -70,7 +70,7 @@ class TestModel(SubscriptionModelMixin, models.Model):
     objects = SubscriptionQuerySet.as_manager()
 ```
 
-#### Subclassing the `SubscriptionModel` base class.
+##### Subclassing the `SubscriptionModel` base class.
 
 ```py
 from model_subscription.model import SubscriptionModel
