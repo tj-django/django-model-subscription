@@ -20,7 +20,7 @@ class ModelSubscriptionTestCase(TestCase):
     def setUpTestData(cls):
         cls.TestModel = cls.get_model("TestModel")
 
-    def test_create_trigger_subscription(self):
+    def test_create_triggers_subscription(self):
         name = "test"
         with self.assertLogs(log, level=logging.DEBUG) as cm:
             self.TestModel.objects.create(name=name)
