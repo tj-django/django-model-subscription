@@ -57,6 +57,31 @@ INSTALLED_APPS = [
 
 ### Usage
 
+#### Using the `SubscriptionModelMixin` and `SubscriptionQuerySet`
+
+```py
+from model_subscription.mixin import SubscriptionModelMixin
+from model_subscription.model import SubscriptionQuerySet
+
+
+class TestModel(SubscriptionModelMixin, models.Model):
+    name = models.CharField(max_length=255)
+    
+    objects = SubscriptionQuerySet.as_manager()
+```
+
+#### Subclassing the `SubscriptionModel` base class.
+
+```py
+from model_subscription.model import SubscriptionModel
+
+
+class TestModel(SubscriptionModel):
+    name = models.CharField(max_length=255)
+
+```
+
+
 #### Creating subscribers.
 
 - Using `OperationType`
