@@ -35,7 +35,11 @@ clean-build: ## Clean project build artifacts.
 
 install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
-	@pip install -U pip setuptools
+	@pip install -U pip setuptools poetry
+ifeq "$(shell uname)" "Darwin"
+	@export LDFLAGS="-L/usr/local/opt/openssl/lib"
+	@export CPPFLAGS="-I/usr/local/opt/openssl/include"
+endif
 	@pip install poetry==1.1.4
 	@poetry install -vvv
 	@poetry update
