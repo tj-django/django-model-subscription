@@ -12,7 +12,7 @@ jobs:
     
     services:
       postgres:
-        image: postgres:10.16
+        image: postgres:latest
         env:
           POSTGRES_USER: test_user
           POSTGRES_PASSWORD: test_user_password
@@ -21,6 +21,17 @@ jobs:
         - 5432:5432
         # needed because the postgres container does not provide a healthcheck
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+      
+      mysql:
+        image: mysql:latest
+        ports:
+          - 3306:3306
+        env:
+          MYSQL_USER: test_user
+          MYSQL_PASSWORD: test_user_password
+          MYSQL_DATABASE: test
+          MYSQL_ROOT_PASSWORD: test_user_password
+        options: --health-cmd="mysqladmin ping" --health-interval=5s --health-timeout=2s --health-retries=3
     
     steps:
     - uses: actions/checkout@v2
@@ -54,4 +65,9 @@ jobs:
         PG_USER: test_user
         PG_PASSWORD: test_user_password
         PG_DB: test
+        MYSQL_ROOT_PASSWORD: test_user_password
+        MYSQL_DATABASE: test
+        MYSQL_USER: test_user
+        MYSQL_PASSWORD: test_user_password
         CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        
