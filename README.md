@@ -229,8 +229,12 @@ SUBSCRIPTION_AUTO_DISCOVER = True
 ```python
 
 SUBSCRIPTION_MODULE  = 'subscription' 
-
 ```
+
+Credits
+=======
+- [django-lifecycle](https://github.com/rsinger86/django-lifecycle)
+
 
 #### Resources
 - https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html
