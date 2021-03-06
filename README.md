@@ -17,9 +17,11 @@
 * [Motivation](#Motivation)
 * [Installation](#Installation)
 * [Usage](#Usage)
-* [Decorators](#Decorators)
-* [Setup Subscribers using AppConfig.ready](#setup-subscribers-using-appconfigready-recomended)
-* [Setup Subscribers with auto discovery](#setup-subscribers-using-auto-discovery)
+  * [Decorators](#Decorators)
+  * [Setup Subscribers using AppConfig.ready](#setup-subscribers-using-appconfigready-recomended)
+  * [Setup Subscribers with auto discovery](#setup-subscribers-using-auto-discovery)
+* [Credits](#credits)
+* [Resources](#resources)
 
 
 ### Motivation
@@ -231,8 +233,7 @@ SUBSCRIPTION_AUTO_DISCOVER = True
 SUBSCRIPTION_MODULE  = 'subscription' 
 ```
 
-Credits
-=======
+##### Credits
 - [django-lifecycle](https://github.com/rsinger86/django-lifecycle)
 
 
