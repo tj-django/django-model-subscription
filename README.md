@@ -233,7 +233,7 @@ SUBSCRIPTION_AUTO_DISCOVER = True
 SUBSCRIPTION_MODULE  = 'subscription' 
 ```
 
-##### Credits
+#### Credits
 - [django-lifecycle](https://github.com/rsinger86/django-lifecycle)
 
 
