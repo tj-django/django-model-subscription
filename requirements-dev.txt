@@ -27,7 +27,7 @@ html5lib==1.1; python_version >= "2.7" and python_full_version < "3.0.0" or pyth
 idna==2.10; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 imagesize==1.2.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 importlib-metadata==1.7.0; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.8" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") or python_full_version >= "3.5.0" and python_version < "3.8" and python_version >= "3.6" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0")
-importlib-resources==5.1.1; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.5.0" and python_version < "3.7" and python_version >= "3.6"
+importlib-resources==5.1.2; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.5.0" and python_version < "3.7" and python_version >= "3.6"
 jeepney==0.6.0; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux"
 jinja2==2.11.3; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.5.0"
 keyring==21.8.0; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0")
@@ -64,7 +64,7 @@ six==1.15.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (pyt
 snowballstemmer==2.1.0; python_version >= "3.6"
 sphinx-autobuild==2020.9.1; python_version >= "3.6"
 sphinx-rtd-theme==0.5.1
-sphinx==3.5.1; python_version >= "3.5"
+sphinx==3.5.2; python_version >= "3.5"
 sphinxcontrib-applehelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-devhelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-htmlhelp==1.0.3; python_version >= "3.6"
@@ -82,4 +82,4 @@ urllib3==1.26.3; python_version >= "2.7" and python_full_version < "3.0.0" or py
 urlman==1.4.0
 virtualenv==20.4.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 webencodings==0.5.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-zipp==3.4.0; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.5.0" and python_version < "3.7" and python_version >= "3.6"
+zipp==3.4.1; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.5.0" and python_version < "3.7" and python_version >= "3.6"
