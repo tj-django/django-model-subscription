@@ -1,11 +1,10 @@
 from django.conf import settings
 from django.db import models, connections
-from django.db.models import QuerySet
 
 from model_subscription.mixin import SubscriptionModelMixin
 
 
-class SubscriptionQuerySet(QuerySet):  # type: ignore
+class SubscriptionQuerySet(models.QuerySet):  # type: ignore
     def bulk_create(self, *args, **kwargs):
         objs = super(SubscriptionQuerySet, self).bulk_create(*args, **kwargs)
         connection = connections[self.db]
