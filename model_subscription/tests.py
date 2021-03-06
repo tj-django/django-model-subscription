@@ -213,11 +213,11 @@ class ModelSubscriptionPostgresTransactionTestCase(
 
 
 @override_settings(
-    SUBSCRIPTION_MODULE='subscription',
+    SUBSCRIPTION_MODULE="subscription",
     SUBSCRIPTION_AUTO_DISCOVER=False,
 )
 class ModelSubscriptionMysqlTransactionTestCase(
     ModelSubscriptionSqliteTransactionTestCase
 ):
-    db_alias = 'mysql'
+    db_alias = "mysql"
     databases = {"mysql"}
