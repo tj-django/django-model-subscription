@@ -54,3 +54,4 @@ jobs:
         PG_USER: test_user
         PG_PASSWORD: test_user_password
         PG_DB: test
+        CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
