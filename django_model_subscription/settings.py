@@ -83,14 +83,14 @@ DATABASES = {
         "HOST": "localhost",
         "PORT": "5432",
     },
-    'mysql': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv("MSQL_DB", "test_db"),
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'USER': os.getenv("MSQL_USER", "test_user"),
-        'PASSWORD': os.getenv("MSQL_PASSWORD", "passw0rd"),
-    }
+    "mysql": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": os.getenv("MSQL_DB", "test_db"),
+        "HOST": "localhost",
+        "PORT": "3306",
+        "USER": os.getenv("MSQL_USER", "test_user"),
+        "PASSWORD": os.getenv("MSQL_PASSWORD", "passw0rd"),
+    },
 }
 
 # Internationalization
