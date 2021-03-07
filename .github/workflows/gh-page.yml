@@ -6,22 +6,11 @@ on:
   push:
 
 jobs:
-
-  build_docs_job:
+  build:
     runs-on: ubuntu-latest
-    container: debian:buster-slim
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-        with:
-          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
-      - name: Build and Commit
-        uses: sphinx-notes/pages@master
-        with:
-          documentation_path: doc
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - uses: seanzhengw/sphinx-pages@master
+        id: sphinx-pages
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
+          create_readme: true
