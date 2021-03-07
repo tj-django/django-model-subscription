@@ -12,16 +12,36 @@ jobs:
     
     services:
       postgres:
-        image: postgres:10.16
+        image: postgres:latest
         env:
           POSTGRES_USER: test_user
           POSTGRES_PASSWORD: test_user_password
           POSTGRES_DB: test
         ports:
-        - 5432:5432
+          - 5432:5432
         # needed because the postgres container does not provide a healthcheck
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-    
+        options: >-
+          --health-cmd pg_isready
+          --health-interval=10s 
+          --health-timeout=5s
+          --health-retries=5
+
+      mysql:
+        image: bitnami/mysql:latest
+        env:
+          MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
+          MYSQL_USER: test_user
+          MYSQL_PASSWORD: test_user_password
+          MYSQL_DATABASE: test
+          MYSQL_ROOT_PASSWORD: test_user_password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping" 
+          --health-interval=10s 
+          --health-timeout=5s 
+          --health-retries=5
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
@@ -54,4 +74,8 @@ jobs:
         PG_USER: test_user
         PG_PASSWORD: test_user_password
         PG_DB: test
+        MYSQL_DB: test
+        MYSQL_USER: test_user
+        MYSQL_PASSWORD: test_user_password
         CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+        
