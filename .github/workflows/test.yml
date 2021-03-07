@@ -18,21 +18,30 @@ jobs:
           POSTGRES_PASSWORD: test_user_password
           POSTGRES_DB: test
         ports:
-        - 5432:5432
+          - 5432/tcp
         # needed because the postgres container does not provide a healthcheck
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-      
+        options: |
+          --health-cmd pg_isready
+          --health-interval=10s 
+          --health-timeout=5s
+          --health-retries=5
+
       mysql:
-        image: mysql:latest
-        ports:
-          - 3306:3306
+        image: bitnami/mysql:latest
         env:
+          MYSQL_AUTHENTICATION_PLUGIN: mysql_native_password
           MYSQL_USER: test_user
           MYSQL_PASSWORD: test_user_password
           MYSQL_DATABASE: test
           MYSQL_ROOT_PASSWORD: test_user_password
-        options: --health-cmd="mysqladmin ping" --health-interval 10s --health-timeout 5s --health-retries 5
-    
+        ports:
+          - 3306/tcp
+        options: |
+          --health-cmd="mysqladmin ping" 
+          --health-interval=10s 
+          --health-timeout=5s 
+          --health-retries=5
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
