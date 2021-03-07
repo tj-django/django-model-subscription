@@ -18,7 +18,7 @@ jobs:
           POSTGRES_PASSWORD: test_user_password
           POSTGRES_DB: test
         ports:
-          - 5432/tcp
+          - 5432:5432
         # needed because the postgres container does not provide a healthcheck
         options: >-
           --health-cmd pg_isready
@@ -35,7 +35,7 @@ jobs:
           MYSQL_DATABASE: test
           MYSQL_ROOT_PASSWORD: test_user_password
         ports:
-          - 3306/tcp
+          - 3306:3306
         options: >-
           --health-cmd="mysqladmin ping" 
           --health-interval=10s 
