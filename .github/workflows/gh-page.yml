@@ -4,8 +4,6 @@ on:
   release:
     types: [published]
   push:
-    tags:
-      - '*'
 
 jobs:
 
@@ -14,14 +12,16 @@ jobs:
     container: debian:buster-slim
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Update permission
-      run: |
-        chmod +x docs/buildDocs.sh
-    - name: Execute script to build our documentation and update pages
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: "docs/buildDocs.sh"
-      shell: bash
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+      - name: Build and Commit
+        uses: sphinx-notes/pages@master
+        with:
+          documentation_path: doc
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
