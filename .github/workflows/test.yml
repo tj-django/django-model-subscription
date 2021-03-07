@@ -75,7 +75,7 @@ jobs:
         PG_PASSWORD: test_user_password
         PG_DB: test
         MYSQL_DB: test
-        MYSQL_USER: root
+        MYSQL_USER: test_user
         MYSQL_PASSWORD: test_user_password
         CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
         
