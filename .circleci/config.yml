@@ -8,16 +8,14 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-#      - test-3.8
+      - test-3.9
+      - test-3.8
       - test-3.7
-# TODO: FIX ME
-#      - test-3.6
-#      - test-3.5
-#      - test-2.7
+      - test-3.6
 jobs:
-  test-3.8: &test-template
+  test-3.9: &test-template
     docker:
-      - image: circleci/python:3.8
+      - image: circleci/python:3.9
       - image: circleci/postgres:9.6-alpine
         environment:
           POSTGRES_USER: circleci
@@ -99,6 +97,23 @@ jobs:
       - store_artifacts:
           path: test-reports
           destination: test-reports
+  test-3.8:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.8
+      - image: circleci/postgres:9.6-alpine
+        environment:
+          POSTGRES_USER: circleci
+          POSTGRES_DB: circle_test
+          POSTGRES_PASSWORD: circle_password
+      - image: circleci/mysql:8.0.23
+        command: [--default-authentication-plugin=mysql_native_password]
+        environment:
+          MYSQL_ROOT_PASSWORD: rootpw
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: circleci
+          MYSQL_PASSWORD: passw0rd
+
   test-3.7:
     <<: *test-template
     docker:
@@ -120,38 +135,6 @@ jobs:
     <<: *test-template
     docker:
       - image: circleci/python:3.6
-      - image: circleci/postgres:9.6-alpine
-        environment:
-          POSTGRES_USER: circleci
-          POSTGRES_DB: circle_test
-          POSTGRES_PASSWORD: circle_password
-      - image: circleci/mysql:8.0.23
-        command: [--default-authentication-plugin=mysql_native_password]
-        environment:
-          MYSQL_ROOT_PASSWORD: rootpw
-          MYSQL_DATABASE: test_db
-          MYSQL_USER: circleci
-          MYSQL_PASSWORD: passw0rd
-  test-3.5:
-    <<: *test-template
-    docker:
-      - image: circleci/python:3.5
-      - image: circleci/postgres:9.6-alpine
-        environment:
-          POSTGRES_USER: circleci
-          POSTGRES_DB: circle_test
-          POSTGRES_PASSWORD: circle_password
-      - image: circleci/mysql:8.0.23
-        command: [--default-authentication-plugin=mysql_native_password]
-        environment:
-          MYSQL_ROOT_PASSWORD: rootpw
-          MYSQL_DATABASE: test_db
-          MYSQL_USER: circleci
-          MYSQL_PASSWORD: passw0rd
-  test-2.7:
-    <<: *test-template
-    docker:
-      - image: circleci/python:2.7
       - image: circleci/postgres:9.6-alpine
         environment:
           POSTGRES_USER: circleci
