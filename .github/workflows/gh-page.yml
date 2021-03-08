@@ -4,13 +4,24 @@ on:
   release:
     types: [published]
   push:
+    tags:
+      - '*'
 
 jobs:
-  build:
+
+  build_docs_job:
     runs-on: ubuntu-latest
+    container: debian:buster-slim
+
     steps:
-      - uses: seanzhengw/sphinx-pages@master
-        id: sphinx-pages
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          create_readme: true
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+    - name: Update permission
+      run: |
+        chmod +x docs/buildDocs.sh
+    - name: Execute script to build our documentation and update pages
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: "docs/buildDocs.sh"
+      shell: bash
