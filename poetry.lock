@@ -233,7 +233,7 @@ bcrypt = ["bcrypt"]
 
 [[package]]
 name = "django-lifecycle"
-version = "0.9.0"
+version = "0.9.1"
 description = "Declarative model lifecycle hooks."
 category = "main"
 optional = false
@@ -1114,7 +1114,7 @@ django = [
     {file = "Django-3.1.7.tar.gz", hash = "sha256:32ce792ee9b6a0cbbec340123e229ac9f765dff8c2a4ae9247a14b2ba3a365a7"},
 ]
 django-lifecycle = [
-    {file = "django-lifecycle-0.9.0.tar.gz", hash = "sha256:4a49e5375e2c043a1ca7237b38a68ff8521af9d6b2dd4954aed4bdd4a28f987c"},
+    {file = "django-lifecycle-0.9.1.tar.gz", hash = "sha256:d33eda0a9601f0f2ba83378ae76fddbffe41cb3c93f23f1b4a699dd4e132cde9"},
 ]
 django-stubs = [
     {file = "django-stubs-1.1.0.tar.gz", hash = "sha256:cd6a7333d518b9168f001b8a31c4ea89a91dea40a9dd1535c798635f69a5f80a"},
