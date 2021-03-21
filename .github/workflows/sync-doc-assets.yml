@@ -14,9 +14,10 @@ jobs:
           fetch-depth: 0
 
       - name: Copy CHANGELOG
-        run: |
-          pip install pandoc
-          pandoc -t markdown CHANGELOG.md -t rst -o docs/source/changelog.rst
+        uses: docker://pandoc/core:2.9
+        with:
+          args: -t markdown CHANGELOG.md -t rst --output=docs/source/changelog.rst
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
