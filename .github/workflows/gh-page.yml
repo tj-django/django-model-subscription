@@ -57,6 +57,8 @@ jobs:
 
           pushd "${docroot}" || exit
 
+          touch .nojekyll
+
           # don't bother maintaining history; just generate fresh
           git init
           git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
