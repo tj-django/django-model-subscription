@@ -39,7 +39,7 @@ jobs:
 
       - name: Generate docs
         run: |
-          make build-docs
+          poetry run make build-docs
 
       - name: Update gh-pages branch
         run: |
