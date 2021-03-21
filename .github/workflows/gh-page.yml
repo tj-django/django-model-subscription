@@ -17,7 +17,60 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: seanzhengw/sphinx-pages@master
+      - name: Set up Python 3.6
+        uses: actions/setup-python@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          create_readme: true
+          python-version: 3.6
+
+      - name: Pip cache
+        uses: actions/cache@v2
+        id: pip-cache
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip setuptools
+          sudo apt-get install -y --no-install-recommends python3-sphinx
+          make install-dev
+
+      - name: Generate docs
+        run: |
+          poetry run make build-docs
+
+      - name: Update gh-pages branch
+        run: |
+          export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
+
+          #######################
+          # Update GitHub Pages #
+          #######################
+
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
+          docroot=`mktemp -d`
+          rsync -av "docs/build/html/" "${docroot}/"
+
+          pushd "${docroot}" || exit
+
+          # don't bother maintaining history; just generate fresh
+          git init
+          git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git checkout -b gh-pages
+
+          git add .
+
+          # commit all the new files
+          msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
+          git commit -am "${msg}"
+
+          # overwrite the contents of the gh-pages branch on our github.com repo
+          git push deploy gh-pages --force
+
+          popd || exit # return to main repo sandbox root
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
