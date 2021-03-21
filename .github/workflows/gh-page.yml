@@ -34,6 +34,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip setuptools
+          sudo apt-get install -y --no-install-recommends python3-sphinx
           make install-dev
 
       - name: Generate docs
