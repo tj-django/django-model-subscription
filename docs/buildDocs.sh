@@ -17,6 +17,7 @@
 
 apt-get update
 apt-get -y install git rsync python3-sphinx python3-sphinx-rtd-theme python3-recommonmark
+make install
 
 #####################
 # DECLARE VARIABLES #
