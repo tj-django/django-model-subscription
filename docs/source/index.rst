@@ -17,6 +17,7 @@ Welcome to Django Model Subscription's documentation!
    subscription_model
    subscribers
    contents
+   changelog
 
 
 Indices and tables

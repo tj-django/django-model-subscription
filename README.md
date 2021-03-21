@@ -1,8 +1,9 @@
-[![CircleCI](https://circleci.com/gh/tj-django/django-model-subscription.svg?style=shield)](https://circleci.com/gh/tj-django/django-model-subscription)
 [![Actions Status](https://github.com/jackton1/django-model-subscription/workflows/django%20model%20subscription%20test./badge.svg)](https://github.com/jackton1/django-model-subscription/actions?query=workflow%3A"django+model+subscription+test.")
 [![Documentation Status](https://readthedocs.org/projects/django-model-subscription/badge/?version=latest)](https://django-model-subscription.readthedocs.io/en/latest/?badge=latest)
 
-[![PyPI](https://img.shields.io/pypi/v/django-model-subscription)](https://pypi.org/project/django-model-subscription/) [![Total alerts](https://img.shields.io/lgtm/alerts/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/tj-django/django-model-subscription/alerts/) [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/tj-django/django-model-subscription/context:python) [![PyPI - License](https://img.shields.io/pypi/l/django-model-subscription.svg)](https://github.com/jackton1/django-model-subscription/blob/master/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/django-model-subscription)](https://pypi.org/project/django-model-subscription/) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/353aa86af402423cbcd4e810bca664cc)](https://www.codacy.com/gh/tj-django/django-model-subscription/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-model-subscription&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/353aa86af402423cbcd4e810bca664cc)](https://www.codacy.com/gh/tj-django/django-model-subscription/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-model-subscription&utm_campaign=Badge_Coverage) 
+
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/tj-django/django-model-subscription/alerts/) [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/tj-django/django-model-subscription/context:python) [![PyPI - License](https://img.shields.io/pypi/l/django-model-subscription.svg)](https://github.com/jackton1/django-model-subscription/blob/master/LICENSE)
 
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-model-subscription.svg)](https://pypi.org/project/django-model-subscription)
 [![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-model-subscription.svg)](https://docs.djangoproject.com/en/2.2/releases/)
@@ -17,9 +18,11 @@
 * [Motivation](#Motivation)
 * [Installation](#Installation)
 * [Usage](#Usage)
-* [Decorators](#Decorators)
-* [Setup Subscribers using AppConfig.ready](#setup-subscribers-using-appconfigready-recomended)
-* [Setup Subscribers with auto discovery](#setup-subscribers-using-auto-discovery)
+  * [Decorators](#Decorators)
+  * [Setup Subscribers using AppConfig.ready](#setup-subscribers-using-appconfigready-recomended)
+  * [Setup Subscribers with auto discovery](#setup-subscribers-using-auto-discovery)
+* [Credits](#credits)
+* [Resources](#resources)
 
 
 ### Motivation
@@ -229,8 +232,11 @@ SUBSCRIPTION_AUTO_DISCOVER = True
 ```python
 
 SUBSCRIPTION_MODULE  = 'subscription' 
-
 ```
+
+#### Credits
+- [django-lifecycle](https://github.com/rsinger86/django-lifecycle)
+
 
 #### Resources
 - https://python-3-patterns-idioms-test.readthedocs.io/en/latest/Observer.html

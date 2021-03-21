@@ -16,7 +16,8 @@
 ###################
 
 apt-get update
-apt-get -y install git rsync python3-sphinx python3-sphinx-rtd-theme
+apt-get -y install git rsync python3-pip python3-sphinx python3-sphinx-rtd-theme python3-recommonmark
+make install
 
 #####################
 # DECLARE VARIABLES #
@@ -33,8 +34,7 @@ export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 
 # build our documentation with sphinx (see docs/conf.py)
 # * https://www.sphinx-doc.org/en/master/usage/quickstart.html#running-the-build
-make -C docs clean
-make -C docs html
+make build-docs
 
 #######################
 # Update GitHub Pages #
@@ -44,7 +44,7 @@ git config --global user.name "${GITHUB_ACTOR}"
 git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
 docroot=`mktemp -d`
-rsync -av "docs/_build/html/" "${docroot}/"
+rsync -av "docs/build/html/" "${docroot}/"
 
 pushd "${docroot}" || exit
 
