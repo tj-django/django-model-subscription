@@ -9,68 +9,67 @@ on:
 
 jobs:
 
-  build_docs_job:
+  build_docs:
     runs-on: ubuntu-latest
-    container: debian:buster-slim
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-    - name: Set up Python 3.6
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.6
+      - name: Set up Python 3.6
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
 
-    - name: Pip cache
-      uses: actions/cache@v2
-      id: pip-cache
-      with:
-        path: ~/.cache/pip
-        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
-        restore-keys: |
-          ${{ runner.os }}-pip
+      - name: Pip cache
+        uses: actions/cache@v2
+        id: pip-cache
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip
 
-    - name: Install dependencies
-      run: |
-        pip install --upgrade pip setuptools
-        pip install sphinx==3.5.1 sphinx-autobuild sphinx_rtd_theme
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip setuptools
+          pip install sphinx==3.5.1 sphinx-autobuild sphinx_rtd_theme
 
-    - name: Generate docs
-      run: |
-        make build-docs
+      - name: Generate docs
+        run: |
+          make build-docs
 
-    - name: Update gh-pages branch
-      run: |
-        export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
+      - name: Update gh-pages branch
+        run: |
+          export SOURCE_DATE_EPOCH=$(git log -1 --pretty=%ct)
 
-        #######################
-        # Update GitHub Pages #
-        #######################
+          #######################
+          # Update GitHub Pages #
+          #######################
 
-        git config --global user.name "${GITHUB_ACTOR}"
-        git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          git config --global user.name "${GITHUB_ACTOR}"
+          git config --global user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
-        docroot=`mktemp -d`
-        rsync -av "docs/build/html/" "${docroot}/"
+          docroot=`mktemp -d`
+          rsync -av "docs/build/html/" "${docroot}/"
 
-        pushd "${docroot}" || exit
+          pushd "${docroot}" || exit
 
-        # don't bother maintaining history; just generate fresh
-        git init
-        git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-        git checkout -b gh-pages
+          # don't bother maintaining history; just generate fresh
+          git init
+          git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git checkout -b gh-pages
 
-        git add .
+          git add .
 
-        # commit all the new files
-        msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
-        git commit -am "${msg}"
+          # commit all the new files
+          msg="Updating Docs for commit ${GITHUB_SHA} made on `date -d"@${SOURCE_DATE_EPOCH}" --iso-8601=seconds` from ${GITHUB_REF} by ${GITHUB_ACTOR}"
+          git commit -am "${msg}"
 
-        # overwrite the contents of the gh-pages branch on our github.com repo
-        git push deploy gh-pages --force
+          # overwrite the contents of the gh-pages branch on our github.com repo
+          git push deploy gh-pages --force
 
-        popd || exit # return to main repo sandbox root
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          popd || exit # return to main repo sandbox root
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
