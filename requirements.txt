@@ -1,6 +1,6 @@
-asgiref==3.3.1; python_version >= "3.6"
+asgiref==3.3.2; python_version >= "3.6"
 django-lifecycle==0.9.1
-django==3.1.7; python_version >= "3.6"
+django==3.1.8; python_version >= "3.6"
 pytz==2021.1; python_version >= "3.6"
 six==1.15.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.3.0")
 sqlparse==0.4.1; python_version >= "3.6"
