@@ -1,6 +1,6 @@
 alabaster==0.7.12; python_version >= "3.6"
 appdirs==1.4.4; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-asgiref==3.3.3; python_version >= "3.6"
+asgiref==3.3.4; python_version >= "3.6"
 babel==2.9.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 build==0.3.1.post1; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.5.0"
 bump2version==1.0.1; python_version >= "3.6" and python_version < "4.0"
