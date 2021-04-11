@@ -44,7 +44,7 @@ pep517==0.10.0; python_version >= "3.6" and python_full_version < "3.0.0" and py
 pexpect==4.8.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pkginfo==1.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pluggy==0.13.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-poetry-core==1.0.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+poetry-core==1.0.3; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 poetry==1.1.5; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 psycopg2==2.8.6; python_version >= "3.6.0" and python_version < "3.10.0"
 ptyprocess==0.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
@@ -64,7 +64,7 @@ six==1.15.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (pyt
 snowballstemmer==2.1.0; python_version >= "3.6"
 sphinx-autobuild==2021.3.14; python_version >= "3.6"
 sphinx-rtd-theme==0.5.2
-sphinx==3.5.3; python_version >= "3.5"
+sphinx==3.5.4; python_version >= "3.5"
 sphinxcontrib-applehelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-devhelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-htmlhelp==1.0.3; python_version >= "3.6"
