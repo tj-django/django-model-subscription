@@ -1,7 +1,7 @@
 [![Actions Status](https://github.com/jackton1/django-model-subscription/workflows/django%20model%20subscription%20test./badge.svg)](https://github.com/jackton1/django-model-subscription/actions?query=workflow%3A"django+model+subscription+test.")
 [![Documentation Status](https://readthedocs.org/projects/django-model-subscription/badge/?version=latest)](https://django-model-subscription.readthedocs.io/en/latest/?badge=latest)
 
-[![PyPI](https://img.shields.io/pypi/v/django-model-subscription)](https://pypi.org/project/django-model-subscription/) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/353aa86af402423cbcd4e810bca664cc)](https://www.codacy.com/gh/tj-django/django-model-subscription/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-model-subscription&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/353aa86af402423cbcd4e810bca664cc)](https://www.codacy.com/gh/tj-django/django-model-subscription/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-model-subscription&utm_campaign=Badge_Coverage) 
+[![PyPI](https://img.shields.io/pypi/v/django-model-subscription)](https://pypi.org/project/django-model-subscription/) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/353aa86af402423cbcd4e810bca664cc)](https://www.codacy.com/gh/tj-django/django-model-subscription/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-model-subscription&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/353aa86af402423cbcd4e810bca664cc)](https://www.codacy.com/gh/tj-django/django-model-subscription/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-model-subscription&utm_campaign=Badge_Coverage)
 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/tj-django/django-model-subscription/alerts/) [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/tj-django/django-model-subscription.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/tj-django/django-model-subscription/context:python) [![PyPI - License](https://img.shields.io/pypi/l/django-model-subscription.svg)](https://github.com/jackton1/django-model-subscription/blob/master/LICENSE)
 
@@ -30,10 +30,10 @@
 - Using Observer Pattern notify subscribers about changes to a django model.
 - Decouple Business logic from Models.save
 - Support for bulk actions (Not available using django signals.)
-- Use noop subscribers when `settings.SUBSCRIPTION_RUN_EXTERNAL` is `False` 
-  which prevents having to mock subscribers that call external services in testing, local development 
+- Use noop subscribers when `settings.SUBSCRIPTION_RUN_EXTERNAL` is `False`
+  which prevents having to mock subscribers that call external services in testing, local development
   environments.
-- Show changes to the instance after it has been updated i.e diff's the initial state and the 
+- Show changes to the instance after it has been updated i.e diff's the initial state and the
 current state.
 
 ![Screenshot](Subscriber.png)
@@ -56,8 +56,6 @@ INSTALLED_APPS = [
 ```
 
 
-
-
 ### Usage
 
 ##### Using the `SubscriptionModelMixin` and `SubscriptionQuerySet`
@@ -69,7 +67,7 @@ from model_subscription.model import SubscriptionQuerySet
 
 class TestModel(SubscriptionModelMixin, models.Model):
     name = models.CharField(max_length=255)
-    
+
     objects = SubscriptionQuerySet.as_manager()
 ```
 
@@ -125,7 +123,7 @@ def handle_create(instance):
 * `subscribe`: Explicit (Requires a valid OperationType).
 
 
-#### (Create, Update, Delete) operations. 
+#### (Create, Update, Delete) operations.
 
 * `create_subscription`: Subscribes to create operation i.e a new instance.
 
@@ -143,7 +141,7 @@ def handle_update(instance, changed_data):
 ```
 
 
-* `delete_subscription`: Subscribes to delete operation: 
+* `delete_subscription`: Subscribes to delete operation:
 
 > NOTE: The instance.pk is already set to None.
 
@@ -153,7 +151,7 @@ def handle_delete(instance):
     log.debug('Deleted {}'.format(instance.name))
 ```
 
-#### (Bulk Create, Bulk Update, Bulk Delete) operations. 
+#### (Bulk Create, Bulk Update, Bulk Delete) operations.
 
 * `bulk_create_subscription`: Subscribe to bulk create operations.
 
@@ -189,7 +187,7 @@ def handle_bulk_delete(instances):
 ```
 
 
-### Setup Subscribers using AppConfig.ready `(Recomended)`. 
+### Setup Subscribers using AppConfig.ready `(Recomended)`.
 
 
 Update you `apps.py`
@@ -214,7 +212,7 @@ class MyAppConfig(AppConfig):
 
 By default the `settings.SUBSCRIPTION_AUTO_DISCOVER` is set to `False`.
 
-To use auto discovery this is not recommended as it would notify the subscribers 
+To use auto discovery this is not recommended as it would notify the subscribers
 wherever the model is used i.e IPython notebook, external scripts.
 
 In your `settings.py` add
@@ -231,7 +229,7 @@ SUBSCRIPTION_AUTO_DISCOVER = True
 
 ```python
 
-SUBSCRIPTION_MODULE  = 'subscription' 
+SUBSCRIPTION_MODULE  = 'subscription'
 ```
 
 #### Credits
