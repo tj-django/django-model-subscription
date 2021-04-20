@@ -56,8 +56,6 @@ INSTALLED_APPS = [
 ```
 
 
-
-
 ### Usage
 
 ##### Using the `SubscriptionModelMixin` and `SubscriptionQuerySet`
