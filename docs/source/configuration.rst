@@ -12,6 +12,3 @@ Add ``model_subscription`` to your ``INSTALLED_APPS``.
         'model_subscription',
         ...
     ]
-
-
-

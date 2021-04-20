@@ -103,5 +103,3 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 - Added subscription and observers module. ([4405e25](https://github.com/jackton1/django-model-subscription/commit/4405e25da8b90d77aa0c4fe306836d5c4b7f7e41) by Tonye Jack).
-
-
