@@ -82,7 +82,6 @@ class TestModel(SubscriptionModel):
 
 ```
 
-
 #### Creating subscribers.
 
 - Using `OperationType`
