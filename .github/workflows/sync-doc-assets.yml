@@ -19,7 +19,8 @@ jobs:
           args: -t markdown CHANGELOG.md -t rst --output=docs/source/changelog.rst
 
       - name: Verify changed files
-        uses: tj-actions/verify-changed-files@v5.5
+        id: changed_files
+        uses: tj-actions/verify-changed-files@v6
         with:
           files: |
             docs/source/changelog.rst
