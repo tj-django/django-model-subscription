@@ -18,8 +18,15 @@ jobs:
         with:
           args: -t markdown CHANGELOG.md -t rst --output=docs/source/changelog.rst
 
+      - name: Verify changed files
+        uses: tj-actions/verify-changed-files@5.5
+        with:
+          files: |
+            docs/source/changelog.rst
+
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
+        if: steps.changed_files.outputs.files_changed == 'true'
         with:
           commit-message: Synced README changes to docs
           committer: github-actions[bot] <github-actions[bot]@users.noreply@github.com>
