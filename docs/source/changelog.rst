@@ -11,7 +11,7 @@ adheres to `Semantic Versioning <http://semver.org/spec/v2.0.0.html>`__.
 ---------------------------------------------------------------------------------------------------
 
 \ `Compare with
-v0.1.0 <https://github.com/jackton1/django-model-subscription/compare/v0.1.0...v0.2.0>`__\
+v0.1.0 <https://github.com/jackton1/django-model-subscription/compare/v0.1.0...v0.2.0>`__\ 
 
 Fixed
 ~~~~~
@@ -24,7 +24,7 @@ Fixed
 ---------------------------------------------------------------------------------------------------
 
 \ `Compare with
-v0.0.10 <https://github.com/jackton1/django-model-subscription/compare/v0.0.10...v0.1.0>`__\
+v0.0.10 <https://github.com/jackton1/django-model-subscription/compare/v0.0.10...v0.1.0>`__\ 
 
 .. _fixed-1:
 
@@ -73,7 +73,7 @@ Removed
 -----------------------------------------------------------------------------------------------------
 
 \ `Compare with
-v0.0.9 <https://github.com/jackton1/django-model-subscription/compare/v0.0.9...v0.0.10>`__\
+v0.0.9 <https://github.com/jackton1/django-model-subscription/compare/v0.0.9...v0.0.10>`__\ 
 
 .. _fixed-2:
 
@@ -103,7 +103,7 @@ Removed
 ---------------------------------------------------------------------------------------------------
 
 \ `Compare with
-v0.0.6 <https://github.com/jackton1/django-model-subscription/compare/v0.0.6...v0.0.9>`__\
+v0.0.6 <https://github.com/jackton1/django-model-subscription/compare/v0.0.6...v0.0.9>`__\ 
 
 .. _fixed-3:
 
@@ -118,7 +118,7 @@ Fixed
 ---------------------------------------------------------------------------------------------------
 
 \ `Compare with
-v0.0.5 <https://github.com/jackton1/django-model-subscription/compare/v0.0.5...v0.0.6>`__\
+v0.0.5 <https://github.com/jackton1/django-model-subscription/compare/v0.0.5...v0.0.6>`__\ 
 
 Added
 ~~~~~
@@ -158,7 +158,7 @@ Removed
 ---------------------------------------------------------------------------------------------------
 
 \ `Compare with
-v0.0.4 <https://github.com/jackton1/django-model-subscription/compare/v0.0.4...v0.0.5>`__\
+v0.0.4 <https://github.com/jackton1/django-model-subscription/compare/v0.0.4...v0.0.5>`__\ 
 
 .. _fixed-5:
 
@@ -173,7 +173,7 @@ Fixed
 ---------------------------------------------------------------------------------------------------
 
 \ `Compare with
-v0.0.3 <https://github.com/jackton1/django-model-subscription/compare/v0.0.3...v0.0.4>`__\
+v0.0.3 <https://github.com/jackton1/django-model-subscription/compare/v0.0.3...v0.0.4>`__\ 
 
 .. _added-1:
 
@@ -197,7 +197,7 @@ Removed
 ---------------------------------------------------------------------------------------------------
 
 \ `Compare with
-v0.0.1 <https://github.com/jackton1/django-model-subscription/compare/v0.0.1...v0.0.3>`__\
+v0.0.1 <https://github.com/jackton1/django-model-subscription/compare/v0.0.1...v0.0.3>`__\ 
 
 .. _removed-4:
 
@@ -212,7 +212,7 @@ Removed
 ---------------------------------------------------------------------------------------------------
 
 \ `Compare with first
-commit <https://github.com/jackton1/django-model-subscription/compare/fadbc19ce2b1307403e85a707d085e865bcfe453...v0.0.1>`__\
+commit <https://github.com/jackton1/django-model-subscription/compare/fadbc19ce2b1307403e85a707d085e865bcfe453...v0.0.1>`__\ 
 
 .. _added-2:
 
