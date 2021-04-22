@@ -3,8 +3,9 @@ repos:
     rev: v3.4.0
     hooks:
     -   id: trailing-whitespace
+        exclude: ^docs/.*
     -   id: end-of-file-fixer
-        exclude: docs/.*
+        exclude: ^docs/.*
 
 -   repo: https://github.com/psf/black
     rev: 20.8b1
