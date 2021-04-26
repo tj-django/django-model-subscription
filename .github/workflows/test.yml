@@ -1,12 +1,19 @@
 name: django model subscription test.
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+      - '**'
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: true
       matrix:
         python-version: [3.6, 3.7, 3.8, 3.9]
 
@@ -78,3 +85,8 @@ jobs:
         MYSQL_USER: test_user
         MYSQL_PASSWORD: test_user_password
         CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v1
+      with:
+        fail_ci_if_error: true

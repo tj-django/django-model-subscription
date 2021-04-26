@@ -85,7 +85,7 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 # --------- Run project Test -------------------------------
 # ----------------------------------------------------------
 tox:  ## Run tox test
-	@pip install "tox>=3.14"
+	@pip install "tox>=3.14" tox-gh-actions
 	@tox
 
 clean-test-all: clean-build  ## Clean build and test assets.

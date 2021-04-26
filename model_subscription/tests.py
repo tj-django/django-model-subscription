@@ -4,6 +4,8 @@ from django.apps import apps
 from django.db import connections
 from django.test import TestCase, override_settings, TransactionTestCase
 
+from model_subscription.utils import can_return_rows_from_bulk_insert
+
 log = logging.getLogger("demo.subscription")
 
 
@@ -120,7 +122,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
             ["DEBUG:demo.subscription:Bulk Created {}".format(name) for name in names],
         )
 
-        if connection.features.can_return_ids_from_bulk_insert:
+        if can_return_rows_from_bulk_insert(connection):
             for obj in objs:
                 self.assertIsNot(obj.pk, None)
         else:
@@ -147,7 +149,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         with self.assertLogs(log, level=logging.DEBUG) as cm:
             obj_pks = (
                 [obj.pk for obj in objs]
-                if connection.features.can_return_ids_from_bulk_insert
+                if can_return_rows_from_bulk_insert(connection)
                 else (
                     self.TestModel.objects.using(self.db_alias).values_list(
                         "pk", flat=True
@@ -185,7 +187,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         with self.assertLogs(log, level=logging.DEBUG) as cm:
             obj_pks = (
                 [obj.pk for obj in objs]
-                if connection.features.can_return_ids_from_bulk_insert
+                if can_return_rows_from_bulk_insert(connection)
                 else (
                     self.TestModel.objects.using(self.db_alias).values_list(
                         "pk", flat=True

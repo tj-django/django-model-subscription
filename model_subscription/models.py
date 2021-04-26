@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models, connections
 
 from model_subscription.mixin import SubscriptionModelMixin
+from model_subscription.utils import can_return_rows_from_bulk_insert
 
 
 class SubscriptionQuerySet(models.QuerySet):  # type: ignore
@@ -11,7 +12,7 @@ class SubscriptionQuerySet(models.QuerySet):  # type: ignore
         can_notify_bulk_create_subscribers = getattr(
             settings,
             "NOTIFY_BULK_CREATE_SUBSCRIBERS_WITHOUT_PKS",
-            connection.features.can_return_ids_from_bulk_insert,
+            can_return_rows_from_bulk_insert(connection),
         )
         if can_notify_bulk_create_subscribers:
             self.model.notify_bulk_create(objs)
