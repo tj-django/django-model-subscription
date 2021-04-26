@@ -35,26 +35,26 @@ class SubscriptionModelMixin(LifecycleModelMixin):
             self._subscription.auto_discover()
         super(SubscriptionModelMixin, self).__init__(*args, **kwargs)
 
-    @hook("after_create")
-    def notify_create(self):
-        self._subscription.notify(OperationType.CREATE, self)
-
     @classmethod
     def notify_bulk_create(cls, objs):
         cls._subscription.notify_many(OperationType.BULK_CREATE, objs)
-
-    @hook("after_update")
-    def notify_update(self):
-        self._subscription.notify(OperationType.UPDATE, self)
 
     @classmethod
     def notify_bulk_update(cls, objs):
         cls._subscription.notify_many(OperationType.BULK_UPDATE, objs)
 
-    @hook("after_delete")
-    def notify_delete(self):
-        self._subscription.notify(OperationType.DELETE, self)
-
     @classmethod
     def notify_bulk_delete(cls, objs):
         cls._subscription.notify_many(OperationType.BULK_DELETE, objs)
+
+    @hook("after_create")
+    def notify_create(self):
+        self._subscription.notify(OperationType.CREATE, self)
+
+    @hook("after_update")
+    def notify_update(self):
+        self._subscription.notify(OperationType.UPDATE, self)
+
+    @hook("after_delete")
+    def notify_delete(self):
+        self._subscription.notify(OperationType.DELETE, self)
