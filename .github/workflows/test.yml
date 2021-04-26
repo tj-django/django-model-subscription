@@ -11,11 +11,10 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.platform }}
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: true
       matrix:
-        platform: [ubuntu-latest, macos-latest, windows-latest]
         python-version: [3.6, 3.7, 3.8, 3.9]
 
     services:
@@ -79,7 +78,6 @@ jobs:
         # If we were running the job on the VM this would be localhost
         POSTGRES_HOST: postgres
         POSTGRES_PORT: ${{ job.services.postgres.ports[5432] }}
-        PLATFORM: ${{ matrix.platform }}
         PG_USER: test_user
         PG_PASSWORD: test_user_password
         PG_DB: test
