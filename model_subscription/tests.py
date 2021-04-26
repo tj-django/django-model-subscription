@@ -149,7 +149,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         with self.assertLogs(log, level=logging.DEBUG) as cm:
             obj_pks = (
                 [obj.pk for obj in objs]
-                if connection.features.can_return_ids_from_bulk_insert
+                if can_return_rows_from_bulk_insert(connection)
                 else (
                     self.TestModel.objects.using(self.db_alias).values_list(
                         "pk", flat=True
@@ -187,7 +187,7 @@ class ModelSubscriptionSqliteTransactionTestCase(BaseSubscriptionTransactionTest
         with self.assertLogs(log, level=logging.DEBUG) as cm:
             obj_pks = (
                 [obj.pk for obj in objs]
-                if connection.features.can_return_ids_from_bulk_insert
+                if can_return_rows_from_bulk_insert(connection)
                 else (
                     self.TestModel.objects.using(self.db_alias).values_list(
                         "pk", flat=True
