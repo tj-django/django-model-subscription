@@ -1,46 +1,12 @@
 version: 2
 updates:
-- package-ecosystem: pip
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: django
-    versions:
-    - 1.11.29
-    - 3.1.7
-    - 3.1.8
-  - dependency-name: mysqlclient
-    versions:
-    - 2.0.3
-  - dependency-name: git-changelog
-    versions:
-    - 0.4.2
-  - dependency-name: sphinx-autobuild
-    versions:
-    - 2020.9.1
-  - dependency-name: check-manifest
-    versions:
-    - "0.41"
-    - "0.44"
-  - dependency-name: psycopg2
-    versions:
-    - 2.8.6
-  - dependency-name: django-lifecycle
-    versions:
-    - 0.7.6
-  - dependency-name: typing-extensions
-    versions:
-    - 3.7.4.3
-  - dependency-name: six
-    versions:
-    - 1.15.0
-  - dependency-name: typing
-    versions:
-    - 3.7.4.3
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 10
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 10
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 10
