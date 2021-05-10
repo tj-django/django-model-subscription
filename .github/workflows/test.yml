@@ -3,10 +3,10 @@ name: django model subscription test.
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
       - '**'
 
 jobs:
