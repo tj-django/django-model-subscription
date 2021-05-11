@@ -240,7 +240,7 @@ SUBSCRIPTION_MODULE  = 'subscription'
 - https://refactoring.guru/design-patterns/observer
 - https://hackernoon.com/observer-vs-pub-sub-pattern-50d3b27f838c
 
-TODO's
+### TODO's
 - Supporting field level subscriptions.
 - Support class based subscribers which implements `__call__`
 - Extend to include custom OperationType.
