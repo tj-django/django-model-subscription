@@ -18,7 +18,7 @@ jobs:
         with:
           fetch-depth: 0  # otherwise, you will failed to push refs to dest repo
           persist-credentials: false  # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-      - uses: actions/cache@v2
+      - uses: actions/cache@v2.1.5
         id: pip-cache
         with:
           path: ~/.cache/pip
