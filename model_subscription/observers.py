@@ -34,7 +34,6 @@ class Observer(ABC):
         """
         Receive update from subject.
         """
-        pass
 
     @property
     def receivers(self):

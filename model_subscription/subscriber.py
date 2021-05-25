@@ -24,7 +24,6 @@ class BaseSubscription(ABC):
         """
         Attach an observer.
         """
-        pass
 
     @abstractmethod
     def detach(self, operation_type, receiver):
@@ -32,7 +31,6 @@ class BaseSubscription(ABC):
         """
         Detach an observer.
         """
-        pass
 
     @abstractmethod
     def notify(self, operation_type, instance):
@@ -40,7 +38,6 @@ class BaseSubscription(ABC):
         """
         Notify all observers about an event.
         """
-        pass
 
     @abstractmethod
     def notify_many(self, operation_type, objs):
@@ -48,7 +45,6 @@ class BaseSubscription(ABC):
         """
         Notify the observers of (bulk) actions.
         """
-        pass
 
 
 class ModelSubscription(BaseSubscription):
