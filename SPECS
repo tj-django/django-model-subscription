@@ -1,5 +1,4 @@
 TODOS
 - Add support for field subscriptions i.e should this also include Foriegn keys and Many to Many
 relationships.
-
 - Investigate using https://github.com/django/django-docker-box for testing package across multiple database vendors.
