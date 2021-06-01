@@ -13,7 +13,6 @@
 
 ![Sreenshot](https://media.giphy.com/media/IgvrR33L6S7nFgH1by/giphy.gif)
 
-
 ## Table of contents
 * [Motivation](#Motivation)
 * [Installation](#Installation)

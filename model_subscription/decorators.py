@@ -1,5 +1,5 @@
 from functools import partial
-from typing import Callable, Optional, Any, Type
+from typing import Any, Callable, Optional, Type
 
 from django.conf import settings
 

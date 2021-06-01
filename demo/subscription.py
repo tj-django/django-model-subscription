@@ -3,14 +3,14 @@ import logging
 from demo.models import TestModel
 from model_subscription.constants import OperationType
 from model_subscription.decorators import (
-    subscribe,
-    create_subscription,
-    unsubscribe_create,
     bulk_create_subscription,
-    update_subscription,
-    delete_subscription,
-    bulk_update_subscription,
     bulk_delete_subscription,
+    bulk_update_subscription,
+    create_subscription,
+    delete_subscription,
+    subscribe,
+    unsubscribe_create,
+    update_subscription,
 )
 
 log = logging.getLogger(__name__)

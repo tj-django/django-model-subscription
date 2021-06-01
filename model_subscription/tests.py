@@ -2,7 +2,7 @@ import logging
 
 from django.apps import apps
 from django.db import connections
-from django.test import TestCase, override_settings, TransactionTestCase
+from django.test import TestCase, TransactionTestCase, override_settings
 
 from model_subscription.utils import can_return_rows_from_bulk_insert
 
