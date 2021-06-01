@@ -1,5 +1,5 @@
 from django.conf import settings
-from django.db import models, connections
+from django.db import connections, models
 
 from model_subscription.mixin import SubscriptionModelMixin
 from model_subscription.utils import can_return_rows_from_bulk_insert

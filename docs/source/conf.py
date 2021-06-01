@@ -15,10 +15,11 @@
 import os
 import sys
 
+import django
+from recommonmark.parser import CommonMarkParser
+
 # sys.path.insert(0, os.path.abspath('.'))
 
-from recommonmark.parser import CommonMarkParser
-import django
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
