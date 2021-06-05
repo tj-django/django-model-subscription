@@ -205,7 +205,6 @@ class MyAppConfig(AppConfig):
 ```
 
 
-
 ### Setup Subscribers using auto discovery.
 
 By default the `settings.SUBSCRIPTION_AUTO_DISCOVER` is set to `False`.
@@ -232,6 +231,14 @@ SUBSCRIPTION_MODULE  = 'subscription'
 
 #### Credits
 - [django-lifecycle](https://github.com/rsinger86/django-lifecycle)
+
+
+If you feel generous and want to show some extra appreciation:
+
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+
+[buymeacoffee]: https://www.buymeacoffee.com/jackton1
+[buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png
 
 
 #### Resources
