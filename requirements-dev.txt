@@ -31,7 +31,7 @@ importlib-metadata==1.7.0; python_version >= "3.6" and python_full_version < "3.
 importlib-resources==5.1.4; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.5.0" and python_version < "3.7" and python_version >= "3.6"
 jeepney==0.6.0; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux"
 jinja2==2.11.3; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.5.0"
-keyring==23.0.1; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0")
+keyring==21.8.0; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0")
 livereload==2.6.3; python_version >= "3.6"
 lockfile==0.12.2
 markupsafe==2.0.1; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.5.0"
