@@ -949,7 +949,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "urlman"
-version = "1.4.0"
+version = "2.0.0"
 description = "Django URL pattern helpers"
 category = "main"
 optional = false
@@ -1002,7 +1002,7 @@ development = []
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
-content-hash = "a43cf169ac4cb208442a98bb25c40fa13111766116136f394dfb9a01e6edfebb"
+content-hash = "35256ec4caef963be25ce3ddedc705d506907dd7228b30e15aea666cc9eeb442"
 
 [metadata.files]
 alabaster = [
@@ -1551,8 +1551,8 @@ urllib3 = [
     {file = "urllib3-1.26.5.tar.gz", hash = "sha256:a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098"},
 ]
 urlman = [
-    {file = "urlman-1.4.0-py2.py3-none-any.whl", hash = "sha256:03cad71d5a651abd2ff867b2f31e189cb578874069fedb122267ddc16b301924"},
-    {file = "urlman-1.4.0.tar.gz", hash = "sha256:a90b3acb3b03ee1b48a671cbb0a375b554274cb02fb823afde495a21f2cd8448"},
+    {file = "urlman-2.0.0-py2.py3-none-any.whl", hash = "sha256:3d18299bde16fb4a04c78b54abaa47413d6362c3c96d729bdddd740e8e83b8f7"},
+    {file = "urlman-2.0.0.tar.gz", hash = "sha256:d520ed8ac66f635e0565fc74c0863a5bb66750f10a6a82b0aa69c9dd2ff4e625"},
 ]
 virtualenv = [
     {file = "virtualenv-20.4.7-py2.py3-none-any.whl", hash = "sha256:2b0126166ea7c9c3661f5b8e06773d28f83322de7a3ff7d06f0aed18c9de6a76"},
