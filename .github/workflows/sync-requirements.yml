@@ -1,11 +1,9 @@
 name: Sync Requirments
 
 on:
-  push:
-    paths:
-      - 'pyproject.toml'
-      - 'poetry.lock'
   pull_request:
+    branches:
+      - main
     paths:
       - 'pyproject.toml'
       - 'poetry.lock'
