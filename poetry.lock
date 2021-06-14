@@ -951,7 +951,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
 name = "urlman"
-version = "2.0.0"
+version = "2.0.1"
 description = "Django URL pattern helpers"
 category = "main"
 optional = false
@@ -1554,8 +1554,8 @@ urllib3 = [
     {file = "urllib3-1.26.5.tar.gz", hash = "sha256:a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098"},
 ]
 urlman = [
-    {file = "urlman-2.0.0-py2.py3-none-any.whl", hash = "sha256:3d18299bde16fb4a04c78b54abaa47413d6362c3c96d729bdddd740e8e83b8f7"},
-    {file = "urlman-2.0.0.tar.gz", hash = "sha256:d520ed8ac66f635e0565fc74c0863a5bb66750f10a6a82b0aa69c9dd2ff4e625"},
+    {file = "urlman-2.0.1-py2.py3-none-any.whl", hash = "sha256:909177485ddbbeada15a21f80155762faf70fc53be31890ff7288e21803f06c7"},
+    {file = "urlman-2.0.1.tar.gz", hash = "sha256:3b9c5ac4e447b1e29fa259dc76953d46d711c84b296a0c66c34870e248eb1205"},
 ]
 virtualenv = [
     {file = "virtualenv-20.4.7-py2.py3-none-any.whl", hash = "sha256:2b0126166ea7c9c3661f5b8e06773d28f83322de7a3ff7d06f0aed18c9de6a76"},
