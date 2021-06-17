@@ -47,7 +47,7 @@ pkginfo==1.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or pyt
 pluggy==0.13.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 poetry-core==1.0.3; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 poetry==1.1.6; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
-psycopg2==2.8.6; python_version >= "3.6.0" and python_version < "3.10.0"
+psycopg2==2.9.1; python_version >= "3.6.0" and python_version < "3.10.0"
 ptyprocess==0.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 py==1.10.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pycparser==2.20; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux" or python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux" and python_full_version >= "3.4.0"
