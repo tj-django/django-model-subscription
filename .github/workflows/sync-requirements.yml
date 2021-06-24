@@ -33,7 +33,7 @@ jobs:
         run: |
           make update-requirements
       - name: Verify Changed files
-        uses: tj-actions/verify-changed-files@v6.2
+        uses: tj-actions/verify-changed-files@v7
         id: changed_files
         with:
           files: |
