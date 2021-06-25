@@ -41,7 +41,7 @@ pytz = ">=2015.7"
 
 [[package]]
 name = "build"
-version = "0.4.0"
+version = "0.5.1"
 description = "A simple, correct PEP517 package builder"
 category = "dev"
 optional = false
@@ -56,7 +56,7 @@ toml = ">=0.10.0"
 
 [package.extras]
 docs = ["furo (>=2020.11.19b18)", "sphinx (>=3.0,<4.0)", "sphinx-argparse-cli (>=1.5)", "sphinx-autodoc-typehints (>=1.10)"]
-test = ["filelock (>=3)", "pytest (>=4)", "pytest-cov (>=2)", "pytest-mock (>=2)", "pytest-xdist (>=1.34)"]
+test = ["filelock (>=3)", "pytest (>=4)", "pytest-cov (>=2)", "pytest-mock (>=2)", "pytest-rerunfailures (>=8.0)", "pytest-xdist (>=1.34)", "setuptools (>=42.0.0)", "wheel (>=0.36.0)", "pathlib2 (>=2.0.0)"]
 typing = ["mypy (==0.800)", "typing-extensions (>=3.7.4.3)"]
 virtualenv = ["virtualenv (>=20.0.35)"]
 
@@ -1024,8 +1024,8 @@ babel = [
     {file = "Babel-2.9.1.tar.gz", hash = "sha256:bc0c176f9f6a994582230df350aa6e05ba2ebe4b3ac317eab29d9be5d2768da0"},
 ]
 build = [
-    {file = "build-0.4.0-py2.py3-none-any.whl", hash = "sha256:5950f98775a59f0c5ac68586691003d2db58a809fbea2ade3fe32109dfd12790"},
-    {file = "build-0.4.0.tar.gz", hash = "sha256:b798f3f490c779fa88c99816ebee97ab636acd6630b1d91c8cf8eb8a4d922a19"},
+    {file = "build-0.5.1-py2.py3-none-any.whl", hash = "sha256:0281eeec2697ee43114eb4fe3ba6e54c111ee2c4ef287b5cd24f82cb24cc1bdb"},
+    {file = "build-0.5.1.tar.gz", hash = "sha256:16897cac845b50cca04f3c92cf8d3e9e0868b21b29b96b577333c14473baa916"},
 ]
 bump2version = [
     {file = "bump2version-1.0.1-py2.py3-none-any.whl", hash = "sha256:37f927ea17cde7ae2d7baf832f8e80ce3777624554a653006c9144f8017fe410"},
