@@ -71,7 +71,7 @@ Django = {version = "^3.2.4"}
 check-manifest = {version = "^0.46", python = "^3.6"}
 bump2version = {version = "^1.0.0", python = "^3.6"}
 git-changelog = {version = "^0.4.0", python = "^3.6"}
-poetry = "=1.1.6"
+poetry = "=1.1.7"
 sphinx = "=4.0.2"
 sphinx-autobuild = "^2021.0.0"
 sphinx_rtd_theme = "^0.5.2"
