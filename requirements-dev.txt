@@ -46,7 +46,7 @@ pexpect==4.8.0; python_version >= "2.7" and python_full_version < "3.0.0" or pyt
 pkginfo==1.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pluggy==0.13.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 poetry-core==1.0.3; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-poetry==1.1.6; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
+poetry==1.1.7; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 psycopg2==2.8.6; python_version >= "3.6.0" and python_version < "3.10.0"
 ptyprocess==0.7.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 py==1.10.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
@@ -79,7 +79,7 @@ tornado==6.1; python_version >= "3.6"
 tox==3.23.1; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 typed-ast==1.4.3; python_version >= "3.6" and python_version < "3.8"
 typing-extensions==3.10.0.0
-urllib3==1.26.5; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4"
+urllib3==1.26.6; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4"
 urlman==2.0.1
 virtualenv==20.4.7; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 webencodings==0.5.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
