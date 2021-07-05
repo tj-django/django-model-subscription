@@ -1,6 +1,6 @@
 alabaster==0.7.12; python_version >= "3.6"
 appdirs==1.4.4; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-asgiref==3.4.0; python_version >= "3.6"
+asgiref==3.4.1; python_version >= "3.6"
 babel==2.9.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 build==0.5.1; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" or python_version >= "3.6" and python_version < "4.0" and python_full_version >= "3.5.0"
 bump2version==1.0.1; python_version >= "3.6" and python_version < "4.0"
@@ -20,7 +20,7 @@ distlib==0.3.2; python_version >= "2.7" and python_full_version < "3.0.0" or pyt
 django-lifecycle==0.9.1
 django-stubs-ext==0.2.0; python_version >= "3.6" and python_version < "4.0"
 django-stubs==1.8.0; python_version >= "3.6" and python_version < "4.0"
-django==3.2.4; python_version >= "3.6"
+django==3.2.5; python_version >= "3.6"
 docutils==0.16; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 filelock==3.0.12; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 git-changelog==0.4.2; python_version >= "3.6" and python_version < "4.0"
@@ -65,7 +65,7 @@ six==1.16.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (pyt
 snowballstemmer==2.1.0; python_version >= "3.6"
 sphinx-autobuild==2021.3.14; python_version >= "3.6"
 sphinx-rtd-theme==0.5.2
-sphinx==4.0.2; python_version >= "3.6"
+sphinx==4.0.3; python_version >= "3.6"
 sphinxcontrib-applehelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-devhelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-htmlhelp==2.0.0; python_version >= "3.6"
@@ -83,4 +83,4 @@ urllib3==1.26.6; python_version >= "2.7" and python_full_version < "3.0.0" or py
 urlman==2.0.1
 virtualenv==20.4.7; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 webencodings==0.5.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-zipp==3.4.1; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.5.0" and python_version < "3.7" and python_version >= "3.6"
+zipp==3.5.0; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.5.0" and python_version < "3.7" and python_version >= "3.6"
