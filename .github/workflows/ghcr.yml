@@ -20,7 +20,7 @@ jobs:
 
       - name: Get Short SHA value
         id: short-sha
-        run: echo "::set-output name=sha::$(echo ${GITHUB_SHA} | cut -c1 -10)"
+        run: echo "::set-output name=sha::$(echo ${GITHUB_SHA} | cut -c1-10)"
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1.2.0
