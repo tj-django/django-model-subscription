@@ -68,7 +68,7 @@ jobs:
     - name: Install dependencies
       run: |
         pip install --upgrade pip setuptools
-        sudo apt-get install -y --no-install-recommends libpq-dev
+        apt-get install -y --no-install-recommends libpq-dev
 
     - name: Test with tox
       run: |
