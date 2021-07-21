@@ -12,6 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    container: ghcr.io/tj-django/django-model-subscription:2ec8332ee0
     strategy:
       fail-fast: true
       matrix:
