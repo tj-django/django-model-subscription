@@ -1056,7 +1056,7 @@ development = []
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
-content-hash = "2701085019a4015385ead07b3358b41896ccddffd39c9590ad0c6f359965744c"
+content-hash = "11edc9294941778cceb3514a3bc582913c36db6c7cc6b1b0f818ff02ea81a72d"
 
 [metadata.files]
 alabaster = [
