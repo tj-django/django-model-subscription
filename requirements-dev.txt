@@ -18,9 +18,9 @@ crashtest==0.3.1; python_version >= "3.6" and python_version < "4.0" and (python
 cryptography==3.4.8; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux"
 distlib==0.3.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 django-lifecycle==0.9.1
-django-stubs-ext==0.2.0; python_version >= "3.6" and python_version < "4.0"
-django-stubs==1.8.0; python_version >= "3.6" and python_version < "4.0"
-django==3.2.6; python_version >= "3.6"
+django-stubs-ext==0.3.0; python_version >= "3.6" and python_version < "4.0"
+django-stubs==1.9.0; python_version >= "3.6" and python_version < "4.0"
+django==3.2.7; python_version >= "3.6"
 docutils==0.16; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 filelock==3.0.12; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 git-changelog==0.4.2; python_version >= "3.6" and python_version < "4.0"
@@ -44,7 +44,7 @@ pastel==0.2.1; python_version >= "2.7" and python_full_version < "3.0.0" or pyth
 pep517==0.11.0; python_version >= "3.6" and python_version < "4.0"
 pexpect==4.8.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pkginfo==1.7.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-platformdirs==2.2.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
+platformdirs==2.3.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 pluggy==1.0.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 poetry-core==1.0.4; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 poetry==1.1.8; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
@@ -80,7 +80,9 @@ tomlkit==0.7.2; python_version >= "2.7" and python_full_version < "3.0.0" or pyt
 tornado==6.1; python_version >= "3.6"
 tox==3.24.3; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 typed-ast==1.4.3; python_version >= "3.6" and python_version < "3.8"
-typing-extensions==3.10.0.1
+types-pytz==2021.1.2; python_version >= "3.6" and python_version < "4.0"
+types-pyyaml==5.4.10; python_version >= "3.6" and python_version < "4.0"
+typing-extensions==3.10.0.2
 urllib3==1.26.6; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version < "4"
 urlman==2.0.1
 virtualenv==20.7.2; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
