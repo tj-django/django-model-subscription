@@ -1,5 +1,4 @@
 import logging
-
 from django.apps import apps
 from django.db import connections
 from django.test import TestCase, TransactionTestCase, override_settings
