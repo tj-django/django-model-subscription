@@ -1,6 +1,7 @@
-from django.conf import settings
 from functools import partial
 from typing import Any, Callable, Optional, Type
+
+from django.conf import settings
 
 from model_subscription.constants import OperationType
 from model_subscription.mixin import SubscriptionModelMixin
