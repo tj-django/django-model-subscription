@@ -11,8 +11,6 @@
 
 # [django-model-subscription](https://django-model-subscription.readthedocs.io/en/latest/installation.html)
 
-![Sreenshot](https://media.giphy.com/media/IgvrR33L6S7nFgH1by/giphy.gif)
-
 ## Table of contents
 * [Motivation](#Motivation)
 * [Installation](#Installation)
@@ -24,12 +22,12 @@
 * [Resources](#resources)
 
 
-### Motivation
+### Features
 
 - Using Observer Pattern notify subscribers about changes to a django model.
 - Decouple Business logic from Models.save
 - Support for bulk actions (Not available using django signals.)
-- Use noop subscribers when `settings.SUBSCRIPTION_RUN_EXTERNAL` is `False`
+- Use noop subscribers when `settings.SUBSCRIPTION_DISABLE_SUBSCRIBERS` is `False`
   which prevents having to mock subscribers that call external services in testing, local development
   environments.
 - Show changes to the instance after it has been updated i.e diff's the initial state and the
