@@ -67,8 +67,10 @@ def subscribe(operation, model):
     can_run = getattr(settings, "SUBSCRIPTION_DISABLE_SUBSCRIBERS", True)
 
     if not can_run:
+
         def noop():
             pass
+
         return noop
 
     def _decorator(func):
