@@ -11,7 +11,7 @@
 [![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-model-subscription.svg)](https://docs.djangoproject.com/en/3.2/releases/)
 [![Downloads](https://pepy.tech/badge/django-model-subscription)](https://pepy.tech/project/django-model-subscription)
 
-# [django-model-subscription](https://django-model-subscription.readthedocs.io/en/latest/installation.html)
+# django-model-subscription
 
 ## Table of contents
 * [Motivation](#Motivation)
