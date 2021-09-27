@@ -44,7 +44,7 @@ pastel==0.2.1; python_version >= "2.7" and python_full_version < "3.0.0" or pyth
 pep517==0.11.0; python_version >= "3.6" and python_version < "4.0"
 pexpect==4.8.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 pkginfo==1.7.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-platformdirs==2.3.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
+platformdirs==2.4.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 pluggy==1.0.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 poetry-core==1.0.6; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 poetry==1.1.9; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
@@ -85,6 +85,6 @@ types-pyyaml==5.4.10; python_version >= "3.6" and python_version < "4.0"
 typing-extensions==3.10.0.2
 urllib3==1.26.7; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version < "4"
 urlman==2.0.1
-virtualenv==20.8.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
+virtualenv==20.8.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 webencodings==0.5.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 zipp==3.5.0; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "3.7" or python_full_version >= "3.5.0" and python_version < "3.7" and python_version >= "3.6"
