@@ -64,11 +64,10 @@ def my_custom_delete_receiver(instance)
 
 def subscribe(operation, model):
     # type: (OperationType, Type[SubscriptionModelMixin]) -> Callable[[T], None]
-    can_run = getattr(settings, "SUBSCRIPTION_DISABLE_SUBSCRIBERS", True)
+    disabled = getattr(settings, "SUBSCRIPTION_DISABLE_SUBSCRIBERS", False)
 
-    if not can_run:
-
-        def noop():
+    if disabled:
+        def noop(func):
             pass
 
         return noop
