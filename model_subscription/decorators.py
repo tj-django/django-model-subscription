@@ -67,6 +67,7 @@ def subscribe(operation, model):
     disabled = getattr(settings, "SUBSCRIPTION_DISABLE_SUBSCRIBERS", False)
 
     if disabled:
+
         def noop(func):
             pass
 
