@@ -578,7 +578,7 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "poetry"
-version = "1.1.10"
+version = "1.1.11"
 description = "Python dependency management and packaging made easy."
 category = "dev"
 optional = false
@@ -596,7 +596,7 @@ keyring = {version = ">=21.2.0,<22.0.0", markers = "python_version >= \"3.6\" an
 packaging = ">=20.4,<21.0"
 pexpect = ">=4.7.0,<5.0.0"
 pkginfo = ">=1.4,<2.0"
-poetry-core = ">=1.0.6,<1.1.0"
+poetry-core = ">=1.0.7,<1.1.0"
 requests = ">=2.18,<3.0"
 requests-toolbelt = ">=0.9.1,<0.10.0"
 shellingham = ">=1.1,<2.0"
@@ -605,7 +605,7 @@ virtualenv = ">=20.0.26,<21.0.0"
 
 [[package]]
 name = "poetry-core"
-version = "1.0.6"
+version = "1.0.7"
 description = "Poetry PEP 517 Build Backend"
 category = "dev"
 optional = false
@@ -1061,7 +1061,7 @@ development = []
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
-content-hash = "4ca0e0ec6de5a8754b3c9e5198ecfab554c90c0b6494348990e8c91690118b10"
+content-hash = "08caa25a1b400514eb2cab49c917f0aad5aeee948e02e9cd62cdbe240ef09f65"
 
 [metadata.files]
 alabaster = [
@@ -1418,12 +1418,12 @@ pluggy = [
     {file = "pluggy-1.0.0.tar.gz", hash = "sha256:4224373bacce55f955a878bf9cfa763c1e360858e330072059e10bad68531159"},
 ]
 poetry = [
-    {file = "poetry-1.1.10-py2.py3-none-any.whl", hash = "sha256:34fa96da801da50e39b57855ebbc89e7b559acbcaf748c2a504e2424940017f9"},
-    {file = "poetry-1.1.10.tar.gz", hash = "sha256:284ab7685a2b0549bd34161db0ee3c51d67991f53054564293391a0c8a346b7c"},
+    {file = "poetry-1.1.11-py2.py3-none-any.whl", hash = "sha256:628e2a933c9f7c28fa0edbee09f9e2e6b25301e610929b5414f3d55ed40fc712"},
+    {file = "poetry-1.1.11.tar.gz", hash = "sha256:7d7d22f55fbebb830cc85b1c69cd7a91fd85f49e5396e7a14b953645a470f69e"},
 ]
 poetry-core = [
-    {file = "poetry-core-1.0.6.tar.gz", hash = "sha256:dd3c97003579242236890306836f2acc86d9741e6bea320dda6f844f16b0d845"},
-    {file = "poetry_core-1.0.6-py2.py3-none-any.whl", hash = "sha256:4ef68b4a55a8a95a60e6a312317e5a2f2af7590cf3d46b6bfe648c1e5f13cc48"},
+    {file = "poetry-core-1.0.7.tar.gz", hash = "sha256:98c11c755a16ef6c5673c22ca94a3802a7df4746a0853a70b6fae8b9f5cac206"},
+    {file = "poetry_core-1.0.7-py2.py3-none-any.whl", hash = "sha256:4f8a7f5390d772f42c4c4c3f188e6424b802cb4b57466c6633a1b9ac36f18a43"},
 ]
 psycopg2 = [
     {file = "psycopg2-2.8.6-cp27-cp27m-win32.whl", hash = "sha256:068115e13c70dc5982dfc00c5d70437fe37c014c808acce119b5448361c03725"},
