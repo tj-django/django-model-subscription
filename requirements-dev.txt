@@ -20,7 +20,7 @@ distlib==0.3.3; python_version >= "2.7" and python_full_version < "3.0.0" or pyt
 django-lifecycle==0.9.1
 django-stubs-ext==0.3.1; python_version >= "3.6" and python_version < "4.0"
 django-stubs==1.9.0; python_version >= "3.6" and python_version < "4.0"
-django==3.2.7; python_version >= "3.6"
+django==3.2.8; python_version >= "3.6"
 docutils==0.17.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 filelock==3.3.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 git-changelog==0.4.2; python_version >= "3.6" and python_version < "4.0"
