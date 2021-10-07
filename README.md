@@ -29,7 +29,7 @@
 - Using Observer Pattern notify subscribers about changes to a django model.
 - Decouple Business logic from Models.save
 - Support for bulk actions (Not available using django signals.)
-- Use noop subscribers when `settings.SUBSCRIPTION_DISABLE_SUBSCRIBERS` is `False`
+- Use noop subscribers when `settings.SUBSCRIPTION_DISABLE_SUBSCRIBERS` is `True`
   which prevents having to mock subscribers that call external services in testing, local development
   environments.
 - Show changes to the instance after it has been updated i.e diff's the initial state and the
