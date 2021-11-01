@@ -35,7 +35,7 @@
 - Show changes to the instance after it has been updated i.e diff's the initial state and the
 current state.
 
-![Screenshot](Subscriber.png)
+<img width="580" alt="Subscriber" src="https://user-images.githubusercontent.com/17484350/139741273-83cd6400-552e-419f-8cca-0f13caacf5aa.png">
 
 
 ### Installation
