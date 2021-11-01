@@ -86,7 +86,7 @@ jobs:
         MYSQL_PASSWORD: test_user_password
         CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2.1.0
-      with:
-        fail_ci_if_error: true
+#     - name: Upload coverage to Codecov
+#       uses: codecov/codecov-action@v2.1.0
+#       with:
+#         fail_ci_if_error: true
