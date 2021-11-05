@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0
 
       - name: Copy CHANGELOG
-        uses: docker://pandoc/core:2.15
+        uses: docker://pandoc/core:2.16
         with:
           args: -t markdown CHANGELOG.md -t rst --output=docs/source/changelog.rst
 
