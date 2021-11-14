@@ -63,7 +63,7 @@ python = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
 # The typing module is not in the stdlib in Python 2.7 and 3.4
 typing = { version = "^3.6", python = "~3.4" }
 django-lifecycle = "~0.9.0"
-typing_extensions = "^3.7"
+typing_extensions = "^4.0"
 six = "^1.14"
 
 [tool.poetry.dev-dependencies]
