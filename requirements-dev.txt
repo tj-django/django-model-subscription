@@ -22,7 +22,7 @@ django-stubs-ext==0.3.1; python_version >= "3.6" and python_version < "4.0"
 django-stubs==1.9.0; python_version >= "3.6" and python_version < "4.0"
 django==3.2.9; python_version >= "3.6"
 docutils==0.17.1; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
-filelock==3.3.2; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
+filelock==3.4.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 git-changelog==0.4.2; python_version >= "3.6" and python_version < "4.0"
 html5lib==1.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 idna==3.3; python_version >= "3.5" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version >= "3.5"
@@ -54,7 +54,7 @@ py==1.11.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_
 pycparser==2.21; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux" or python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux" and python_full_version >= "3.4.0"
 pygments==2.10.0; python_version >= "3.6"
 pylev==1.4.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
-pyparsing==3.0.5; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
+pyparsing==3.0.6; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version >= "3.6"
 pytz==2021.3; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.4.0" and python_version >= "3.6"
 pywin32-ctypes==0.2.0; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "win32"
 recommonmark==0.7.1
@@ -63,10 +63,10 @@ requests==2.26.0; python_version >= "3.6" and python_full_version < "3.0.0" or p
 secretstorage==3.3.1; python_version >= "3.6" and python_version < "4.0" and (python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0") and sys_platform == "linux"
 shellingham==1.4.0; python_version >= "2.7" and python_version < "3.0" and python_full_version < "3.0.0" or python_version >= "2.6" and python_version < "3.0" and python_full_version >= "3.5.0" or python_version > "3.0" and python_version < "3.1" and python_full_version < "3.0.0" or python_version > "3.0" and python_version < "3.1" and python_full_version >= "3.5.0" or python_version > "3.1" and python_version < "3.2" and python_full_version < "3.0.0" or python_version > "3.1" and python_version < "3.2" and python_full_version >= "3.5.0" or python_version > "3.2" and python_version < "3.3" and python_full_version < "3.0.0" or python_version > "3.2" and python_version < "3.3" and python_full_version >= "3.5.0" or python_version > "3.3" and python_full_version < "3.0.0" or python_version > "3.3" and python_full_version >= "3.5.0"
 six==1.16.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.3.0")
-snowballstemmer==2.1.0; python_version >= "3.6"
+snowballstemmer==2.2.0; python_version >= "3.6"
 sphinx-autobuild==2021.3.14; python_version >= "3.6"
 sphinx-rtd-theme==1.0.0; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.4.0")
-sphinx==4.2.0; python_version >= "3.6"
+sphinx==4.3.0; python_version >= "3.6"
 sphinxcontrib-applehelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-devhelp==1.0.2; python_version >= "3.6"
 sphinxcontrib-htmlhelp==2.0.0; python_version >= "3.6"
@@ -81,7 +81,7 @@ tornado==6.1; python_version >= "3.6"
 tox==3.24.4; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.5.0")
 typed-ast==1.4.3; python_version >= "3.6" and python_version < "3.8"
 types-pytz==2021.3.0; python_version >= "3.6" and python_version < "4.0"
-types-pyyaml==6.0.0; python_version >= "3.6" and python_version < "4.0"
+types-pyyaml==6.0.1; python_version >= "3.6" and python_version < "4.0"
 typing-extensions==3.10.0.2
 urllib3==1.26.7; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" and python_version < "4"
 urlman==2.0.1
