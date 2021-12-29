@@ -77,7 +77,7 @@ sphinx-autobuild = "^2021.0.0"
 sphinx_rtd_theme = "^1.0.0"
 lockfile = "^0.12.2"
 recommonmark = "^0.7.1"
-psycopg2 = {version = "=2.9.2", python = "3.6.* || 3.7.* || 3.8.* || 3.9.*"}
+psycopg2 = {version = "=2.9.3", python = "3.6.* || 3.7.* || 3.8.* || 3.9.*"}
 mysqlclient = {version = "=2.1.0", python = "^3.6"}
 tox = "^3.23"
 mypy = {version = "^0.930", python = "^3.6"}
