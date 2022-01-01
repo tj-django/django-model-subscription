@@ -13,6 +13,8 @@
 
 # django-model-subscription
 
+Subscribe to django model changes include bulk create/update/delete.
+
 ## Table of contents
 * [Motivation](#Motivation)
 * [Installation](#Installation)
