@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 0
-      
+
       - name: Run remark
         uses: tj-actions/remark@v1.7
 
@@ -22,7 +22,7 @@ jobs:
         with:
           files: |
             README.md
-      
+
       - name: README.md changed
         if: steps.verify_changed_files.outputs.files_changed == 'true'
         run: |
