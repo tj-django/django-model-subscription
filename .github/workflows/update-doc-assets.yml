@@ -1,4 +1,4 @@
-name: Sync doc assets.
+name: Update doc assets.
 
 on:
   push:
@@ -12,6 +12,32 @@ jobs:
       - uses: actions/checkout@v2.4.0
         with:
           fetch-depth: 0
+      
+      - name: Run remark
+        uses: tj-actions/remark@v1.7
+
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v8
+        id: verify_changed_files
+        with:
+          files: |
+            README.md
+      
+      - name: README.md changed
+        if: steps.verify_changed_files.outputs.files_changed == 'true'
+        run: |
+          echo "README.md has uncommited changes"
+          exit 1
+      - name: Create Pull Request
+        if: failure()
+        uses: peter-evans/create-pull-request@v3
+        with:
+          base: "main"
+          title: "Updated README.md"
+          branch: "chore/update-readme"
+          commit-message: "Updated README.md"
+          body: "Updated README.md"
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Copy CHANGELOG
         uses: docker://pandoc/core:2.16
