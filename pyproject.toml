@@ -80,7 +80,7 @@ recommonmark = "^0.7.1"
 psycopg2 = {version = "=2.9.3", python = "3.6.* || 3.7.* || 3.8.* || 3.9.*"}
 mysqlclient = {version = "=2.1.0", python = "^3.6"}
 tox = "^3.23"
-mypy = {version = "^0.930", python = "^3.6"}
+mypy = {version = "^0.931", python = "^3.6"}
 django-stubs = {version = "^1.9", python = "^3.6"}
 
 [tool.poetry.extras]
