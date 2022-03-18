@@ -122,7 +122,7 @@ unicode_backport = ["unicodedata2"]
 
 [[package]]
 name = "check-manifest"
-version = "0.47"
+version = "0.48"
 description = "Check MANIFEST.in in a Python source package for completeness"
 category = "dev"
 optional = false
@@ -130,7 +130,7 @@ python-versions = ">=3.6"
 
 [package.dependencies]
 build = ">=0.1"
-toml = "*"
+tomli = "*"
 
 [package.extras]
 test = ["mock (>=3.0.0)", "pytest"]
@@ -1150,8 +1150,8 @@ charset-normalizer = [
     {file = "charset_normalizer-2.0.10-py3-none-any.whl", hash = "sha256:cb957888737fc0bbcd78e3df769addb41fd1ff8cf950dc9e7ad7793f1bf44455"},
 ]
 check-manifest = [
-    {file = "check-manifest-0.47.tar.gz", hash = "sha256:56dadd260a9c7d550b159796d2894b6d0bcc176a94cbc426d9bb93e5e48d12ce"},
-    {file = "check_manifest-0.47-py3-none-any.whl", hash = "sha256:365c94d65de4c927d9d8b505371d08ee19f9f369c86b9ac3db97c2754c827c95"},
+    {file = "check-manifest-0.48.tar.gz", hash = "sha256:3b575f1dade7beb3078ef4bf33a94519834457c7281dbc726b15c5466b55c657"},
+    {file = "check_manifest-0.48-py3-none-any.whl", hash = "sha256:b1923685f98c1c2468601a1a7bed655db549a25d43c583caded3860ad8308f8c"},
 ]
 cleo = [
     {file = "cleo-0.8.1-py2.py3-none-any.whl", hash = "sha256:141cda6dc94a92343be626bb87a0b6c86ae291dfc732a57bf04310d4b4201753"},
