@@ -215,7 +215,7 @@ python-versions = "*"
 
 [[package]]
 name = "django"
-version = "3.2.13"
+version = "3.2.14"
 description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 category = "main"
 optional = false
@@ -1058,7 +1058,7 @@ development = []
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
-content-hash = "4472b65f787a9756836940cc3fb01e44fabd381743542642364049f41ea94fe7"
+content-hash = "5dffca6e1cfae9639bc999aa2b32b319d4a613d8c1162a84f183a480a00feb0b"
 
 [metadata.files]
 alabaster = [
@@ -1200,8 +1200,8 @@ distlib = [
     {file = "distlib-0.3.4.zip", hash = "sha256:e4b58818180336dc9c529bfb9a0b58728ffc09ad92027a3f30b7cd91e3458579"},
 ]
 django = [
-    {file = "Django-3.2.13-py3-none-any.whl", hash = "sha256:b896ca61edc079eb6bbaa15cf6071eb69d6aac08cce5211583cfb41515644fdf"},
-    {file = "Django-3.2.13.tar.gz", hash = "sha256:6d93497a0a9bf6ba0e0b1a29cccdc40efbfc76297255b1309b3a884a688ec4b6"},
+    {file = "Django-3.2.14-py3-none-any.whl", hash = "sha256:a8681e098fa60f7c33a4b628d6fcd3fe983a0939ff1301ecacac21d0b38bad56"},
+    {file = "Django-3.2.14.tar.gz", hash = "sha256:677182ba8b5b285a4e072f3ac17ceee6aff1b5ce77fd173cc5b6a2d3dc022fcf"},
 ]
 django-lifecycle = [
     {file = "django-lifecycle-0.9.5.tar.gz", hash = "sha256:88528f976e8664f98f2e0c3c9d6e3ce61c12bd791d1960240d9ef2841dcab7ea"},
