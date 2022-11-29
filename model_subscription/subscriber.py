@@ -1,8 +1,6 @@
 from abc import ABC, abstractmethod
-from typing import Any, Callable, FrozenSet, List, Optional, Tuple, Type, Union
 
 from django.conf import settings
-from django.db import models
 from django.utils.module_loading import autodiscover_modules
 
 from model_subscription.constants import OperationType
@@ -12,7 +10,6 @@ from model_subscription.observers import (
     BulkUpdateObserver,
     CreateObserver,
     DeleteObserver,
-    Observer,
     UpdateObserver,
 )
 

@@ -1,11 +1,8 @@
 from functools import partial
-from typing import Any, Callable, Optional, Type
 
 from django.conf import settings
 
 from model_subscription.constants import OperationType
-from model_subscription.mixin import SubscriptionModelMixin
-from model_subscription.types import T
 
 __all__ = [
     "subscribe",
