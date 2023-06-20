@@ -26,8 +26,6 @@ jobs:
             python-version: 3.6
           - platform: windows-latest
             python-version: 3.11
-          - platform: macos-latest
-            python-version: 3.6
 
     services:
       postgres:
@@ -64,7 +62,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3.0.2
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4.0.0
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
 
