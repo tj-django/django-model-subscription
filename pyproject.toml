@@ -62,7 +62,7 @@ readme = "README.md"
 python = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
 # The dataclasses package is not in the stdlib in Python 3.6
 dataclasses = { version = "^0.8", python = "~3.6" }
-django-lifecycle = "~1.0.0"
+django-lifecycle = "~0.9.0"
 typing_extensions = ">=3.7,<5.0"
 six = "^1.14"
 
