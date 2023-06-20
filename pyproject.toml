@@ -34,6 +34,8 @@ classifiers = [
     'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
     'Topic :: Internet :: WWW/HTTP',
     'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
 ]
@@ -59,7 +61,7 @@ readme = "README.md"
 
 
 [tool.poetry.dependencies]
-python = "3.6.* || 3.7.* || 3.8.* || 3.9.*"
+python = "3.6.* || 3.7.* || 3.8.* || 3.9.* || 3.10.* || 3.11.*"
 # The dataclasses package is not in the stdlib in Python 3.6
 dataclasses = { version = "^0.8", python = "~3.6" }
 django-lifecycle = "~0.9.0"
