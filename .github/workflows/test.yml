@@ -26,6 +26,8 @@ jobs:
             python-version: 3.6
           - platform: windows-latest
             python-version: 3.11
+          - platform: macos-latest
+            python-version: 3.6
 
     services:
       postgres:
