@@ -6,7 +6,6 @@ import model_subscription.mixin
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = []
