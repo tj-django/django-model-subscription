@@ -30,7 +30,6 @@ classifiers = [
     'License :: OSI Approved :: MIT License',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
-    'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
@@ -61,7 +60,7 @@ readme = "README.md"
 
 
 [tool.poetry.dependencies]
-python = "3.6.* || 3.7.* || 3.8.* || 3.9.* || 3.10.* || 3.11.*"
+python = "3.7.* || 3.8.* || 3.9.* || 3.10.* || 3.11.*"
 # The dataclasses package is not in the stdlib in Python 3.6
 dataclasses = { version = "^0.8", python = "~3.6" }
 django-lifecycle = "~1.0.0"
