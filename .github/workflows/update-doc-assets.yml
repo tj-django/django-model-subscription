@@ -17,7 +17,7 @@ jobs:
         uses: tj-actions/remark@v3
 
       - name: Verify Changed files
-        uses: tj-actions/verify-changed-files@v10
+        uses: tj-actions/verify-changed-files@v16
         id: verify_changed_files
         with:
           files: |
@@ -46,7 +46,7 @@ jobs:
 
       - name: Verify changed files
         id: changed_files
-        uses: tj-actions/verify-changed-files@v10
+        uses: tj-actions/verify-changed-files@v16
         with:
           files: |
             docs/source/changelog.rst
