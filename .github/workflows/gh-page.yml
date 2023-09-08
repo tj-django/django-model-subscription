@@ -23,7 +23,7 @@ jobs:
           python-version: 3.6
 
       - name: Pip cache
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v3.3.2
         id: pip-cache
         with:
           path: ~/.cache/pip
