@@ -40,7 +40,7 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
 
       - name: Copy CHANGELOG
-        uses: docker://pandoc/core:2.19
+        uses: docker://pandoc/core:3.13
         with:
           args: -t markdown CHANGELOG.md -t rst --output=docs/source/changelog.rst
 
